@@ -1,0 +1,50 @@
+name: Collect ECOS snapshot
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/collect-ecos.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-ecos
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Collect ECOS metrics
+        env:
+          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+        run: |
+          REF_DATE="$(TZ=Asia/Seoul date +%F)"
+          mkdir -p data/snapshots/ecos
+          REFERENCE_DATE="$REF_DATE" OUTPUT_PATH="data/snapshots/ecos/$REF_DATE.json" npm run collect:ecos
+          cp "data/snapshots/ecos/$REF_DATE.json" data/snapshots/ecos/latest.json
+
+      - name: Commit ECOS snapshot
+        run: |
+          if git diff --quiet -- data/snapshots/ecos; then
+            echo "No ECOS snapshot changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/snapshots/ecos
+          git commit -m "Update ECOS market snapshot"
+          git pull --rebase origin main
+          git push
