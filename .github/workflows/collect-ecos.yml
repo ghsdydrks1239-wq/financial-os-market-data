@@ -2,6 +2,9 @@ name: Collect public market snapshot
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/collect-ecos.yml'
 
 permissions:
   contents: write
@@ -29,7 +32,7 @@ jobs:
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
         run: |
           REF_DATE="$(TZ=Asia/Seoul date +%F)"
-          mkdir -p data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/public .tmp
+          mkdir -p data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/public .tmp
           REFERENCE_DATE="$REF_DATE" OUTPUT_PATH="data/snapshots/ecos/$REF_DATE.json" npm run collect:ecos
           cp "data/snapshots/ecos/$REF_DATE.json" data/snapshots/ecos/latest.json
           INPUT_PATH="data/snapshots/ecos/$REF_DATE.json" OUTPUT_PATH="data/snapshots/derived/$REF_DATE.json" npm run derive:kr-rates
@@ -40,18 +43,20 @@ jobs:
           cp "data/snapshots/fed-liquidity/$REF_DATE.json" data/snapshots/fed-liquidity/latest.json
           REFERENCE_DATE="$REF_DATE" OUTPUT_PATH="data/snapshots/us-cp/$REF_DATE.json" npm run collect:us-cp
           cp "data/snapshots/us-cp/$REF_DATE.json" data/snapshots/us-cp/latest.json
-          ECOS_INPUT="data/snapshots/ecos/$REF_DATE.json" DERIVED_INPUT="data/snapshots/derived/$REF_DATE.json" TREASURY_INPUT="data/snapshots/treasury/$REF_DATE.json" FED_LIQUIDITY_INPUT="data/snapshots/fed-liquidity/$REF_DATE.json" US_CP_INPUT="data/snapshots/us-cp/$REF_DATE.json" OUTPUT_PATH="data/public/$REF_DATE.json" npm run build:public-snapshot
+          REFERENCE_DATE="$REF_DATE" OUTPUT_PATH="data/snapshots/us-labor-signals/$REF_DATE.json" npm run collect:us-labor-signals
+          cp "data/snapshots/us-labor-signals/$REF_DATE.json" data/snapshots/us-labor-signals/latest.json
+          ECOS_INPUT="data/snapshots/ecos/$REF_DATE.json" DERIVED_INPUT="data/snapshots/derived/$REF_DATE.json" TREASURY_INPUT="data/snapshots/treasury/$REF_DATE.json" FED_LIQUIDITY_INPUT="data/snapshots/fed-liquidity/$REF_DATE.json" US_CP_INPUT="data/snapshots/us-cp/$REF_DATE.json" US_LABOR_SIGNALS_INPUT="data/snapshots/us-labor-signals/$REF_DATE.json" OUTPUT_PATH="data/public/$REF_DATE.json" npm run build:public-snapshot
           cp "data/public/$REF_DATE.json" data/public/latest.json
 
       - name: Commit public-safe snapshots
         run: |
-          if [ -z "$(git status --porcelain -- data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/public)" ]; then
+          if [ -z "$(git status --porcelain -- data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/public)" ]; then
             echo "No public-safe snapshot changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/public
+          git add data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/public
           git commit -m "Update public market snapshot"
           git pull --rebase origin main
           git push
