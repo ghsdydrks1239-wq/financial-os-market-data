@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T07:21:41.230Z",
+  "generatedAt": "2026-08-13T07:50:15.483Z",
   "provider": "FED_LIQUIDITY",
   "source": "Federal Reserve Board + Federal Reserve Bank of New York direct APIs",
   "publicOutputAllowed": true,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T07:21:41.085Z",
+      "collectedAt": "2026-08-13T07:50:15.414Z",
       "sourceMeta": {
         "provider": "FED_BOARD_PRATES",
         "seriesId": "PRATES/PRATES_POLICY_RATES/RESBM_N.D",
@@ -52,7 +52,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Weekly official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T07:21:41.230Z",
+      "collectedAt": "2026-08-13T07:50:15.483Z",
       "sourceMeta": {
         "provider": "FED_BOARD_H41",
         "seriesId": "H41/H41/RESPPLLDT_XAW_N.WW",
@@ -77,7 +77,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T07:21:41.230Z",
+      "collectedAt": "2026-08-13T07:50:15.483Z",
       "sourceMeta": {
         "provider": "NY_FED_RRP",
         "field": "totalAmtAccepted / 1e9",
@@ -103,7 +103,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T07:21:41.230Z",
+      "collectedAt": "2026-08-13T07:50:15.483Z",
       "sourceMeta": {
         "provider": "NY_FED_RRP",
         "field": "details[].percentAwardRate",
