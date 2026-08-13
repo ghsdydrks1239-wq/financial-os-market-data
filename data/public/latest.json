@@ -1,96 +1,25 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T06:26:24.002Z",
-  "provider": "ECOS",
-  "source": "한국은행 경제통계시스템(ECOS)",
+  "generatedAt": "2026-08-13T06:26:31.655Z",
+  "purpose": "Financial OS MARKET BRIEF verified-number bundle",
   "publicOutputAllowed": true,
+  "providers": [
+    "ECOS",
+    "DERIVED_ECOS"
+  ],
+  "excludedProviders": [
+    "KRX"
+  ],
+  "exclusionNote": "KRX OPEN API values are intentionally excluded from this public bundle pending redistribution-rights resolution.",
   "dataQuality": {
-    "total": 19,
-    "available": 18,
+    "total": 26,
+    "available": 25,
     "stale": 0,
     "missing": 1,
     "error": 0
   },
   "metrics": [
-    {
-      "id": "kr_fi_metric_134",
-      "name": "한국 기준금리",
-      "assetClass": "rates_credit_kr",
-      "value": 2.75,
-      "unit": "연%",
-      "referenceDate": "2026-08-13",
-      "source": "한국은행 경제통계시스템(ECOS)",
-      "sourceDate": "2026-08-10",
-      "expectedSourceDate": null,
-      "marketSession": "KR_RATES_DAILY",
-      "sessionAligned": true,
-      "status": "available",
-      "isStale": false,
-      "qualityNote": "Latest effective policy value; sourceDate is not expected to equal referenceDate.",
-      "collectedAt": "2026-08-13T06:26:24.002Z",
-      "sourceMeta": {
-        "provider": "ECOS",
-        "statisticCode": "722Y001",
-        "itemCode": "0101000",
-        "definition": null,
-        "publicOutputAllowed": true,
-        "fallbackUsed": false,
-        "observedItemName": "한국은행 기준금리"
-      }
-    },
-    {
-      "id": "kr_fi_3y",
-      "name": "국고채 3Y",
-      "assetClass": "rates_credit_kr",
-      "value": 3.791,
-      "unit": "연%",
-      "referenceDate": "2026-08-13",
-      "source": "한국은행 경제통계시스템(ECOS)",
-      "sourceDate": "2026-08-12",
-      "expectedSourceDate": "2026-08-12",
-      "marketSession": "KR_RATES_DAILY",
-      "sessionAligned": null,
-      "status": "available",
-      "isStale": false,
-      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:26:24.002Z",
-      "sourceMeta": {
-        "provider": "ECOS",
-        "statisticCode": "817Y002",
-        "itemCode": "010200000",
-        "definition": null,
-        "publicOutputAllowed": true,
-        "fallbackUsed": false,
-        "observedItemName": "국고채(3년)"
-      }
-    },
-    {
-      "id": "kr_fi_5y",
-      "name": "국고채 5Y",
-      "assetClass": "rates_credit_kr",
-      "value": 4.025,
-      "unit": "연%",
-      "referenceDate": "2026-08-13",
-      "source": "한국은행 경제통계시스템(ECOS)",
-      "sourceDate": "2026-08-12",
-      "expectedSourceDate": "2026-08-12",
-      "marketSession": "KR_RATES_DAILY",
-      "sessionAligned": null,
-      "status": "available",
-      "isStale": false,
-      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:26:24.002Z",
-      "sourceMeta": {
-        "provider": "ECOS",
-        "statisticCode": "817Y002",
-        "itemCode": "010200001",
-        "definition": null,
-        "publicOutputAllowed": true,
-        "fallbackUsed": false,
-        "observedItemName": "국고채(5년)"
-      }
-    },
     {
       "id": "kr_fi_10y",
       "name": "국고채 10Y",
@@ -115,6 +44,32 @@
         "publicOutputAllowed": true,
         "fallbackUsed": false,
         "observedItemName": "국고채(10년)"
+      }
+    },
+    {
+      "id": "kr_fi_1y",
+      "name": "통안채 1Y",
+      "assetClass": "rates_credit_kr",
+      "value": 3.264,
+      "unit": "연%",
+      "referenceDate": "2026-08-13",
+      "source": "한국은행 경제통계시스템(ECOS)",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "KR_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
+      "sourceMeta": {
+        "provider": "ECOS",
+        "statisticCode": "817Y002",
+        "itemCode": "010400001",
+        "definition": null,
+        "publicOutputAllowed": true,
+        "fallbackUsed": false,
+        "observedItemName": "통안증권(1년)"
       }
     },
     {
@@ -170,6 +125,32 @@
       }
     },
     {
+      "id": "kr_fi_3y",
+      "name": "국고채 3Y",
+      "assetClass": "rates_credit_kr",
+      "value": 3.791,
+      "unit": "연%",
+      "referenceDate": "2026-08-13",
+      "source": "한국은행 경제통계시스템(ECOS)",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "KR_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
+      "sourceMeta": {
+        "provider": "ECOS",
+        "statisticCode": "817Y002",
+        "itemCode": "010200000",
+        "definition": null,
+        "publicOutputAllowed": true,
+        "fallbackUsed": false,
+        "observedItemName": "국고채(3년)"
+      }
+    },
+    {
       "id": "kr_fi_50y",
       "name": "국고채 50Y",
       "assetClass": "rates_credit_kr",
@@ -196,10 +177,10 @@
       }
     },
     {
-      "id": "kr_fi_cd_91d",
-      "name": "CD 91D",
+      "id": "kr_fi_5y",
+      "name": "국고채 5Y",
       "assetClass": "rates_credit_kr",
-      "value": 2.94,
+      "value": 4.025,
       "unit": "연%",
       "referenceDate": "2026-08-13",
       "source": "한국은행 경제통계시스템(ECOS)",
@@ -214,37 +195,11 @@
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
-        "itemCode": "010502000",
+        "itemCode": "010200001",
         "definition": null,
         "publicOutputAllowed": true,
         "fallbackUsed": false,
-        "observedItemName": "CD(91일)"
-      }
-    },
-    {
-      "id": "kr_fi_cp_91d",
-      "name": "CP 91D",
-      "assetClass": "rates_credit_kr",
-      "value": 3.17,
-      "unit": "연%",
-      "referenceDate": "2026-08-13",
-      "source": "한국은행 경제통계시스템(ECOS)",
-      "sourceDate": "2026-08-12",
-      "expectedSourceDate": "2026-08-12",
-      "marketSession": "KR_RATES_DAILY",
-      "sessionAligned": null,
-      "status": "available",
-      "isStale": false,
-      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:26:24.002Z",
-      "sourceMeta": {
-        "provider": "ECOS",
-        "statisticCode": "817Y002",
-        "itemCode": "010503000",
-        "definition": null,
-        "publicOutputAllowed": true,
-        "fallbackUsed": false,
-        "observedItemName": "CP(91일)"
+        "observedItemName": "국고채(5년)"
       }
     },
     {
@@ -274,55 +229,30 @@
       }
     },
     {
-      "id": "kr_fi_1y",
-      "name": "통안채 1Y",
+      "id": "kr_fi_aa",
+      "name": "AA- 신용스프레드",
       "assetClass": "rates_credit_kr",
-      "value": 3.264,
-      "unit": "연%",
+      "value": 70.5,
+      "unit": "bp",
       "referenceDate": "2026-08-13",
-      "source": "한국은행 경제통계시스템(ECOS)",
+      "source": "Derived from ECOS inputs",
       "sourceDate": "2026-08-12",
-      "expectedSourceDate": "2026-08-12",
-      "marketSession": "KR_RATES_DAILY",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
       "sessionAligned": null,
       "status": "available",
       "isStale": false,
-      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:26:24.002Z",
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:26:31.509Z",
       "sourceMeta": {
-        "provider": "ECOS",
-        "statisticCode": "817Y002",
-        "itemCode": "010400001",
-        "definition": null,
-        "publicOutputAllowed": true,
-        "fallbackUsed": false,
-        "observedItemName": "통안증권(1년)"
-      }
-    },
-    {
-      "id": "kr_fi_metric_148",
-      "name": "콜금리",
-      "assetClass": "rates_credit_kr",
-      "value": 2.781,
-      "unit": "연%",
-      "referenceDate": "2026-08-13",
-      "source": "한국은행 경제통계시스템(ECOS)",
-      "sourceDate": "2026-08-12",
-      "expectedSourceDate": "2026-08-12",
-      "marketSession": "KR_RATES_DAILY",
-      "sessionAligned": null,
-      "status": "available",
-      "isStale": false,
-      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:26:24.002Z",
-      "sourceMeta": {
-        "provider": "ECOS",
-        "statisticCode": "817Y002",
-        "itemCode": "010101000",
-        "definition": "콜금리(1일, 전체거래)",
-        "publicOutputAllowed": true,
-        "fallbackUsed": false,
-        "observedItemName": "콜금리(1일, 전체거래)"
+        "formula": "kr_fi_aa_3y - kr_fi_3y",
+        "displayFormula": "(kr_fi_aa_3y - kr_fi_3y) * 100",
+        "sourceDates": {
+          "kr_fi_aa_3y": "2026-08-12",
+          "kr_fi_3y": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
       }
     },
     {
@@ -352,6 +282,33 @@
       }
     },
     {
+      "id": "kr_fi_bbb",
+      "name": "BBB- 신용스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 650.6,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:26:31.509Z",
+      "sourceMeta": {
+        "formula": "kr_fi_bbb_3y - kr_fi_3y",
+        "displayFormula": "(kr_fi_bbb_3y - kr_fi_3y) * 100",
+        "sourceDates": {
+          "kr_fi_bbb_3y": "2026-08-12",
+          "kr_fi_3y": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
       "id": "kr_fi_bbb_3y",
       "name": "회사채 BBB- 3Y",
       "assetClass": "rates_credit_kr",
@@ -378,16 +335,16 @@
       }
     },
     {
-      "id": "fx_usd_krw",
-      "name": "USD/KRW",
-      "assetClass": "fx",
-      "value": 1418.5,
-      "unit": "원",
+      "id": "kr_fi_cd_91d",
+      "name": "CD 91D",
+      "assetClass": "rates_credit_kr",
+      "value": 2.94,
+      "unit": "연%",
       "referenceDate": "2026-08-13",
       "source": "한국은행 경제통계시스템(ECOS)",
       "sourceDate": "2026-08-12",
       "expectedSourceDate": "2026-08-12",
-      "marketSession": "KR_FX_DAILY",
+      "marketSession": "KR_RATES_DAILY",
       "sessionAligned": null,
       "status": "available",
       "isStale": false,
@@ -395,25 +352,79 @@
       "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
-        "statisticCode": "731Y003",
-        "itemCode": "0000013",
-        "definition": "원/달러(종가)",
+        "statisticCode": "817Y002",
+        "itemCode": "010502000",
+        "definition": null,
         "publicOutputAllowed": true,
         "fallbackUsed": false,
-        "observedItemName": "원/달러(종가)"
+        "observedItemName": "CD(91일)"
       }
     },
     {
-      "id": "fx_jpy_krw_100",
-      "name": "JPY/KRW 100",
-      "assetClass": "fx",
-      "value": 888.09,
-      "unit": "원",
+      "id": "kr_fi_cd91",
+      "name": "CD91-기준금리 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 19,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:26:31.509Z",
+      "sourceMeta": {
+        "formula": "kr_fi_cd_91d - kr_fi_metric_134",
+        "displayFormula": "(kr_fi_cd_91d - kr_fi_metric_134) * 100",
+        "sourceDates": {
+          "kr_fi_cd_91d": "2026-08-12",
+          "kr_fi_metric_134": "2026-08-10"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_cd91_tb91",
+      "name": "CD91-TB91 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 14,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:26:31.509Z",
+      "sourceMeta": {
+        "formula": "kr_fi_cd_91d - kr_fi_91d",
+        "displayFormula": "(kr_fi_cd_91d - kr_fi_91d) * 100",
+        "sourceDates": {
+          "kr_fi_cd_91d": "2026-08-12",
+          "kr_fi_91d": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_cp_91d",
+      "name": "CP 91D",
+      "assetClass": "rates_credit_kr",
+      "value": 3.17,
+      "unit": "연%",
       "referenceDate": "2026-08-13",
       "source": "한국은행 경제통계시스템(ECOS)",
       "sourceDate": "2026-08-12",
       "expectedSourceDate": "2026-08-12",
-      "marketSession": "KR_FX_DAILY",
+      "marketSession": "KR_RATES_DAILY",
       "sessionAligned": null,
       "status": "available",
       "isStale": false,
@@ -421,12 +432,170 @@
       "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
-        "statisticCode": "731Y003",
-        "itemCode": "0000006",
-        "definition": "원/100엔(하나은행고시)",
+        "statisticCode": "817Y002",
+        "itemCode": "010503000",
+        "definition": null,
         "publicOutputAllowed": true,
         "fallbackUsed": false,
-        "observedItemName": "원/100엔(하나은행고시)"
+        "observedItemName": "CP(91일)"
+      }
+    },
+    {
+      "id": "kr_fi_ktb_3y_10y",
+      "name": "KTB 3Y-10Y 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 50.3,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:26:31.509Z",
+      "sourceMeta": {
+        "formula": "kr_fi_10y - kr_fi_3y",
+        "displayFormula": "(kr_fi_10y - kr_fi_3y) * 100",
+        "sourceDates": {
+          "kr_fi_10y": "2026-08-12",
+          "kr_fi_3y": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_ktb3",
+      "name": "KTB3-기준금리 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 104.1,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:26:31.509Z",
+      "sourceMeta": {
+        "formula": "kr_fi_3y - kr_fi_metric_134",
+        "displayFormula": "(kr_fi_3y - kr_fi_metric_134) * 100",
+        "sourceDates": {
+          "kr_fi_3y": "2026-08-12",
+          "kr_fi_metric_134": "2026-08-10"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_ktb3_tb91",
+      "name": "KTB3-TB91 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 99.1,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:26:31.509Z",
+      "sourceMeta": {
+        "formula": "kr_fi_3y - kr_fi_91d",
+        "displayFormula": "(kr_fi_3y - kr_fi_91d) * 100",
+        "sourceDates": {
+          "kr_fi_3y": "2026-08-12",
+          "kr_fi_91d": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_metric_134",
+      "name": "한국 기준금리",
+      "assetClass": "rates_credit_kr",
+      "value": 2.75,
+      "unit": "연%",
+      "referenceDate": "2026-08-13",
+      "source": "한국은행 경제통계시스템(ECOS)",
+      "sourceDate": "2026-08-10",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DAILY",
+      "sessionAligned": true,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Latest effective policy value; sourceDate is not expected to equal referenceDate.",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
+      "sourceMeta": {
+        "provider": "ECOS",
+        "statisticCode": "722Y001",
+        "itemCode": "0101000",
+        "definition": null,
+        "publicOutputAllowed": true,
+        "fallbackUsed": false,
+        "observedItemName": "한국은행 기준금리"
+      }
+    },
+    {
+      "id": "kr_fi_metric_148",
+      "name": "콜금리",
+      "assetClass": "rates_credit_kr",
+      "value": 2.781,
+      "unit": "연%",
+      "referenceDate": "2026-08-13",
+      "source": "한국은행 경제통계시스템(ECOS)",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "KR_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
+      "sourceMeta": {
+        "provider": "ECOS",
+        "statisticCode": "817Y002",
+        "itemCode": "010101000",
+        "definition": "콜금리(1일, 전체거래)",
+        "publicOutputAllowed": true,
+        "fallbackUsed": false,
+        "observedItemName": "콜금리(1일, 전체거래)"
+      }
+    },
+    {
+      "id": "kr_fi_rp",
+      "name": "RP 금리",
+      "assetClass": "rates_credit_kr",
+      "value": null,
+      "unit": null,
+      "referenceDate": "2026-08-13",
+      "source": "한국은행 경제통계시스템(ECOS)",
+      "sourceDate": null,
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "missing",
+      "isStale": false,
+      "qualityNote": "ECOS market-rate table 817Y002 does not expose the intended daily market RP rate. Do not substitute a bank RP deposit rate.",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
+      "sourceMeta": {
+        "provider": "ECOS",
+        "statisticCode": null,
+        "itemCode": null,
+        "definition": null,
+        "publicOutputAllowed": true,
+        "mappingStatus": "unresolved"
       }
     },
     {
@@ -482,28 +651,55 @@
       }
     },
     {
-      "id": "kr_fi_rp",
-      "name": "RP 금리",
-      "assetClass": "rates_credit_kr",
-      "value": null,
-      "unit": null,
+      "id": "fx_jpy_krw_100",
+      "name": "JPY/KRW 100",
+      "assetClass": "fx",
+      "value": 888.09,
+      "unit": "원",
       "referenceDate": "2026-08-13",
       "source": "한국은행 경제통계시스템(ECOS)",
-      "sourceDate": null,
-      "expectedSourceDate": null,
-      "marketSession": "KR_RATES_DAILY",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "KR_FX_DAILY",
       "sessionAligned": null,
-      "status": "missing",
+      "status": "available",
       "isStale": false,
-      "qualityNote": "ECOS market-rate table 817Y002 does not expose the intended daily market RP rate. Do not substitute a bank RP deposit rate.",
+      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
       "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
-        "statisticCode": null,
-        "itemCode": null,
-        "definition": null,
+        "statisticCode": "731Y003",
+        "itemCode": "0000006",
+        "definition": "원/100엔(하나은행고시)",
         "publicOutputAllowed": true,
-        "mappingStatus": "unresolved"
+        "fallbackUsed": false,
+        "observedItemName": "원/100엔(하나은행고시)"
+      }
+    },
+    {
+      "id": "fx_usd_krw",
+      "name": "USD/KRW",
+      "assetClass": "fx",
+      "value": 1418.5,
+      "unit": "원",
+      "referenceDate": "2026-08-13",
+      "source": "한국은행 경제통계시스템(ECOS)",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "KR_FX_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
+      "sourceMeta": {
+        "provider": "ECOS",
+        "statisticCode": "731Y003",
+        "itemCode": "0000013",
+        "definition": "원/달러(종가)",
+        "publicOutputAllowed": true,
+        "fallbackUsed": false,
+        "observedItemName": "원/달러(종가)"
       }
     }
   ]

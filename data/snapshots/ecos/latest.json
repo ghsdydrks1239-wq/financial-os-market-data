@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T06:23:58.957Z",
+  "generatedAt": "2026-08-13T06:26:24.002Z",
   "provider": "ECOS",
   "source": "한국은행 경제통계시스템(ECOS)",
   "publicOutputAllowed": true,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest effective policy value; sourceDate is not expected to equal referenceDate.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "722Y001",
@@ -54,7 +54,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -80,7 +80,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -106,7 +106,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -132,7 +132,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -158,7 +158,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -184,7 +184,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -210,7 +210,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -236,7 +236,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -262,7 +262,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -288,7 +288,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -314,7 +314,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -340,7 +340,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -366,7 +366,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -392,7 +392,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "731Y003",
@@ -418,7 +418,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "731Y003",
@@ -444,7 +444,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "731Y003",
@@ -470,7 +470,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "731Y001",
@@ -496,7 +496,7 @@
       "status": "missing",
       "isStale": false,
       "qualityNote": "ECOS market-rate table 817Y002 does not expose the intended daily market RP rate. Do not substitute a bank RP deposit rate.",
-      "collectedAt": "2026-08-13T06:23:58.957Z",
+      "collectedAt": "2026-08-13T06:26:24.002Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": null,
