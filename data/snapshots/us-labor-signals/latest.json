@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0",
+  "referenceDate": "2026-08-13",
+  "generatedAt": "2026-08-13T07:14:14.450Z",
+  "provider": "BLS_DERIVED",
+  "source": "U.S. Bureau of Labor Statistics — Current Population Survey",
+  "publicOutputAllowed": true,
+  "dataQuality": {
+    "total": 1,
+    "available": 1,
+    "stale": 0,
+    "missing": 0,
+    "error": 0
+  },
+  "metrics": [
+    {
+      "id": "gl_fi_sahm_rule",
+      "name": "Sahm Rule",
+      "assetClass": "rates_credit_global",
+      "value": 0,
+      "unit": "pp",
+      "referenceDate": "2026-08-13",
+      "source": "U.S. Bureau of Labor Statistics — Current Population Survey",
+      "sourceDate": "2026-07-01",
+      "expectedSourceDate": "2026-07-01",
+      "marketSession": "US_LABOR_MONTHLY",
+      "sessionAligned": true,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Derived from the latest seasonally adjusted BLS U-3 unemployment-rate vintage. This is the current Sahm Rule reading, not a reconstruction of historical real-time vintages.",
+      "collectedAt": "2026-08-13T07:14:14.449Z",
+      "sourceMeta": {
+        "provider": "BLS_DERIVED",
+        "seriesId": "LNS14000000",
+        "seriesName": "Unemployment Rate, seasonally adjusted",
+        "formula": "latest 3-month average unemployment rate minus the minimum 3-month average over the prior 12 months",
+        "threshold": 0.5,
+        "currentThreeMonthAverage": 4.2,
+        "priorTwelveMonthLow": 4.2,
+        "publicOutputAllowed": true
+      }
+    }
+  ]
+}

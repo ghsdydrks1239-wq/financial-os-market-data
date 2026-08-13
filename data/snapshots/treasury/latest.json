@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T07:02:21.258Z",
+  "generatedAt": "2026-08-13T07:14:12.694Z",
   "provider": "US_TREASURY",
   "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
   "publicOutputAllowed": true,
@@ -21,7 +21,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T07:02:21.258Z",
+      "collectedAt": "2026-08-13T07:14:12.693Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_3MONTH",
@@ -44,7 +44,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T07:02:21.258Z",
+      "collectedAt": "2026-08-13T07:14:12.693Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_1YEAR",
@@ -67,7 +67,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T07:02:21.258Z",
+      "collectedAt": "2026-08-13T07:14:12.693Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_2YEAR",
@@ -90,7 +90,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T07:02:21.258Z",
+      "collectedAt": "2026-08-13T07:14:12.693Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_3YEAR",
@@ -113,7 +113,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T07:02:21.258Z",
+      "collectedAt": "2026-08-13T07:14:12.693Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_5YEAR",
@@ -136,7 +136,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T07:02:21.258Z",
+      "collectedAt": "2026-08-13T07:14:12.694Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_10YEAR",
@@ -159,7 +159,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T07:02:21.258Z",
+      "collectedAt": "2026-08-13T07:14:12.694Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_20YEAR",
@@ -182,7 +182,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T07:02:21.258Z",
+      "collectedAt": "2026-08-13T07:14:12.694Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_30YEAR",
@@ -205,7 +205,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Derived directly from official Treasury par-yield inputs.",
-      "collectedAt": "2026-08-13T07:02:21.258Z",
+      "collectedAt": "2026-08-13T07:14:12.694Z",
       "sourceMeta": {
         "provider": "DERIVED_US_TREASURY",
         "formula": "(UST10Y - UST2Y) * 100",
