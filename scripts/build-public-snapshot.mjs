@@ -3,24 +3,29 @@ import path from "node:path";
 
 const ecosPath = process.env.ECOS_INPUT?.trim();
 const derivedPath = process.env.DERIVED_INPUT?.trim();
+const treasuryPath = process.env.TREASURY_INPUT?.trim();
 const outputPath = process.env.OUTPUT_PATH?.trim();
 if (!ecosPath || !derivedPath || !outputPath) {
   throw new Error("ECOS_INPUT, DERIVED_INPUT and OUTPUT_PATH are required.");
 }
 
-const [ecos, derived] = await Promise.all([
+const snapshots = await Promise.all([
   fs.readFile(ecosPath, "utf8").then(JSON.parse),
   fs.readFile(derivedPath, "utf8").then(JSON.parse),
+  ...(treasuryPath ? [fs.readFile(treasuryPath, "utf8").then(JSON.parse)] : []),
 ]);
 
-if (ecos.referenceDate !== derived.referenceDate) {
-  throw new Error(`Snapshot referenceDate mismatch: ECOS=${ecos.referenceDate}, derived=${derived.referenceDate}`);
+const referenceDate = snapshots[0]?.referenceDate;
+if (!referenceDate || snapshots.some((snapshot) => snapshot.referenceDate !== referenceDate)) {
+  throw new Error(`Snapshot referenceDate mismatch: ${snapshots.map((s) => s.referenceDate).join(", ")}`);
 }
-if (ecos.publicOutputAllowed !== true || derived.publicOutputAllowed !== true) {
-  throw new Error("A non-public source was passed to the public snapshot builder.");
+for (const snapshot of snapshots) {
+  if (snapshot.publicOutputAllowed !== true) {
+    throw new Error(`A non-public source was passed to the public snapshot builder: ${snapshot.provider ?? "unknown"}`);
+  }
 }
 
-const metrics = [...(ecos.metrics ?? []), ...(derived.metrics ?? [])];
+const metrics = snapshots.flatMap((snapshot) => snapshot.metrics ?? []);
 const ids = new Set();
 for (const metric of metrics) {
   if (ids.has(metric.id)) throw new Error(`Duplicate metric id in public snapshot: ${metric.id}`);
@@ -30,7 +35,7 @@ for (const metric of metrics) {
   }
 }
 
-const order = new Map([["rates_credit_kr", 1], ["fx", 2]]);
+const order = new Map([["rates_credit_kr", 1], ["rates_credit_global", 2], ["fx", 3]]);
 metrics.sort((a, b) => {
   const assetOrder = (order.get(a.assetClass) ?? 99) - (order.get(b.assetClass) ?? 99);
   return assetOrder || String(a.id).localeCompare(String(b.id));
@@ -43,13 +48,13 @@ const counts = metrics.reduce((acc, metric) => {
 
 const output = {
   schemaVersion: "1.0",
-  referenceDate: ecos.referenceDate,
+  referenceDate,
   generatedAt: new Date().toISOString(),
   purpose: "Financial OS MARKET BRIEF verified-number bundle",
   publicOutputAllowed: true,
-  providers: ["ECOS", "DERIVED_ECOS"],
-  excludedProviders: ["KRX"],
-  exclusionNote: "KRX OPEN API values are intentionally excluded from this public bundle pending redistribution-rights resolution.",
+  providers: snapshots.map((snapshot) => snapshot.provider),
+  excludedProviders: ["KRX", "NY_FED"],
+  exclusionNote: "KRX values remain excluded pending redistribution-rights resolution. NY Fed reference-rate values remain excluded until required presentation notices are wired into the frontend.",
   dataQuality: {
     total: metrics.length,
     available: counts.available ?? 0,
