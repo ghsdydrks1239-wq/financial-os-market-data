@@ -9,6 +9,7 @@ const usCpPath = process.env.US_CP_INPUT?.trim();
 const usLaborSignalsPath = process.env.US_LABOR_SIGNALS_INPUT?.trim();
 const jgbPath = process.env.JGB_INPUT?.trim();
 const bisPath = process.env.BIS_INPUT?.trim();
+const boePath = process.env.BOE_INPUT?.trim();
 const outputPath = process.env.OUTPUT_PATH?.trim();
 if (!ecosPath || !derivedPath || !outputPath) {
   throw new Error("ECOS_INPUT, DERIVED_INPUT and OUTPUT_PATH are required.");
@@ -23,6 +24,7 @@ const snapshots = await Promise.all([
   ...(usLaborSignalsPath ? [fs.readFile(usLaborSignalsPath, "utf8").then(JSON.parse)] : []),
   ...(jgbPath ? [fs.readFile(jgbPath, "utf8").then(JSON.parse)] : []),
   ...(bisPath ? [fs.readFile(bisPath, "utf8").then(JSON.parse)] : []),
+  ...(boePath ? [fs.readFile(boePath, "utf8").then(JSON.parse)] : []),
 ]);
 
 const referenceDate = snapshots[0]?.referenceDate;
