@@ -2,6 +2,9 @@ name: Check MARKET DATA setup
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/check-market-data.yml'
 
 permissions:
   contents: read
@@ -28,3 +31,8 @@ jobs:
         run: npm run smoke:ecos
         env:
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+
+      - name: Smoke test KRX API
+        run: npm run smoke:krx
+        env:
+          KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
