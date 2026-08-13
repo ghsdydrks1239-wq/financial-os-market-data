@@ -2,6 +2,9 @@ name: Collect public market snapshot
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/collect-ecos.yml'
   schedule:
     # 07:30 / 07:40 / 07:50 KST = 22:30 / 22:40 / 22:50 UTC (previous UTC day)
     - cron: '30 22 * * *'
@@ -31,6 +34,11 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
             echo "Manual run: freshness guard bypassed."
+            exit 0
+          fi
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "Temporary push validation: freshness guard bypassed."
             exit 0
           fi
           TODAY="$(TZ=Asia/Seoul date +%F)"
