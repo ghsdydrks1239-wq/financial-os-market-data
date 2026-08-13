@@ -59,8 +59,8 @@ const output = {
   purpose: "Financial OS MARKET BRIEF verified-number bundle",
   publicOutputAllowed: true,
   providers: snapshots.map((snapshot) => snapshot.provider),
-  excludedProviders: ["KRX", "NY_FED", "FRED_COPYRIGHTED"],
-  exclusionNote: "KRX values remain excluded pending redistribution-rights resolution. NY Fed reference-rate values remain excluded until required presentation notices are wired into the frontend. Copyrighted FRED series are not ingested into the AI-facing public bundle without a separate rights review.",
+  excludedProviders: ["KRX", "NY_FED_REFERENCE_RATES", "FRED_COPYRIGHTED"],
+  exclusionNote: "KRX values remain excluded pending redistribution-rights resolution. NY Fed SOFR/EFFR reference-rate values remain excluded until their required presentation notice is wired into the frontend; NY Fed reverse-repo operation data are collected directly and are included. Copyrighted FRED series are not ingested into the AI-facing public bundle without a separate rights review.",
   dataQuality: {
     total: metrics.length,
     available: counts.available ?? 0,
