@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 24
 
-      - name: Collect official rates and build public-safe bundle
+      - name: Collect official public-safe sources and build bundle
         env:
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
         run: |
