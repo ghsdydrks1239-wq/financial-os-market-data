@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "provider": "KRX",
+  "source": "KRX Data Marketplace OPEN API",
+  "publicOutputAllowed": false,
+  "termsNote": "Standard KRX OPEN API terms prohibit providing received information to third parties. Keep KRX values out of this public repository and public-site output unless separate rights are confirmed.",
+  "confirmedEndpoints": {
+    "kospiIndex": "https://data-dbg.krx.co.kr/svc/apis/idx/kospi_dd_trd",
+    "kosdaqIndex": "https://data-dbg.krx.co.kr/svc/apis/idx/kosdaq_dd_trd",
+    "kospiStocks": "https://data-dbg.krx.co.kr/svc/apis/sto/stk_bydd_trd",
+    "kosdaqStocks": "https://data-dbg.krx.co.kr/svc/apis/sto/ksq_bydd_trd",
+    "etf": "https://data-dbg.krx.co.kr/svc/apis/etp/etf_bydd_trd",
+    "futures": "https://data-dbg.krx.co.kr/svc/apis/drv/fut_bydd_trd",
+    "options": "https://data-dbg.krx.co.kr/svc/apis/drv/opt_bydd_trd"
+  },
+  "metrics": [
+    {"metricId":"kr_eq_kospi","name":"KOSPI","status":"endpoint_confirmed_selector_pending","endpointRef":"kospiIndex","valueField":"CLSPRC_IDX","selector":{"field":"IDX_NM","candidateExact":"코스피"},"note":"Do not take row 0; row 0 can be a composite row with blank price fields."},
+    {"metricId":"kr_eq_kosdaq","name":"KOSDAQ","status":"endpoint_confirmed_selector_pending","endpointRef":"kosdaqIndex","valueField":"CLSPRC_IDX","selector":{"field":"IDX_NM","candidateExact":"코스닥"}},
+    {"metricId":"kr_eq_kospi200","name":"KOSPI200","status":"endpoint_confirmed_selector_pending","endpointRef":"kospiIndex","valueField":"CLSPRC_IDX","selector":{"field":"IDX_NM","candidateExact":"코스피 200"}},
+
+    {"metricId":"kr_deriv_kospi200_futures","legacyMetricId":"kr_eq_kospi200","name":"KOSPI200 선물","status":"endpoint_confirmed_definition_pending","endpointRef":"futures","valueField":"TDD_CLSPRC","selector":{"productCandidate":"코스피200 선물","excludeMarket":"야간","contractRule":"highest ACC_TRDVOL among valid daytime contracts"}},
+    {"metricId":"kr_eq_metric_005","name":"선물 베이시스","status":"derivable_definition_pending","endpointRef":"futures","formula":"selectedFuture.TDD_CLSPRC - selectedFuture.SPOT_PRC","dependsOn":["kr_deriv_kospi200_futures"],"note":"Formula is technically available once the active KOSPI200 futures contract-selection rule is verified."},
+    {"metricId":"kr_eq_metric_006","name":"선물 이론가격","status":"unresolved","reason":"SPOT_PRC is not theoretical futures price; no verified field/source yet."},
+    {"metricId":"kr_eq_metric_007","name":"선물 미결제약정","status":"derivable_definition_pending","endpointRef":"futures","valueField":"ACC_OPNINT_QTY","dependsOn":["kr_deriv_kospi200_futures"]},
+    {"metricId":"kr_eq_metric_008","name":"선물 미결제약정 증감","status":"derivable_definition_pending","endpointRef":"futures","formula":"current ACC_OPNINT_QTY - prior-session same-contract ACC_OPNINT_QTY","dependsOn":["kr_eq_metric_007"]},
+    {"metricId":"kr_eq_vkospi","name":"VKOSPI","status":"approved_service_endpoint_pending","reason":"User has approved the derivatives-index service, but its exact API ID/endpoint is not yet verified."},
+    {"metricId":"kr_eq_metric_010","name":"풋콜비율","status":"derivable_definition_pending","endpointRef":"options","formula":"KOSPI200 PUT ACC_TRDVOL / KOSPI200 CALL ACC_TRDVOL","note":"Need to lock the product/market/expiry universe before production."},
+    {"metricId":"kr_eq_metric_011","name":"옵션 내재변동성","status":"unresolved_definition","endpointRef":"options","availableField":"IMP_VOLT","reason":"An aggregate option-IV metric needs a specified ATM/expiry/weighting rule; do not invent one."},
+    {"metricId":"kr_eq_metric_012","name":"옵션 변동성 스프레드","status":"unresolved_definition","endpointRef":"options"},
+    {"metricId":"kr_eq_metric_013","name":"옵션 풋콜스프레드","status":"unresolved_definition","endpointRef":"options"},
+    {"metricId":"kr_eq_metric_014","name":"프로그램 차익","status":"source_pending","reason":"Not exposed by the seven confirmed basic endpoints."},
+    {"metricId":"kr_eq_metric_015","name":"프로그램 비차익","status":"source_pending","reason":"Not exposed by the seven confirmed basic endpoints."},
+    {"metricId":"kr_eq_metric_016","name":"프로그램 매매","status":"source_pending","reason":"Not exposed by the seven confirmed basic endpoints."},
+    {"metricId":"kr_eq_metric_022","name":"연기금 수급","status":"source_pending","reason":"Investor-flow endpoint/source still needs verification."},
+
+    {"metricId":"kr_eq_kospi_turnover_ranking","legacyMetricId":"kr_eq_kospi","name":"KOSPI 거래대금 상위","status":"derivable_confirmed","endpointRef":"kospiStocks","sortField":"ACC_TRDVAL","sortOrder":"desc","valueFields":["ISU_CD","ISU_NM","TDD_CLSPRC","FLUC_RT","ACC_TRDVAL"]},
+    {"metricId":"kr_eq_kosdaq_turnover_ranking","legacyMetricId":"kr_eq_kosdaq","name":"KOSDAQ 거래대금 상위","status":"derivable_confirmed","endpointRef":"kosdaqStocks","sortField":"ACC_TRDVAL","sortOrder":"desc","valueFields":["ISU_CD","ISU_NM","TDD_CLSPRC","FLUC_RT","ACC_TRDVAL"]},
+    {"metricId":"kr_eq_metric_025","name":"외국인 순매수 상위","status":"source_pending","reason":"Investor-flow endpoint/source still needs verification."},
+    {"metricId":"kr_eq_metric_026","name":"외국인 순매도 상위","status":"source_pending","reason":"Investor-flow endpoint/source still needs verification."},
+    {"metricId":"kr_eq_metric_027","name":"기관 순매수 상위","status":"source_pending","reason":"Investor-flow endpoint/source still needs verification."},
+    {"metricId":"kr_eq_metric_028","name":"기관 순매도 상위","status":"source_pending","reason":"Investor-flow endpoint/source still needs verification."},
+
+    {"metricId":"kr_etf_kodex_leverage","legacyMetricId":"kr_eq_kodex","name":"KODEX 레버리지","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"KODEX 레버리지"}},
+    {"metricId":"kr_etf_kodex_inverse","legacyMetricId":"kr_eq_kodex","name":"KODEX 인버스","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"KODEX 인버스"}},
+    {"metricId":"kr_eq_kodex_200_2x","name":"KODEX 200선물 인버스2X","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"KODEX 200선물인버스2X"}},
+    {"metricId":"kr_etf_kodex_bank","legacyMetricId":"kr_eq_kodex","name":"KODEX 은행","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"KODEX 은행"}},
+    {"metricId":"kr_etf_tiger_bank_high_div_top10","legacyMetricId":"kr_eq_tiger_top10","name":"TIGER 은행고배당플러스TOP10","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"TIGER 은행고배당플러스TOP10"}},
+    {"metricId":"kr_etf_tiger_shipbuilding_top10","legacyMetricId":"kr_eq_tiger_top10","name":"TIGER 조선TOP10","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"TIGER 조선TOP10"}},
+    {"metricId":"kr_eq_tiger_k","name":"TIGER K방산&우주","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"TIGER K방산&우주"}},
+    {"metricId":"kr_etf_kodex_semiconductor","legacyMetricId":"kr_eq_kodex","name":"KODEX 반도체","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"KODEX 반도체"}},
+    {"metricId":"kr_etf_tiger_semiconductor_top10","legacyMetricId":"kr_eq_tiger_top10","name":"TIGER 반도체 TOP10","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"TIGER 반도체TOP10"}},
+    {"metricId":"kr_eq_kodex_2","name":"KODEX 2차전지산업","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"KODEX 2차전지산업"}},
+    {"metricId":"kr_eq_tiger_2","name":"TIGER 2차전지 테마","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"TIGER 2차전지테마"}},
+    {"metricId":"kr_etf_kodex_bio","legacyMetricId":"kr_eq_kodex","name":"KODEX 바이오","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"KODEX 바이오"}},
+    {"metricId":"kr_etf_kodex_auto","legacyMetricId":"kr_eq_kodex","name":"KODEX 자동차","status":"endpoint_confirmed_selector_pending","endpointRef":"etf","valueField":"TDD_CLSPRC","selector":{"field":"ISU_NM","candidateExact":"KODEX 자동차"}}
+  ]
+}
