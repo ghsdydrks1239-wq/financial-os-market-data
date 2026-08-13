@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ghsdydrks1239-wq/financial-os-market-data/config/metric-record.schema.json",
+  "title": "Financial OS Market Metric Record",
+  "type": "object",
+  "required": ["id", "name", "assetClass", "value", "referenceDate", "source", "sourceDate", "status"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "assetClass": { "type": "string", "minLength": 1 },
+    "value": { "type": ["number", "string", "null"] },
+    "unit": { "type": ["string", "null"] },
+    "referenceDate": { "type": ["string", "null"] },
+    "source": { "type": ["string", "null"] },
+    "sourceDate": { "type": ["string", "null"] },
+    "expectedSourceDate": { "type": ["string", "null"] },
+    "marketSession": { "type": ["string", "null"] },
+    "sessionAligned": { "type": ["boolean", "null"] },
+    "status": { "enum": ["available", "stale", "missing", "error"] },
+    "isStale": { "type": "boolean" },
+    "qualityNote": { "type": ["string", "null"] },
+    "collectedAt": { "type": "string" }
+  },
+  "additionalProperties": true
+}
