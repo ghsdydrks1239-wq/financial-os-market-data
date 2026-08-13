@@ -12,14 +12,35 @@ MARKET BRIEF용 시장 데이터 파이프라인 저장소입니다.
 
 ## 2026-08-13 현재 상태
 
+### Public MARKET bundle
+
+- 프런트엔드가 바로 읽을 수 있는 `data/public/latest.json` 생성 완료
+- 현재 **35개 지표 중 34개 available / 1개 missing / 0 error**
+- 포함 공급자: ECOS, ECOS 기반 검증 파생지표, U.S. Treasury
+- KRX와 NY Fed 값은 현재 public bundle에서 제외
+
 ### ECOS
 
 - `ECOS_API_KEY` GitHub Secret 확인 완료
 - 실제 ECOS API 연결 성공
 - 국내 금리·신용·원화환율 19개 Master 항목을 `config/ecos-series.v1.json`에 매핑
 - 19개 중 18개 실제 수집 성공, `RP 금리` 1개는 정확한 시장 RP 개념의 소스를 찾을 때까지 `missing`으로 유지
-- 첫 정규화 snapshot 생성 완료: `data/snapshots/ecos/2026-08-13.json`
+- 날짜별 snapshot: `data/snapshots/ecos/`
 - 요청 timeout + retry 적용
+
+### 국내 금리 파생지표
+
+- 기존 시황 파일의 실제 수식을 audit에서 복구해 7개 스프레드를 구현
+- KTB 10Y-3Y, AA- 신용스프레드, BBB- 신용스프레드, CD91-TB91, KTB3-기준금리, CD91-기준금리, KTB3-TB91
+- 7개 모두 실제 계산 성공
+- 날짜별 snapshot: `data/snapshots/derived/`
+
+### U.S. Treasury / NY Fed
+
+- U.S. Treasury 공식 XML 연결 성공
+- UST 3M / 1Y / 2Y / 3Y / 5Y / 10Y / 20Y / 30Y + 2s10s = 9개 수집 성공
+- 날짜별 Treasury snapshot: `data/snapshots/treasury/`
+- NY Fed SOFR / EFFR API 연결과 정규화 수집은 성공했으나, reference-rate 표시 시 필요한 이용조건을 프런트엔드에 반영하기 전까지 public bundle에는 넣지 않음
 
 ### KRX
 
@@ -34,9 +55,10 @@ KRX OPEN API 기본 약관상 수신 정보를 제3자에게 제공하는 데 �
 
 ## GitHub Actions
 
-- `Check MARKET DATA setup`: Secret, ECOS, KRX 인증 및 selector를 수동 검증
-- `Collect ECOS snapshot`: ECOS 지표를 수집해 날짜별 snapshot과 `latest.json`을 생성
-- 현재 둘 다 `workflow_dispatch` 수동 실행만 사용합니다. 데이터 소스와 공개범위를 더 확정한 뒤 일일 스케줄을 붙입니다.
+- `Check MARKET DATA setup`: Secret, ECOS, KRX 인증 및 selector 수동 검증
+- `Check global rates sources`: U.S. Treasury / NY Fed 연결과 정규화 수동 검증
+- `Collect public market snapshot`: ECOS + 검증 파생지표 + U.S. Treasury를 수집해 `data/public/latest.json` 생성
+- 현재 자동 스케줄은 붙이지 않았습니다. 데이터 소스와 공개범위를 더 확정한 뒤 일일 스케줄을 붙입니다.
 
 ## 필요한 GitHub Actions Secrets
 
@@ -54,7 +76,8 @@ config/                 지표/소스 매핑과 스키마
 src/collectors/         공급자별 collector
 src/lib/                공통 유틸리티
 scripts/                검증·smoke-test·snapshot 생성 스크립트
-data/snapshots/         날짜별 공개 가능한 snapshot
+data/snapshots/         날짜별 source snapshot
+data/public/            공개 가능한 MARKET BRIEF 숫자 bundle
 .github/workflows/      GitHub Actions
 ```
 
