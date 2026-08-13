@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "reason": "The first generated Master reused a few shorthand IDs for different rows. Apply these overrides before importing the 277-metric registry so every metricId is unique.",
+  "overridesByName": {
+    "KOSPI 거래대금 상위": "kr_eq_kospi_turnover_ranking",
+    "KOSDAQ 거래대금 상위": "kr_eq_kosdaq_turnover_ranking",
+    "KOSPI200 선물": "kr_deriv_kospi200_futures",
+    "KODEX 레버리지": "kr_etf_kodex_leverage",
+    "KODEX 인버스": "kr_etf_kodex_inverse",
+    "KODEX 은행": "kr_etf_kodex_bank",
+    "KODEX 반도체": "kr_etf_kodex_semiconductor",
+    "KODEX 바이오": "kr_etf_kodex_bio",
+    "KODEX 자동차": "kr_etf_kodex_auto",
+    "TIGER 은행고배당플러스TOP10": "kr_etf_tiger_bank_high_div_top10",
+    "TIGER 조선TOP10": "kr_etf_tiger_shipbuilding_top10",
+    "TIGER 반도체 TOP10": "kr_etf_tiger_semiconductor_top10"
+  }
+}
