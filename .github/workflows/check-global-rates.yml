@@ -2,6 +2,12 @@ name: Check global rates sources
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/check-global-rates.yml'
+      - 'scripts/collect-bundesbank-v1.mjs'
+      - 'config/bundesbank-series.v1.json'
+      - 'package.json'
 
 permissions:
   contents: read
@@ -34,3 +40,5 @@ jobs:
         run: OUTPUT_PATH=.tmp/bis.json npm run collect:bis
       - name: Test Bank of England exact 10Y gilt collection
         run: OUTPUT_PATH=.tmp/boe.json npm run collect:boe
+      - name: Test Deutsche Bundesbank government-yield collection
+        run: OUTPUT_PATH=.tmp/bundesbank.json npm run collect:bundesbank
