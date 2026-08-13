@@ -14,3 +14,6 @@ for (const [name,url] of urls) {
     console.log(`SOURCE ${name} ERROR ${error?.message ?? String(error)}`);
   }
 }
+
+console.log('--- normalized Banco de España collector ---');
+await import('./collect-bde-v1.mjs');
