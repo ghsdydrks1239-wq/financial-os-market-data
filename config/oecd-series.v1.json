@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "provider": "OECD",
   "source": "OECD Data Explorer — Composite leading indicators",
-  "dataset": "OECD.SDD.STES,DSD_STES@DF_CLI,4.1",
+  "dataset": "OECD.SDD.STES,DSD_STES@DF_CLI",
   "publicOutputAllowed": true,
   "rights": "OECD data may be extracted, copied, adapted, distributed, shared and embedded unless additional dataset restrictions apply; OECD attribution is required.",
   "metrics": [
@@ -14,7 +14,7 @@
       "measure": "LI",
       "adjustment": "AA",
       "calculationMethod": "H",
-      "queryKey": "USA.M.LI...AA...H",
+      "queryKey": ".M.LI...AA...H",
       "unit": "index",
       "staleAfterDays": 70,
       "legacyFREDSeries": "USALOLITOAASTSAM",
