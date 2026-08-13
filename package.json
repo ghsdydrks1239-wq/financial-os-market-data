@@ -7,6 +7,7 @@
     "node": ">=24"
   },
   "scripts": {
+    "test": "node --test",
     "check": "node scripts/check-setup.mjs",
     "check:registry": "node scripts/check-registry.mjs",
     "smoke:ecos": "node scripts/smoke-ecos.mjs",
@@ -23,6 +24,7 @@
     "collect:bundesbank": "node scripts/collect-bundesbank-v1.mjs",
     "collect:bde": "node scripts/collect-bde-v1.mjs",
     "collect:oecd": "node scripts/collect-oecd-v1.mjs",
+    "collect:eia": "node scripts/collect-eia-v1.mjs",
     "discover:fed-board": "node scripts/discover-fed-board.mjs",
     "build:public-snapshot": "node scripts/build-public-snapshot.mjs",
     "build:coverage": "node scripts/build-coverage-report.mjs"

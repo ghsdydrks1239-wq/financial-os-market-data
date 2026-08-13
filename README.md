@@ -16,8 +16,8 @@ MARKET BRIEF용 시장 데이터 파이프라인 저장소입니다.
 ### Public MARKET bundle
 
 - 프런트엔드가 바로 읽을 수 있는 `data/public/latest.json` 생성 완료
-- 현재 **41개 지표 중 40개 available / 1개 missing / 0 error**
-- 포함 공급자: ECOS, ECOS 기반 검증 파생지표, U.S. Treasury, Fed Liquidity, Federal Reserve Board Commercial Paper, BLS 기반 파생지표
+- 현재 **69개 지표 중 68개 available / 1개 missing / 0 error**
+- 포함 공급자: ECOS, ECOS 기반 검증 파생지표, U.S. Treasury, Fed Liquidity, Federal Reserve Board Commercial Paper, BLS 기반 파생지표, 일본 재무성, BIS, 영란은행, 독일 연방은행, 스페인 중앙은행, OECD
 - KRX 값, NY Fed SOFR/EFFR reference-rate 값, 별도 권리 검토가 필요한 FRED 저작권 시리즈는 public bundle에서 제외
 - NY Fed의 **Reverse Repo operation data는 NY Fed Markets Data API에서 직접 수집해 포함**
 
@@ -74,6 +74,13 @@ MARKET BRIEF용 시장 데이터 파이프라인 저장소입니다.
 
 KRX OPEN API 수신값의 공개 재배포 권리 구조를 확정하기 전까지 `config/krx-series.v1.json`의 `publicOutputAllowed`는 `false`로 유지합니다.
 
+### EIA 원자재 가격
+
+- EIA 공식 일별 history HTML에서 WTI, Brent, Henry Hub 천연가스, 휘발유, 난방유 5개 시리즈를 API 키 없이 수집
+- 주간 표의 월~금 값을 실제 일별 `sourceDate`로 정규화하고 휴일·결측 칸은 건너뜀
+- 단위 테스트와 GitHub Actions 실소스 검증을 연결
+- 기초 가격의 제3자 재배포 권리가 확정되지 않았으므로 수집 결과는 `.tmp` 검증 출력에만 쓰며 `data/public/latest.json`과 커밋되는 snapshot에는 포함하지 않음
+
 ## 데이터 권리 원칙
 
 - 원 출처의 공식 API/다운로드를 우선합니다.
@@ -84,9 +91,9 @@ KRX OPEN API 수신값의 공개 재배포 권리 구조를 확정하기 전까�
 ## GitHub Actions
 
 - `Check MARKET DATA setup`: Secret, ECOS, KRX 인증 및 selector 수동 검증
-- `Check global rates sources`: U.S. Treasury / NY Fed / Federal Reserve Board / Fed Liquidity / US CP / BLS Sahm Rule 연결과 정규화 수동 검증
+- `Check global rates sources`: U.S. Treasury / NY Fed / Federal Reserve Board / Fed Liquidity / US CP / BLS Sahm Rule / EIA 원자재 가격 연결과 정규화 수동 검증
 - `Collect public market snapshot`: 공개 가능한 공식 소스들을 수집해 `data/public/latest.json` 생성
-- 현재 자동 스케줄은 붙이지 않았으며 **workflow_dispatch 수동 실행만 사용**합니다. 데이터 소스와 공개범위를 더 확정한 뒤 일일 스케줄을 붙입니다.
+- 공개 스냅샷은 매일 07:30 KST에 실행하고 07:40·07:50 KST를 백업 슬롯으로 사용합니다. 같은 KST 기준일의 snapshot이 이미 있으면 백업 실행은 API 호출 없이 종료합니다.
 
 ## 필요한 GitHub Actions Secrets
 
