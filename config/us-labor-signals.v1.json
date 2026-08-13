@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "source": {
+    "name": "U.S. Bureau of Labor Statistics — Current Population Survey",
+    "provider": "BLS",
+    "apiUrl": "https://api.bls.gov/publicAPI/v1/timeseries/data/LNS14000000",
+    "seriesId": "LNS14000000",
+    "seriesName": "Unemployment Rate, seasonally adjusted",
+    "publicOutputAllowed": true,
+    "notes": "BLS Public Data API is used directly. No FRED data are ingested."
+  },
+  "metrics": [
+    {
+      "metricId": "gl_fi_sahm_rule",
+      "name": "Sahm Rule",
+      "unit": "pp",
+      "assetClass": "rates_credit_global",
+      "frequency": "monthly",
+      "formula": "latest 3-month average unemployment rate minus the minimum 3-month average over the prior 12 months",
+      "threshold": 0.5
+    }
+  ]
+}
