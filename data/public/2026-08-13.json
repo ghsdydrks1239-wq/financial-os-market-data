@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T11:31:32.426Z",
+  "generatedAt": "2026-08-13T11:42:17.489Z",
   "purpose": "Financial OS MARKET BRIEF verified-number bundle",
   "publicOutputAllowed": true,
   "providers": [
@@ -15,7 +15,8 @@
     "BIS",
     "BOE_DATABASE",
     "DEUTSCHE_BUNDESBANK",
-    "BANCO_DE_ESPANA"
+    "BANCO_DE_ESPANA",
+    "OECD"
   ],
   "excludedProviders": [
     "KRX",
@@ -25,8 +26,8 @@
   ],
   "exclusionNote": "KRX values remain excluded pending redistribution-rights resolution. NY Fed SOFR/EFFR reference-rate values remain excluded until their required presentation notice is wired into the frontend; NY Fed reverse-repo operation data are collected directly and are included. Copyrighted FRED and licensed market-benchmark series are not ingested into the AI-facing public bundle without a separate rights review.",
   "dataQuality": {
-    "total": 68,
-    "available": 67,
+    "total": 69,
+    "available": 68,
     "stale": 0,
     "missing": 1,
     "error": 0
@@ -47,7 +48,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -73,7 +74,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -99,7 +100,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -125,7 +126,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -151,7 +152,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -177,7 +178,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -203,7 +204,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -229,7 +230,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -255,7 +256,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T11:31:21.412Z",
+      "collectedAt": "2026-08-13T11:42:04.359Z",
       "sourceMeta": {
         "formula": "kr_fi_aa_3y - kr_fi_3y",
         "displayFormula": "(kr_fi_aa_3y - kr_fi_3y) * 100",
@@ -282,7 +283,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -308,7 +309,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T11:31:21.412Z",
+      "collectedAt": "2026-08-13T11:42:04.359Z",
       "sourceMeta": {
         "formula": "kr_fi_bbb_3y - kr_fi_3y",
         "displayFormula": "(kr_fi_bbb_3y - kr_fi_3y) * 100",
@@ -335,7 +336,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -361,7 +362,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -387,7 +388,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T11:31:21.412Z",
+      "collectedAt": "2026-08-13T11:42:04.359Z",
       "sourceMeta": {
         "formula": "kr_fi_cd_91d - kr_fi_metric_134",
         "displayFormula": "(kr_fi_cd_91d - kr_fi_metric_134) * 100",
@@ -414,7 +415,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T11:31:21.412Z",
+      "collectedAt": "2026-08-13T11:42:04.359Z",
       "sourceMeta": {
         "formula": "kr_fi_cd_91d - kr_fi_91d",
         "displayFormula": "(kr_fi_cd_91d - kr_fi_91d) * 100",
@@ -441,7 +442,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -467,7 +468,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T11:31:21.412Z",
+      "collectedAt": "2026-08-13T11:42:04.359Z",
       "sourceMeta": {
         "formula": "kr_fi_10y - kr_fi_3y",
         "displayFormula": "(kr_fi_10y - kr_fi_3y) * 100",
@@ -494,7 +495,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T11:31:21.412Z",
+      "collectedAt": "2026-08-13T11:42:04.359Z",
       "sourceMeta": {
         "formula": "kr_fi_3y - kr_fi_metric_134",
         "displayFormula": "(kr_fi_3y - kr_fi_metric_134) * 100",
@@ -521,7 +522,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T11:31:21.412Z",
+      "collectedAt": "2026-08-13T11:42:04.359Z",
       "sourceMeta": {
         "formula": "kr_fi_3y - kr_fi_91d",
         "displayFormula": "(kr_fi_3y - kr_fi_91d) * 100",
@@ -548,7 +549,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest effective policy value; sourceDate is not expected to equal referenceDate.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "722Y001",
@@ -574,7 +575,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "817Y002",
@@ -600,7 +601,7 @@
       "status": "missing",
       "isStale": false,
       "qualityNote": "ECOS market-rate table 817Y002 does not expose the intended daily market RP rate. Do not substitute a bank RP deposit rate.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": null,
@@ -625,7 +626,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:25.398Z",
+      "collectedAt": "2026-08-13T11:42:08.688Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -654,7 +655,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:25.008Z",
+      "collectedAt": "2026-08-13T11:42:08.337Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -683,7 +684,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:25.659Z",
+      "collectedAt": "2026-08-13T11:42:09.256Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -712,7 +713,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:24.851Z",
+      "collectedAt": "2026-08-13T11:42:07.720Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -741,7 +742,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official daily yield of the current German Federal security at the specified original maturity.",
-      "collectedAt": "2026-08-13T11:31:29.330Z",
+      "collectedAt": "2026-08-13T11:42:13.640Z",
       "sourceMeta": {
         "provider": "DEUTSCHE_BUNDESBANK",
         "key": "D.REN.EUR.A630.000000WT1010.A",
@@ -766,7 +767,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official daily yield of the current German Federal security at the specified original maturity.",
-      "collectedAt": "2026-08-13T11:31:29.128Z",
+      "collectedAt": "2026-08-13T11:42:13.481Z",
       "sourceMeta": {
         "provider": "DEUTSCHE_BUNDESBANK",
         "key": "D.REN.EUR.A610.000000WT0202.A",
@@ -791,7 +792,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official daily yield of the current German Federal security at the specified original maturity.",
-      "collectedAt": "2026-08-13T11:31:29.551Z",
+      "collectedAt": "2026-08-13T11:42:13.799Z",
       "sourceMeta": {
         "provider": "DEUTSCHE_BUNDESBANK",
         "key": "D.REN.EUR.A640.000000WT3030.A",
@@ -816,7 +817,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T11:31:22.737Z",
+      "collectedAt": "2026-08-13T11:42:05.389Z",
       "sourceMeta": {
         "provider": "FED_BOARD_PRATES",
         "seriesId": "PRATES/PRATES_POLICY_RATES/RESBM_N.D",
@@ -840,7 +841,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T11:31:24.210Z",
+      "collectedAt": "2026-08-13T11:42:07.011Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "10年",
@@ -864,7 +865,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T11:31:24.210Z",
+      "collectedAt": "2026-08-13T11:42:07.011Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "20年",
@@ -888,7 +889,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T11:31:24.210Z",
+      "collectedAt": "2026-08-13T11:42:07.011Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "2年",
@@ -912,7 +913,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T11:31:24.210Z",
+      "collectedAt": "2026-08-13T11:42:07.011Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "30年",
@@ -936,7 +937,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T11:31:24.210Z",
+      "collectedAt": "2026-08-13T11:42:07.011Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "3年",
@@ -960,7 +961,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T11:31:24.210Z",
+      "collectedAt": "2026-08-13T11:42:07.011Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "40年",
@@ -984,12 +985,40 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T11:31:24.210Z",
+      "collectedAt": "2026-08-13T11:42:07.011Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "5年",
         "sourceUrl": "https://www.mof.go.jp/jgbs/reference/interest_rate/jgbcm.csv",
         "rights": "MOF website content is subject to Japan Public Data License 1.0 unless otherwise indicated; retain source attribution.",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_oecd_leading_indicators",
+      "name": "OECD Leading Indicators",
+      "assetClass": "rates_credit_global",
+      "value": 100.8024,
+      "unit": "index",
+      "referenceDate": "2026-08-13",
+      "source": "OECD Data Explorer — Composite leading indicators",
+      "sourceDate": "2026-06-01",
+      "expectedSourceDate": null,
+      "marketSession": "OECD_MONTHLY",
+      "sessionAligned": true,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "United States OECD harmonised composite leading indicator (CLI), amplitude adjusted; monthly source period is stored as the first day of the month.",
+      "collectedAt": "2026-08-13T11:42:17.331Z",
+      "sourceMeta": {
+        "provider": "OECD",
+        "dataset": "OECD.SDD.STES,DSD_STES@DF_CLI",
+        "queryKey": ".M.LI...AA...H",
+        "referenceArea": "USA",
+        "definition": "United States OECD harmonised composite leading indicator, amplitude adjusted.",
+        "legacyFREDSeries": "USALOLITOAASTSAM",
+        "sourceUrl": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2025-05&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
+        "rights": "OECD data may be extracted, copied, adapted, distributed, shared and embedded unless additional dataset restrictions apply; OECD attribution is required.",
         "publicOutputAllowed": true
       }
     },
@@ -1008,7 +1037,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T11:31:22.898Z",
+      "collectedAt": "2026-08-13T11:42:05.547Z",
       "sourceMeta": {
         "provider": "NY_FED_RRP",
         "field": "totalAmtAccepted / 1e9",
@@ -1034,7 +1063,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T11:31:22.898Z",
+      "collectedAt": "2026-08-13T11:42:05.547Z",
       "sourceMeta": {
         "provider": "NY_FED_RRP",
         "field": "details[].percentAwardRate",
@@ -1059,7 +1088,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Derived from the latest seasonally adjusted BLS U-3 unemployment-rate vintage. This is the current Sahm Rule reading, not a reconstruction of historical real-time vintages.",
-      "collectedAt": "2026-08-13T11:31:23.805Z",
+      "collectedAt": "2026-08-13T11:42:06.415Z",
       "sourceMeta": {
         "provider": "BLS_DERIVED",
         "seriesId": "LNS14000000",
@@ -1086,7 +1115,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:25.247Z",
+      "collectedAt": "2026-08-13T11:42:08.509Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -1115,7 +1144,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official Banco de España daily secondary-market government-bond yield; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:32.307Z",
+      "collectedAt": "2026-08-13T11:42:16.906Z",
       "sourceMeta": {
         "provider": "BANCO_DE_ESPANA",
         "seriesCode": "D_G0B1F0ZP",
@@ -1140,7 +1169,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Weekly official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T11:31:22.898Z",
+      "collectedAt": "2026-08-13T11:42:05.547Z",
       "sourceMeta": {
         "provider": "FED_BOARD_H41",
         "seriesId": "H41/H41/RESPPLLDT_XAW_N.WW",
@@ -1165,7 +1194,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Exact Bank of England Database 10-year nominal par gilt-yield series downloaded through the documented CSV endpoint.",
-      "collectedAt": "2026-08-13T11:31:28.167Z",
+      "collectedAt": "2026-08-13T11:42:12.582Z",
       "sourceMeta": {
         "provider": "BOE_DATABASE",
         "seriesCode": "IUDMNPY",
@@ -1191,7 +1220,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "The latest daily row (2026-08-11) was n.a.; using the latest prior day with sufficient trade data (2026-08-06).",
-      "collectedAt": "2026-08-13T11:31:23.196Z",
+      "collectedAt": "2026-08-13T11:42:05.888Z",
       "sourceMeta": {
         "provider": "FEDERAL_RESERVE_BOARD_CP",
         "seriesConcept": "90-Day AA Nonfinancial Commercial Paper Interest Rate",
@@ -1216,7 +1245,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:21.809Z",
+      "collectedAt": "2026-08-13T11:42:04.704Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_10YEAR",
@@ -1239,7 +1268,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:21.809Z",
+      "collectedAt": "2026-08-13T11:42:04.704Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_1YEAR",
@@ -1262,7 +1291,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:21.809Z",
+      "collectedAt": "2026-08-13T11:42:04.705Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_20YEAR",
@@ -1285,7 +1314,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Derived directly from official Treasury par-yield inputs.",
-      "collectedAt": "2026-08-13T11:31:21.809Z",
+      "collectedAt": "2026-08-13T11:42:04.705Z",
       "sourceMeta": {
         "provider": "DERIVED_US_TREASURY",
         "formula": "(UST10Y - UST2Y) * 100",
@@ -1311,7 +1340,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:21.809Z",
+      "collectedAt": "2026-08-13T11:42:04.704Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_2YEAR",
@@ -1334,7 +1363,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:21.809Z",
+      "collectedAt": "2026-08-13T11:42:04.705Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_30YEAR",
@@ -1357,7 +1386,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:21.809Z",
+      "collectedAt": "2026-08-13T11:42:04.704Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_3MONTH",
@@ -1380,7 +1409,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:21.809Z",
+      "collectedAt": "2026-08-13T11:42:04.704Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_3YEAR",
@@ -1403,7 +1432,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:21.809Z",
+      "collectedAt": "2026-08-13T11:42:04.704Z",
       "sourceMeta": {
         "provider": "US_TREASURY",
         "xmlTag": "BC_5YEAR",
@@ -1426,7 +1455,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "731Y003",
@@ -1452,7 +1481,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "731Y001",
@@ -1478,7 +1507,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "BIS publishes local-currency units per USD; value inverted to match the master metric quotation convention.",
-      "collectedAt": "2026-08-13T11:31:25.815Z",
+      "collectedAt": "2026-08-13T11:42:09.820Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -1507,7 +1536,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "BIS publishes local-currency units per USD; value inverted to match the master metric quotation convention.",
-      "collectedAt": "2026-08-13T11:31:25.968Z",
+      "collectedAt": "2026-08-13T11:42:09.985Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -1536,7 +1565,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "731Y003",
@@ -1562,7 +1591,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:27.359Z",
+      "collectedAt": "2026-08-13T11:42:11.408Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -1591,7 +1620,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:27.210Z",
+      "collectedAt": "2026-08-13T11:42:11.246Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -1620,7 +1649,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:27.059Z",
+      "collectedAt": "2026-08-13T11:42:11.074Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -1649,7 +1678,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:26.350Z",
+      "collectedAt": "2026-08-13T11:42:10.333Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -1678,7 +1707,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:26.507Z",
+      "collectedAt": "2026-08-13T11:42:10.575Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -1707,7 +1736,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:26.191Z",
+      "collectedAt": "2026-08-13T11:42:10.154Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -1736,7 +1765,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily-session calendar alignment is provisional until the KR market holiday calendar is added.",
-      "collectedAt": "2026-08-13T11:31:14.969Z",
+      "collectedAt": "2026-08-13T11:41:57.245Z",
       "sourceMeta": {
         "provider": "ECOS",
         "statisticCode": "731Y003",
@@ -1762,7 +1791,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:26.806Z",
+      "collectedAt": "2026-08-13T11:42:10.910Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -1791,7 +1820,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:26.657Z",
+      "collectedAt": "2026-08-13T11:42:10.746Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",

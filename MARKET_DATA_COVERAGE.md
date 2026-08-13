@@ -5,12 +5,12 @@
 ## 전체 진행률
 
 - Master: **277**
-- Public snapshot 포함: **68**
-- Available: **67**
+- Public snapshot 포함: **69**
+- Available: **68**
 - Stale: **0**
 - Missing: **1**
 - Error: **0**
-- 아직 public snapshot에 미포함: **209**
+- 아직 public snapshot에 미포함: **208**
 
 ## CORE 진행률
 
@@ -23,12 +23,12 @@
 ## Coverage status
 
 - rights_blocked: 156
-- public_available: 67
+- public_available: 68
 - research_needed: 18
 - dependency_needed: 11
 - rights_review: 10
 - access_approval_needed: 6
-- source_mapped_not_public_collected: 6
+- source_mapped_not_public_collected: 5
 - presentation_notice_required: 2
 - public_missing: 1
 
@@ -62,7 +62,6 @@
 - CNN: 1
 - KSD_KOFR: 1
 - FRED: 1
-- OECD: 1
 
 ## 명시적 권리/접근 가드 대표 항목
 

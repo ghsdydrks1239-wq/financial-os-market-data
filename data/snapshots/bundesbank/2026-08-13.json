@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T11:31:29.551Z",
+  "generatedAt": "2026-08-13T11:42:13.799Z",
   "provider": "DEUTSCHE_BUNDESBANK",
   "source": "Deutsche Bundesbank — Daily yields of current Federal securities",
   "publicOutputAllowed": true,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official daily yield of the current German Federal security at the specified original maturity.",
-      "collectedAt": "2026-08-13T11:31:29.128Z",
+      "collectedAt": "2026-08-13T11:42:13.481Z",
       "sourceMeta": {
         "provider": "DEUTSCHE_BUNDESBANK",
         "key": "D.REN.EUR.A610.000000WT0202.A",
@@ -53,7 +53,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official daily yield of the current German Federal security at the specified original maturity.",
-      "collectedAt": "2026-08-13T11:31:29.330Z",
+      "collectedAt": "2026-08-13T11:42:13.640Z",
       "sourceMeta": {
         "provider": "DEUTSCHE_BUNDESBANK",
         "key": "D.REN.EUR.A630.000000WT1010.A",
@@ -78,7 +78,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official daily yield of the current German Federal security at the specified original maturity.",
-      "collectedAt": "2026-08-13T11:31:29.551Z",
+      "collectedAt": "2026-08-13T11:42:13.799Z",
       "sourceMeta": {
         "provider": "DEUTSCHE_BUNDESBANK",
         "key": "D.REN.EUR.A640.000000WT3030.A",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T11:31:32.307Z",
+  "generatedAt": "2026-08-13T11:42:16.906Z",
   "provider": "BANCO_DE_ESPANA",
   "source": "Banco de España — Statistical Information",
   "publicOutputAllowed": true,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official Banco de España daily secondary-market government-bond yield; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T11:31:32.307Z",
+      "collectedAt": "2026-08-13T11:42:16.906Z",
       "sourceMeta": {
         "provider": "BANCO_DE_ESPANA",
         "seriesCode": "D_G0B1F0ZP",

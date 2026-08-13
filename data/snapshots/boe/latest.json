@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T11:31:28.167Z",
+  "generatedAt": "2026-08-13T11:42:12.582Z",
   "provider": "BOE_DATABASE",
   "source": "Bank of England Database",
   "publicOutputAllowed": true,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Exact Bank of England Database 10-year nominal par gilt-yield series downloaded through the documented CSV endpoint.",
-      "collectedAt": "2026-08-13T11:31:28.167Z",
+      "collectedAt": "2026-08-13T11:42:12.582Z",
       "sourceMeta": {
         "provider": "BOE_DATABASE",
         "seriesCode": "IUDMNPY",
