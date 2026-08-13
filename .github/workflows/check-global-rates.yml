@@ -6,6 +6,8 @@ on:
     paths:
       - '.github/workflows/check-global-rates.yml'
       - 'scripts/discover-fed-board.mjs'
+      - 'scripts/collect-fed-liquidity-v1.mjs'
+      - 'package.json'
 
 permissions:
   contents: read
@@ -26,3 +28,5 @@ jobs:
           TREASURY_OUTPUT=.tmp/treasury.json NYFED_OUTPUT=.tmp/nyfed.json npm run collect:global-rates
       - name: Discover Federal Reserve Board series
         run: npm run discover:fed-board
+      - name: Test Fed liquidity collection
+        run: OUTPUT_PATH=.tmp/fed-liquidity.json npm run collect:fed-liquidity
