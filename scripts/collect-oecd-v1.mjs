@@ -21,8 +21,8 @@ function ageDays(referenceDate, sourceDate) { return Math.round((Date.parse(`${r
 
 async function fetchMetric(definition, referenceDate) {
   const startPeriod = monthStart(referenceDate, 15);
-  const url = `https://sdmx.oecd.org/public/rest/data/${config.dataset}/${definition.queryKey}?startPeriod=${startPeriod}&dimensionAtObservation=AllDimensions`;
-  const response = await fetch(url, { headers: { Accept: "text/csv", "User-Agent": "FinancialOS-MarketData/0.1 (+personal research)" }, signal: AbortSignal.timeout(30000) });
+  const url = `https://sdmx.oecd.org/public/rest/data/${config.dataset}/${definition.queryKey}?startPeriod=${startPeriod}&dimensionAtObservation=AllDimensions&format=csvfilewithlabels`;
+  const response = await fetch(url, { headers: { "Accept-Language": "en", "User-Agent": "FinancialOS-MarketData/0.1 (+personal research)" }, signal: AbortSignal.timeout(30000) });
   const text = (await response.text()).replace(/^\uFEFF/, "");
   if (!response.ok) throw new Error(`OECD HTTP ${response.status}: ${text.slice(0, 500)}`);
   const rows = text.split(/\r?\n/).filter(Boolean).map(parseCsvLine);
