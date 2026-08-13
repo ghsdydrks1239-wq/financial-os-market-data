@@ -20,6 +20,7 @@
     "collect:jgb": "node scripts/collect-jgb-v1.mjs",
     "collect:bis": "node scripts/collect-bis-v1.mjs",
     "discover:fed-board": "node scripts/discover-fed-board.mjs",
-    "build:public-snapshot": "node scripts/build-public-snapshot.mjs"
+    "build:public-snapshot": "node scripts/build-public-snapshot.mjs",
+    "build:coverage": "node scripts/build-coverage-report.mjs"
   }
 }
