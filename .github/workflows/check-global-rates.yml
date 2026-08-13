@@ -2,12 +2,6 @@ name: Check global rates sources
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/check-global-rates.yml'
-      - 'scripts/collect-us-cp-v1.mjs'
-      - 'config/us-cp.v1.json'
-      - 'package.json'
 
 permissions:
   contents: read
