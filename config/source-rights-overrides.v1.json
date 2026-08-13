@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "principle": "Free to view is not the same as safe to redistribute. Explicit guards override optimistic source-stage labels.",
+  "sourceFamilyOverrides": {
+    "KRX": {"coverageStatus":"rights_blocked","publicRepoSafe":false,"reason":"KRX OPEN API received information is kept out of the public repository pending explicit redistribution rights."},
+    "GLOBAL_VENDOR": {"coverageStatus":"rights_blocked","publicRepoSafe":false,"reason":"Commercial market prices and security quotes require a licensed redistribution source."},
+    "ICE_LICENSED": {"coverageStatus":"rights_blocked","publicRepoSafe":false,"reason":"ICE benchmark/index data require licensing review before redistribution."},
+    "LBMA": {"coverageStatus":"rights_blocked","publicRepoSafe":false,"reason":"LBMA precious-metal benchmark data are not treated as freely redistributable raw benchmark values."},
+    "LME": {"coverageStatus":"rights_review","publicRepoSafe":false,"reason":"LME delayed/benchmark market data require redistribution-rights review."},
+    "FUTURES_VENDOR": {"coverageStatus":"rights_blocked","publicRepoSafe":false,"reason":"Exchange futures settlements require an exchange/vendor redistribution license unless a public-domain alternative is verified."},
+    "KOFIA": {"coverageStatus":"access_approval_needed","publicRepoSafe":null,"reason":"Official KOFIA automated access requires endpoint/approval or a clearly reusable public export."},
+    "KSD_KOFR": {"coverageStatus":"access_approval_needed","publicRepoSafe":null,"reason":"KSD SEIBro OpenAPI access requires a service key/application; no no-key official machine endpoint has been verified."}
+  },
+  "metricOverrides": {
+    "gl_fi_sofr": {"coverageStatus":"presentation_notice_required","publicRepoSafe":false,"reason":"NY Fed reference-rate API works, but SOFR presentation requirements must be implemented in the frontend before public display."},
+    "gl_fi_effr": {"coverageStatus":"presentation_notice_required","publicRepoSafe":false,"reason":"NY Fed reference-rate API works, but EFFR presentation requirements must be implemented in the frontend before public display."},
+    "gl_fi_china_lpr_1y": {"coverageStatus":"rights_blocked","publicRepoSafe":false,"reason":"CFETS/ChinaMoney market-data terms require authorization for copying, storing, publishing or processing market data."},
+    "gl_fi_china_lpr_5y": {"coverageStatus":"rights_blocked","publicRepoSafe":false,"reason":"CFETS/ChinaMoney market-data terms require authorization for copying, storing, publishing or processing market data."},
+    "cmdty_wti_crude": {"coverageStatus":"rights_review","publicRepoSafe":false,"reason":"EIA displays this spot-price series with a third-party market-data source; EIA hosting alone does not establish raw-price redistribution rights."},
+    "cmdty_brent_crude": {"coverageStatus":"rights_review","publicRepoSafe":false,"reason":"EIA displays this spot-price series with a third-party market-data source; EIA hosting alone does not establish raw-price redistribution rights."},
+    "cmdty_natural_gas": {"coverageStatus":"rights_review","publicRepoSafe":false,"reason":"The targeted daily market-price series has third-party source attribution; redistribution rights need separate verification."},
+    "cmdty_gasoline": {"coverageStatus":"rights_review","publicRepoSafe":false,"reason":"The targeted market-price series has third-party source attribution; redistribution rights need separate verification."},
+    "cmdty_heating_oil": {"coverageStatus":"rights_review","publicRepoSafe":false,"reason":"The targeted market-price series has third-party source attribution; redistribution rights need separate verification."},
+    "gl_fi_st_louis_fed_financial_stress_index": {"coverageStatus":"rights_review","publicRepoSafe":false,"reason":"FRED distribution does not itself guarantee that every hosted series is free of third-party copyright; series-specific rights must be verified."},
+    "gl_eq_move_index": {"coverageStatus":"rights_blocked","publicRepoSafe":false,"reason":"MOVE is a licensed ICE benchmark."},
+    "fx_dxy": {"coverageStatus":"rights_blocked","publicRepoSafe":false,"reason":"DXY is a licensed ICE benchmark."}
+  }
+}
