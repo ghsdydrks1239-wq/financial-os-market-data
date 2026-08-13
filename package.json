@@ -13,6 +13,7 @@
     "collect:ecos": "node scripts/collect-ecos-v1.mjs",
     "derive:kr-rates": "node scripts/derive-kr-rates.mjs",
     "collect:global-rates": "node scripts/collect-global-rates-v1.mjs",
+    "collect:fed-liquidity": "node scripts/collect-fed-liquidity-v1.mjs",
     "discover:fed-board": "node scripts/discover-fed-board.mjs",
     "build:public-snapshot": "node scripts/build-public-snapshot.mjs"
   }
