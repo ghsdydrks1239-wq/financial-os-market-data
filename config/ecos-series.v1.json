@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "provider": "ECOS",
+  "source": "한국은행 경제통계시스템(ECOS)",
+  "publicOutputAllowed": true,
+  "notes": "Series and item codes were discovered from ECOS StatisticTableList/StatisticItemList on 2026-08-13. RP market rate remains unresolved rather than being substituted with a different RP concept.",
+  "metrics": [
+    {"metricId":"kr_fi_metric_134","name":"한국 기준금리","statisticCode":"722Y001","itemCode":"0101000","cycle":"D","unit":"%","freshnessMode":"latest_effective","lookbackDays":180},
+    {"metricId":"kr_fi_3y","name":"국고채 3Y","statisticCode":"817Y002","itemCode":"010200000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_5y","name":"국고채 5Y","statisticCode":"817Y002","itemCode":"010200001","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_10y","name":"국고채 10Y","statisticCode":"817Y002","itemCode":"010210000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_20y","name":"국고채 20Y","statisticCode":"817Y002","itemCode":"010220000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_30y","name":"국고채 30Y","statisticCode":"817Y002","itemCode":"010230000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_50y","name":"국고채 50Y","statisticCode":"817Y002","itemCode":"010240000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_cd_91d","name":"CD 91D","statisticCode":"817Y002","itemCode":"010502000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_cp_91d","name":"CP 91D","statisticCode":"817Y002","itemCode":"010503000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_91d","name":"통안채 91D","statisticCode":"817Y002","itemCode":"010400000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_1y","name":"통안채 1Y","statisticCode":"817Y002","itemCode":"010400001","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_metric_148","name":"콜금리","statisticCode":"817Y002","itemCode":"010101000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14,"definition":"콜금리(1일, 전체거래)"},
+    {"metricId":"kr_fi_aa_3y","name":"회사채 AA- 3Y","statisticCode":"817Y002","itemCode":"010300000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"kr_fi_bbb_3y","name":"회사채 BBB- 3Y","statisticCode":"817Y002","itemCode":"010320000","cycle":"D","unit":"%","freshnessMode":"daily_market","lookbackDays":14},
+    {"metricId":"fx_usd_krw","name":"USD/KRW","statisticCode":"731Y003","itemCode":"0000013","cycle":"D","unit":"KRW per USD","freshnessMode":"daily_market","lookbackDays":14,"definition":"원/달러(종가)","fallbackItemCode":"0000003","fallbackDefinition":"원/달러(종가 15:30), used only for history before 2024-07"},
+    {"metricId":"fx_jpy_krw_100","name":"JPY/KRW 100","statisticCode":"731Y003","itemCode":"0000006","cycle":"D","unit":"KRW per 100 JPY","freshnessMode":"daily_market","lookbackDays":14,"definition":"원/100엔(하나은행고시)"},
+    {"metricId":"fx_cny_krw","name":"CNY/KRW","statisticCode":"731Y003","itemCode":"0000010","cycle":"D","unit":"KRW per CNY","freshnessMode":"daily_market","lookbackDays":14,"definition":"원/위안(종가)"},
+    {"metricId":"fx_eur_krw","name":"EUR/KRW","statisticCode":"731Y001","itemCode":"0000003","cycle":"D","unit":"KRW per EUR","freshnessMode":"daily_market","lookbackDays":14,"definition":"원/유로"},
+    {"metricId":"kr_fi_rp","name":"RP 금리","status":"unresolved","reason":"ECOS market-rate table 817Y002 does not expose the intended daily market RP rate. Do not substitute a bank RP deposit rate."}
+  ]
+}
