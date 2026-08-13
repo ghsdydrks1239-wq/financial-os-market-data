@@ -1,3 +1,7 @@
+import dns from "node:dns";
+
+dns.setDefaultResultOrder("ipv4first");
+
 const apiKey = process.env.ECOS_API_KEY?.trim();
 if (!apiKey) {
   console.error("ECOS_API_KEY is missing.");
