@@ -1,4 +1,9 @@
+import dns from "node:dns";
 import { optionalEnv, requireEnv } from "../lib/env.mjs";
+
+// GitHub-hosted runners can prefer an ECOS route that times out; IPv4-first
+// was verified against ecos.bok.or.kr from Actions on 2026-08-13.
+dns.setDefaultResultOrder("ipv4first");
 
 const DEFAULT_BASE_URL = "https://ecos.bok.or.kr/api";
 
