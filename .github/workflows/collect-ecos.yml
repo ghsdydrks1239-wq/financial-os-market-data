@@ -2,9 +2,6 @@ name: Collect public market snapshot
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/collect-ecos.yml'
 
 permissions:
   contents: write
