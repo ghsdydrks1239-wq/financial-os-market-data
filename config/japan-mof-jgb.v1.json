@@ -2,16 +2,16 @@
   "schemaVersion": "1.0",
   "provider": "JAPAN_MOF_JGB",
   "source": "Ministry of Finance Japan — JGB Interest Rate",
-  "sourceUrl": "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/historical/jgbcme_all.csv",
+  "sourceUrl": "https://www.mof.go.jp/jgbs/reference/interest_rate/jgbcm.csv",
   "publicOutputAllowed": true,
   "rights": "MOF website content is subject to Japan Public Data License 1.0 unless otherwise indicated; retain source attribution.",
   "metrics": [
-    {"id":"gl_fi_jgb_2y","name":"JGB 2Y","column":"2Y","importance":"detail"},
-    {"id":"gl_fi_jgb_3y","name":"JGB 3Y","column":"3Y","importance":"reference"},
-    {"id":"gl_fi_jgb_5y","name":"JGB 5Y","column":"5Y","importance":"detail"},
-    {"id":"gl_fi_jgb_10y","name":"JGB 10Y","column":"10Y","importance":"core"},
-    {"id":"gl_fi_jgb_20y","name":"JGB 20Y","column":"20Y","importance":"detail"},
-    {"id":"gl_fi_jgb_30y","name":"JGB 30Y","column":"30Y","importance":"detail"},
-    {"id":"gl_fi_jgb_40y","name":"JGB 40Y","column":"40Y","importance":"reference"}
+    {"id":"gl_fi_jgb_2y","name":"JGB 2Y","column":"2年","importance":"detail"},
+    {"id":"gl_fi_jgb_3y","name":"JGB 3Y","column":"3年","importance":"reference"},
+    {"id":"gl_fi_jgb_5y","name":"JGB 5Y","column":"5年","importance":"detail"},
+    {"id":"gl_fi_jgb_10y","name":"JGB 10Y","column":"10年","importance":"core"},
+    {"id":"gl_fi_jgb_20y","name":"JGB 20Y","column":"20年","importance":"detail"},
+    {"id":"gl_fi_jgb_30y","name":"JGB 30Y","column":"30年","importance":"detail"},
+    {"id":"gl_fi_jgb_40y","name":"JGB 40Y","column":"40年","importance":"reference"}
   ]
 }
