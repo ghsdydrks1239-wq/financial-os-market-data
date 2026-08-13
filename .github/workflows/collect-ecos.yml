@@ -2,9 +2,6 @@ name: Collect ECOS snapshot
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/collect-ecos.yml'
 
 permissions:
   contents: write
