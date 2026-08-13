@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "provider": "BIS",
+  "apiBase": "https://stats.bis.org/api/v2/data/dataflow/BIS",
+  "publicOutputAllowed": true,
+  "rights": "BIS statistics may be reproduced subject to the BIS Terms of permitted use of statistics, including citation of BIS as source and no misleading endorsement.",
+  "policyRates": [
+    {"id":"gl_fi_ecb_policy_rate","name":"ECB Policy Rate","key":"D.XM","sourceAuthority":"European Central Bank"},
+    {"id":"gl_fi_boe_policy_rate","name":"BOE Policy Rate","key":"D.GB","sourceAuthority":"Bank of England"},
+    {"id":"gl_fi_snb_policy_rate","name":"SNB Policy Rate","key":"D.CH","sourceAuthority":"Swiss National Bank"},
+    {"id":"gl_fi_boc_policy_rate","name":"BOC Policy Rate","key":"D.CA","sourceAuthority":"Bank of Canada"},
+    {"id":"gl_fi_boj_policy_rate","name":"BOJ Policy Rate","key":"D.JP","sourceAuthority":"Bank of Japan"}
+  ],
+  "fx": [
+    {"id":"fx_eur_usd","name":"EUR/USD","key":"D.XM.EUR.A","transform":"invert","definition":"USD per EUR"},
+    {"id":"fx_gbp_usd","name":"GBP/USD","key":"D.GB.GBP.A","transform":"invert","definition":"USD per GBP"},
+    {"id":"fx_usd_jpy","name":"USD/JPY","key":"D.JP.JPY.A","transform":"identity","definition":"JPY per USD"},
+    {"id":"fx_usd_cny","name":"USD/CNY","key":"D.CN.CNY.A","transform":"identity","definition":"CNY per USD"},
+    {"id":"fx_usd_hkd","name":"USD/HKD","key":"D.HK.HKD.A","transform":"identity","definition":"HKD per USD"},
+    {"id":"fx_usd_sgd","name":"USD/SGD","key":"D.SG.SGD.A","transform":"identity","definition":"SGD per USD"},
+    {"id":"fx_usd_rub","name":"USD/RUB","key":"D.RU.RUB.A","transform":"identity","definition":"RUB per USD"},
+    {"id":"fx_usd_chf","name":"USD/CHF","key":"D.CH.CHF.A","transform":"identity","definition":"CHF per USD"},
+    {"id":"fx_usd_cad","name":"USD/CAD","key":"D.CA.CAD.A","transform":"identity","definition":"CAD per USD"},
+    {"id":"fx_usd_aud","name":"USD/AUD","key":"D.AU.AUD.A","transform":"identity","definition":"AUD per USD"}
+  ]
+}
