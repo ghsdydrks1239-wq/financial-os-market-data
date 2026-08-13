@@ -9,15 +9,17 @@ MARKET BRIEF용 시장 데이터 파이프라인 저장소입니다.
 - 누락값은 `0`으로 만들지 않고 `null + status`로 보존합니다.
 - `referenceDate`, `sourceDate`, `marketSession`, `sessionAligned`, `status`를 분리해 저장합니다.
 - 공개 재배포 권리가 확인되지 않은 데이터는 public snapshot에 값을 넣지 않습니다.
+- AI는 검증된 숫자 bundle을 해석할 뿐, 누락된 숫자를 추정해 만들지 않습니다.
 
 ## 2026-08-13 현재 상태
 
 ### Public MARKET bundle
 
 - 프런트엔드가 바로 읽을 수 있는 `data/public/latest.json` 생성 완료
-- 현재 **40개 지표 중 39개 available / 1개 missing / 0 error**
-- 포함 공급자: ECOS, ECOS 기반 검증 파생지표, U.S. Treasury, Fed Liquidity, Federal Reserve Board Commercial Paper
-- KRX와 NY Fed reference-rate 값은 현재 public bundle에서 제외
+- 현재 **41개 지표 중 40개 available / 1개 missing / 0 error**
+- 포함 공급자: ECOS, ECOS 기반 검증 파생지표, U.S. Treasury, Fed Liquidity, Federal Reserve Board Commercial Paper, BLS 기반 파생지표
+- KRX 값, NY Fed SOFR/EFFR reference-rate 값, 별도 권리 검토가 필요한 FRED 저작권 시리즈는 public bundle에서 제외
+- NY Fed의 **Reverse Repo operation data는 NY Fed Markets Data API에서 직접 수집해 포함**
 
 ### ECOS
 
@@ -35,19 +37,31 @@ MARKET BRIEF용 시장 데이터 파이프라인 저장소입니다.
 - 7개 모두 실제 계산 성공
 - 날짜별 snapshot: `data/snapshots/derived/`
 
-### U.S. Treasury / Fed Liquidity / Commercial Paper / NY Fed
+### U.S. Treasury / Fed Liquidity / Commercial Paper
 
 - U.S. Treasury 공식 XML 연결 성공
 - UST 3M / 1Y / 2Y / 3Y / 5Y / 10Y / 20Y / 30Y + 2s10s = 9개 수집 성공
 - 날짜별 Treasury snapshot: `data/snapshots/treasury/`
 - Federal Reserve Board Data Download Program에서 IORB와 H.4.1 TGA 시리즈를 직접 수집
-- ON RRP Balance / ON RRP Rate는 FRED의 Federal Reserve Bank of New York 원천 시리즈를 수집하고 원천 출처 메타데이터를 유지
+- ON RRP Balance / ON RRP Rate는 FRED를 거치지 않고 **New York Fed Markets Data API의 Reverse Repo operation results를 직접 수집**
 - Fed Liquidity 4개(IORB, TGA Balance, ON RRP Balance, ON RRP Rate) 모두 실제 수집 성공
 - 날짜별 Fed Liquidity snapshot: `data/snapshots/fed-liquidity/`
 - Federal Reserve Board Commercial Paper 공식 일별 표에서 `US CP Rate = 90-Day AA Nonfinancial Commercial Paper Interest Rate`를 수집
-- 최신 일자의 90일물 계산이 `n.a.`이면, 최근 일별 행 중 거래 데이터가 충분해 실제 금리가 계산된 가장 가까운 관측일을 사용하고 `sourceDate`와 `expectedSourceDate`를 분리
+- 최신 일자의 90일물 계산이 `n.a.`이면 최근 일별 행 중 실제 금리가 계산된 가장 가까운 관측일을 사용하고 `sourceDate`와 최신 표 일자를 구분
 - 날짜별 US CP snapshot: `data/snapshots/us-cp/`
-- NY Fed SOFR / EFFR API 연결과 정규화 수집은 성공했으나, reference-rate 표시 시 필요한 이용조건을 프런트엔드에 반영하기 전까지 public bundle에는 넣지 않음
+
+### BLS / Sahm Rule
+
+- BLS Public Data API의 계절조정 실업률 `LNS14000000`을 직접 수집
+- 최신 3개월 평균 실업률에서 직전 12개월의 3개월 평균 최저치를 빼는 방식으로 `Sahm Rule`을 계산
+- 현재 데이터 vintage 기준 계산값을 저장하며, 과거 시점의 실시간 vintage를 재구성한 값은 아님을 quality note에 명시
+- 날짜별 snapshot: `data/snapshots/us-labor-signals/`
+
+### NY Fed reference rates
+
+- SOFR / EFFR direct API 연결과 정규화 수집은 성공
+- reference-rate 데이터를 표시할 때 필요한 New York Fed 고지문을 프런트엔드에 반영하기 전까지 public bundle에는 넣지 않음
+- Reverse Repo operation data는 reference-rate 데이터와 구분해 direct API로 수집
 
 ### KRX
 
@@ -58,14 +72,21 @@ MARKET BRIEF용 시장 데이터 파이프라인 저장소입니다.
 - 확인 결과는 `config/krx-verification.v1.json`에 저장
 - KRX 수신값은 현재 이 public 저장소의 snapshot에 저장하지 않음
 
-KRX OPEN API 기본 약관상 수신 정보를 제3자에게 제공하는 데 제한이 있으므로, `config/krx-series.v1.json`의 `publicOutputAllowed`는 `false`로 둡니다. KRX 값은 권리 구조를 확정하기 전까지 내부 수집/검증용으로만 취급합니다.
+KRX OPEN API 수신값의 공개 재배포 권리 구조를 확정하기 전까지 `config/krx-series.v1.json`의 `publicOutputAllowed`는 `false`로 유지합니다.
+
+## 데이터 권리 원칙
+
+- 원 출처의 공식 API/다운로드를 우선합니다.
+- 단순히 무료로 조회된다는 이유만으로 public 재배포 가능하다고 가정하지 않습니다.
+- FRED에서 제공되는 제3자/저작권 시리즈는 원 제공기관의 직접 소스 또는 별도 권리 검토가 없으면 AI-facing public bundle에 넣지 않습니다.
+- New York Fed reference rates처럼 별도 표시 조건이 있는 데이터는 프런트엔드 고지 요건까지 충족된 뒤 공개합니다.
 
 ## GitHub Actions
 
 - `Check MARKET DATA setup`: Secret, ECOS, KRX 인증 및 selector 수동 검증
-- `Check global rates sources`: U.S. Treasury / NY Fed / Federal Reserve Board / Fed Liquidity / US CP 연결과 정규화 수동 검증
-- `Collect public market snapshot`: ECOS + 검증 파생지표 + U.S. Treasury + Fed Liquidity + US CP를 수집해 `data/public/latest.json` 생성
-- 현재 자동 스케줄은 붙이지 않았습니다. 데이터 소스와 공개범위를 더 확정한 뒤 일일 스케줄을 붙입니다.
+- `Check global rates sources`: U.S. Treasury / NY Fed / Federal Reserve Board / Fed Liquidity / US CP / BLS Sahm Rule 연결과 정규화 수동 검증
+- `Collect public market snapshot`: 공개 가능한 공식 소스들을 수집해 `data/public/latest.json` 생성
+- 현재 자동 스케줄은 붙이지 않았으며 **workflow_dispatch 수동 실행만 사용**합니다. 데이터 소스와 공개범위를 더 확정한 뒤 일일 스케줄을 붙입니다.
 
 ## 필요한 GitHub Actions Secrets
 
@@ -91,5 +112,3 @@ data/public/            공개 가능한 MARKET BRIEF 숫자 bundle
 ## 운영 원칙
 
 `collect → normalize → validate → snapshot → market-brief`
-
-AI는 검증된 숫자를 해석하는 마지막 단계에서만 사용하며, 없는 숫자를 추정해 채우지 않습니다.
