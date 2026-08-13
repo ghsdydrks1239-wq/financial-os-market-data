@@ -36,3 +36,8 @@ jobs:
         run: npm run smoke:krx
         env:
           KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
+
+      - name: Discover ECOS market series
+        run: node scripts/discover-ecos.mjs
+        env:
+          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
