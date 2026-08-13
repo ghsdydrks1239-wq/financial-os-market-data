@@ -2,14 +2,6 @@ name: Check global rates sources
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/check-global-rates.yml'
-      - 'scripts/discover-nyfed-rrp.mjs'
-      - 'scripts/collect-fed-liquidity-v1.mjs'
-      - 'scripts/collect-us-labor-signals-v1.mjs'
-      - 'config/us-labor-signals.v1.json'
-      - 'package.json'
 
 permissions:
   contents: read
@@ -30,8 +22,6 @@ jobs:
           TREASURY_OUTPUT=.tmp/treasury.json NYFED_OUTPUT=.tmp/nyfed.json npm run collect:global-rates
       - name: Discover Federal Reserve Board series
         run: npm run discover:fed-board
-      - name: Discover direct NY Fed reverse repo fields
-        run: npm run discover:nyfed-rrp
       - name: Test Fed liquidity collection
         run: OUTPUT_PATH=.tmp/fed-liquidity.json npm run collect:fed-liquidity
       - name: Test US commercial paper collection
