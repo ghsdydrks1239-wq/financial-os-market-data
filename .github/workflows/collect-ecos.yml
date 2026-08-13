@@ -2,6 +2,9 @@ name: Collect ECOS snapshot
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/collect-ecos.yml'
 
 permissions:
   contents: write
@@ -24,24 +27,26 @@ jobs:
         with:
           node-version: 24
 
-      - name: Collect ECOS metrics
+      - name: Collect ECOS metrics and derive verified KR rates spreads
         env:
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
         run: |
           REF_DATE="$(TZ=Asia/Seoul date +%F)"
-          mkdir -p data/snapshots/ecos
+          mkdir -p data/snapshots/ecos data/snapshots/derived
           REFERENCE_DATE="$REF_DATE" OUTPUT_PATH="data/snapshots/ecos/$REF_DATE.json" npm run collect:ecos
           cp "data/snapshots/ecos/$REF_DATE.json" data/snapshots/ecos/latest.json
+          INPUT_PATH="data/snapshots/ecos/$REF_DATE.json" OUTPUT_PATH="data/snapshots/derived/$REF_DATE.json" npm run derive:kr-rates
+          cp "data/snapshots/derived/$REF_DATE.json" data/snapshots/derived/latest.json
 
-      - name: Commit ECOS snapshot
+      - name: Commit public-safe snapshots
         run: |
-          if [ -z "$(git status --porcelain -- data/snapshots/ecos)" ]; then
-            echo "No ECOS snapshot changes."
+          if [ -z "$(git status --porcelain -- data/snapshots/ecos data/snapshots/derived)" ]; then
+            echo "No public-safe snapshot changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/snapshots/ecos
-          git commit -m "Update ECOS market snapshot"
+          git add data/snapshots/ecos data/snapshots/derived
+          git commit -m "Update ECOS and derived market snapshots"
           git pull --rebase origin main
           git push
