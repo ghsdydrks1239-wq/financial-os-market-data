@@ -1,0 +1,14 @@
+{
+  "name": "financial-os-market-data",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "check": "node scripts/check-setup.mjs",
+    "smoke:ecos": "node scripts/smoke-ecos.mjs",
+    "smoke:krx": "node scripts/smoke-krx.mjs"
+  }
+}
