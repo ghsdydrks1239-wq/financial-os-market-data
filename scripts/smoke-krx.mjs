@@ -71,7 +71,8 @@ for (const [name, endpoint] of services) {
     console.log(`AUTHORIZED ${name}: HTTP 200, rows=${rows.length}`);
     if (rows[0]) {
       const sample = rows[0];
-      console.log(`  sample=${sample.IDX_NM ?? sample.ISU_ABBRV ?? sample.ISU_NM ?? sample.ISU_SRT_CD ?? "available"}`);
+      console.log(`  keys=${Object.keys(sample).join(",")}`);
+      console.log(`  sample=${JSON.stringify(sample).slice(0, 1200)}`);
     }
   } catch (error) {
     console.log(`ERROR ${name}: ${error?.message ?? String(error)}`);
