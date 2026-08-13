@@ -12,6 +12,7 @@
     "smoke:krx": "node scripts/smoke-krx.mjs",
     "collect:ecos": "node scripts/collect-ecos-v1.mjs",
     "derive:kr-rates": "node scripts/derive-kr-rates.mjs",
+    "collect:global-rates": "node scripts/collect-global-rates-v1.mjs",
     "build:public-snapshot": "node scripts/build-public-snapshot.mjs"
   }
 }
