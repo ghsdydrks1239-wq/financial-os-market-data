@@ -17,7 +17,7 @@ function boeDate(date) {
   return `${d}/${month}/${y}`;
 }
 function normalizeDate(raw) {
-  const m=String(raw??"").trim().match(/^(\d{2})-([A-Z][a-z]{2})-(\d{4})$/);
+  const m=String(raw??"").trim().match(/^(\d{2})[ -]([A-Z][a-z]{2})[ -](\d{4})$/);
   if(!m) return null;
   const months={Jan:"01",Feb:"02",Mar:"03",Apr:"04",May:"05",Jun:"06",Jul:"07",Aug:"08",Sep:"09",Oct:"10",Nov:"11",Dec:"12"};
   return `${m[3]}-${months[m[2]]}-${m[1]}`;
@@ -31,16 +31,7 @@ function ageDays(referenceDate, sourceDate) {
 }
 async function collectSeries(def, referenceDate) {
   const start=minusDays(referenceDate,45);
-  const params=new URLSearchParams({
-    "csv.x":"yes",
-    Datefrom:boeDate(start),
-    Dateto:boeDate(referenceDate),
-    SeriesCodes:def.seriesCode,
-    CSVF:"TN",
-    UsingCodes:"Y",
-    VPD:"Y",
-    VFD:"N",
-  });
+  const params=new URLSearchParams({"csv.x":"yes",Datefrom:boeDate(start),Dateto:boeDate(referenceDate),SeriesCodes:def.seriesCode,CSVF:"TN",UsingCodes:"Y",VPD:"Y",VFD:"N"});
   const url=`https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?${params.toString()}`;
   const response=await fetch(url,{headers:{"User-Agent":"FinancialOS-MarketData/0.1 (+personal research)"},signal:AbortSignal.timeout(30000)});
   if(!response.ok) throw new Error(`BoE HTTP ${response.status}`);
