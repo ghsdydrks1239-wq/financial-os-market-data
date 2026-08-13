@@ -27,9 +27,7 @@ jobs:
           KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
 
-      - name: Smoke test ECOS API
-        run: npm run smoke:ecos
-        env:
-          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+      - name: Check ECOS IPv4 connectivity
+        run: curl -4 --connect-timeout 10 --max-time 15 -I https://ecos.bok.or.kr/api/
 
-# temporary push trigger for ECOS verification
+# temporary push trigger for ECOS connectivity diagnosis
