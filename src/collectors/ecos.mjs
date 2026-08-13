@@ -6,6 +6,33 @@ import { optionalEnv, requireEnv } from "../lib/env.mjs";
 dns.setDefaultResultOrder("ipv4first");
 
 const DEFAULT_BASE_URL = "https://ecos.bok.or.kr/api";
+const DEFAULT_TIMEOUT_MS = 15000;
+const DEFAULT_ATTEMPTS = 3;
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchWithRetry(url, options = {}) {
+  let lastError;
+  for (let attempt = 1; attempt <= DEFAULT_ATTEMPTS; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        ...options,
+        signal: AbortSignal.timeout(DEFAULT_TIMEOUT_MS),
+      });
+      if (response.ok || response.status < 500 || attempt === DEFAULT_ATTEMPTS) {
+        return response;
+      }
+      lastError = new Error(`ECOS HTTP ${response.status}: ${response.statusText}`);
+    } catch (error) {
+      lastError = error;
+      if (attempt === DEFAULT_ATTEMPTS) throw error;
+    }
+    await sleep(400 * attempt);
+  }
+  throw lastError ?? new Error("ECOS request failed.");
+}
 
 /**
  * Generic ECOS StatisticSearch request.
@@ -45,7 +72,7 @@ export async function fetchEcosStatistic({
   ];
 
   const url = `${baseUrl}/${pathParts.join("/")}`;
-  const response = await fetch(url, {
+  const response = await fetchWithRetry(url, {
     headers: { Accept: "application/json" },
   });
 
