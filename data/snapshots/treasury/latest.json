@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "1.0",
+  "referenceDate": "2026-08-13",
+  "generatedAt": "2026-08-13T06:36:09.242Z",
+  "provider": "US_TREASURY",
+  "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+  "publicOutputAllowed": true,
+  "metrics": [
+    {
+      "id": "gl_fi_ust_3m",
+      "name": "UST 3M",
+      "assetClass": "rates_credit_global",
+      "value": 3.87,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "US_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:36:09.241Z",
+      "sourceMeta": {
+        "provider": "US_TREASURY",
+        "xmlTag": "BC_3MONTH",
+        "sourceUrl": "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_ust_1y",
+      "name": "UST 1Y",
+      "assetClass": "rates_credit_global",
+      "value": 4,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "US_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:36:09.241Z",
+      "sourceMeta": {
+        "provider": "US_TREASURY",
+        "xmlTag": "BC_1YEAR",
+        "sourceUrl": "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_ust_2y",
+      "name": "UST 2Y",
+      "assetClass": "rates_credit_global",
+      "value": 4.2,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "US_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:36:09.241Z",
+      "sourceMeta": {
+        "provider": "US_TREASURY",
+        "xmlTag": "BC_2YEAR",
+        "sourceUrl": "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_ust_3y",
+      "name": "UST 3Y",
+      "assetClass": "rates_credit_global",
+      "value": 4.25,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "US_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:36:09.241Z",
+      "sourceMeta": {
+        "provider": "US_TREASURY",
+        "xmlTag": "BC_3YEAR",
+        "sourceUrl": "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_ust_5y",
+      "name": "UST 5Y",
+      "assetClass": "rates_credit_global",
+      "value": 4.38,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "US_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:36:09.241Z",
+      "sourceMeta": {
+        "provider": "US_TREASURY",
+        "xmlTag": "BC_5YEAR",
+        "sourceUrl": "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_ust_10y",
+      "name": "UST 10Y",
+      "assetClass": "rates_credit_global",
+      "value": 4.68,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "US_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:36:09.241Z",
+      "sourceMeta": {
+        "provider": "US_TREASURY",
+        "xmlTag": "BC_10YEAR",
+        "sourceUrl": "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_ust_20y",
+      "name": "UST 20Y",
+      "assetClass": "rates_credit_global",
+      "value": 5.24,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "US_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:36:09.242Z",
+      "sourceMeta": {
+        "provider": "US_TREASURY",
+        "xmlTag": "BC_20YEAR",
+        "sourceUrl": "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_ust_30y",
+      "name": "UST 30Y",
+      "assetClass": "rates_credit_global",
+      "value": 5.24,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "US_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "U.S. business-day session alignment is provisional until a holiday calendar is added.",
+      "collectedAt": "2026-08-13T06:36:09.242Z",
+      "sourceMeta": {
+        "provider": "US_TREASURY",
+        "xmlTag": "BC_30YEAR",
+        "sourceUrl": "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_ust_2s10s",
+      "name": "UST 2s10s",
+      "assetClass": "rates_credit_global",
+      "value": 48,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": "2026-08-12",
+      "marketSession": "US_RATES_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Derived directly from official Treasury par-yield inputs.",
+      "collectedAt": "2026-08-13T06:36:09.242Z",
+      "sourceMeta": {
+        "provider": "DERIVED_US_TREASURY",
+        "formula": "(UST10Y - UST2Y) * 100",
+        "inputs": [
+          "gl_fi_ust_10y",
+          "gl_fi_ust_2y"
+        ],
+        "publicOutputAllowed": true
+      }
+    }
+  ],
+  "dataQuality": {
+    "total": 9,
+    "available": 9,
+    "stale": 0,
+    "missing": 0,
+    "error": 0
+  }
+}
