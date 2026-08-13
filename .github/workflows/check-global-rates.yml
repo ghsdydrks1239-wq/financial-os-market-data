@@ -11,6 +11,7 @@ on:
       - 'config/bis-series.v1.json'
       - 'scripts/collect-boe-v1.mjs'
       - 'config/boe-series.v1.json'
+      - 'scripts/debug-boe-csv.mjs'
       - 'package.json'
 
 permissions:
@@ -42,5 +43,7 @@ jobs:
         run: OUTPUT_PATH=.tmp/jgb.json npm run collect:jgb
       - name: Test BIS policy-rate and FX collection
         run: OUTPUT_PATH=.tmp/bis.json npm run collect:bis
+      - name: Inspect Bank of England CSV response
+        run: node scripts/debug-boe-csv.mjs
       - name: Test Bank of England exact 10Y gilt collection
         run: OUTPUT_PATH=.tmp/boe.json npm run collect:boe
