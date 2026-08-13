@@ -2,6 +2,10 @@ name: Check global rates sources
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/check-global-rates.yml'
+      - 'scripts/discover-eia-html.mjs'
 
 permissions:
   contents: read
@@ -40,3 +44,5 @@ jobs:
         run: OUTPUT_PATH=.tmp/bde.json npm run collect:bde
       - name: Test OECD US leading-indicator collection
         run: OUTPUT_PATH=.tmp/oecd.json npm run collect:oecd
+      - name: Inspect keyless EIA history pages
+        run: node scripts/discover-eia-html.mjs
