@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "source": {
+    "name": "Board of Governors of the Federal Reserve System — Commercial Paper Rates",
+    "url": "https://www.federalreserve.gov/releases/cp/rates.htm",
+    "publicOutputAllowed": true,
+    "notes": "Official Federal Reserve Board Commercial Paper release. Board website information is public domain unless otherwise indicated; retain Board attribution."
+  },
+  "metric": {
+    "metricId": "gl_fi_us_cp_rate",
+    "name": "US CP Rate",
+    "seriesConcept": "90-Day AA Nonfinancial Commercial Paper Interest Rate",
+    "legacySeriesId": "CPN3M",
+    "frequency": "daily",
+    "unit": "%",
+    "valueColumn": "AA nonfinancial / 90-day"
+  }
+}
