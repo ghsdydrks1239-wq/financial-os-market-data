@@ -12,6 +12,7 @@ const bisPath = process.env.BIS_INPUT?.trim();
 const boePath = process.env.BOE_INPUT?.trim();
 const bundesbankPath = process.env.BUNDESBANK_INPUT?.trim();
 const bdePath = process.env.BDE_INPUT?.trim();
+const oecdPath = process.env.OECD_INPUT?.trim();
 const outputPath = process.env.OUTPUT_PATH?.trim();
 if (!ecosPath || !derivedPath || !outputPath) {
   throw new Error("ECOS_INPUT, DERIVED_INPUT and OUTPUT_PATH are required.");
@@ -29,6 +30,7 @@ const snapshots = await Promise.all([
   ...(boePath ? [fs.readFile(boePath, "utf8").then(JSON.parse)] : []),
   ...(bundesbankPath ? [fs.readFile(bundesbankPath, "utf8").then(JSON.parse)] : []),
   ...(bdePath ? [fs.readFile(bdePath, "utf8").then(JSON.parse)] : []),
+  ...(oecdPath ? [fs.readFile(oecdPath, "utf8").then(JSON.parse)] : []),
 ]);
 
 const referenceDate = snapshots[0]?.referenceDate;
