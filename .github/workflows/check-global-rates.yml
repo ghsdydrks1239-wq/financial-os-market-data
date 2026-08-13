@@ -19,3 +19,7 @@ jobs:
           node-version: 24
       - name: Check official public endpoints
         run: node scripts/smoke-global-rates.mjs
+      - name: Test normalized collection
+        run: |
+          mkdir -p .tmp
+          TREASURY_OUTPUT=.tmp/treasury.json NYFED_OUTPUT=.tmp/nyfed.json npm run collect:global-rates
