@@ -17,7 +17,6 @@
     "collect:us-cp": "node scripts/collect-us-cp-v1.mjs",
     "collect:us-labor-signals": "node scripts/collect-us-labor-signals-v1.mjs",
     "discover:fed-board": "node scripts/discover-fed-board.mjs",
-    "discover:nyfed-rrp": "node scripts/discover-nyfed-rrp.mjs",
     "build:public-snapshot": "node scripts/build-public-snapshot.mjs"
   }
 }
