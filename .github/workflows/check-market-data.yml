@@ -32,4 +32,4 @@ jobs:
         env:
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
 
-# temporary push trigger for setup verification
+# temporary push trigger for ECOS verification
