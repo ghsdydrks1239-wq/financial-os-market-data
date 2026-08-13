@@ -6,6 +6,7 @@ const derivedPath = process.env.DERIVED_INPUT?.trim();
 const treasuryPath = process.env.TREASURY_INPUT?.trim();
 const fedLiquidityPath = process.env.FED_LIQUIDITY_INPUT?.trim();
 const usCpPath = process.env.US_CP_INPUT?.trim();
+const usLaborSignalsPath = process.env.US_LABOR_SIGNALS_INPUT?.trim();
 const outputPath = process.env.OUTPUT_PATH?.trim();
 if (!ecosPath || !derivedPath || !outputPath) {
   throw new Error("ECOS_INPUT, DERIVED_INPUT and OUTPUT_PATH are required.");
@@ -17,6 +18,7 @@ const snapshots = await Promise.all([
   ...(treasuryPath ? [fs.readFile(treasuryPath, "utf8").then(JSON.parse)] : []),
   ...(fedLiquidityPath ? [fs.readFile(fedLiquidityPath, "utf8").then(JSON.parse)] : []),
   ...(usCpPath ? [fs.readFile(usCpPath, "utf8").then(JSON.parse)] : []),
+  ...(usLaborSignalsPath ? [fs.readFile(usLaborSignalsPath, "utf8").then(JSON.parse)] : []),
 ]);
 
 const referenceDate = snapshots[0]?.referenceDate;
@@ -57,8 +59,8 @@ const output = {
   purpose: "Financial OS MARKET BRIEF verified-number bundle",
   publicOutputAllowed: true,
   providers: snapshots.map((snapshot) => snapshot.provider),
-  excludedProviders: ["KRX", "NY_FED"],
-  exclusionNote: "KRX values remain excluded pending redistribution-rights resolution. NY Fed reference-rate values remain excluded until required presentation notices are wired into the frontend.",
+  excludedProviders: ["KRX", "NY_FED", "FRED_COPYRIGHTED"],
+  exclusionNote: "KRX values remain excluded pending redistribution-rights resolution. NY Fed reference-rate values remain excluded until required presentation notices are wired into the frontend. Copyrighted FRED series are not ingested into the AI-facing public bundle without a separate rights review.",
   dataQuality: {
     total: metrics.length,
     available: counts.available ?? 0,
