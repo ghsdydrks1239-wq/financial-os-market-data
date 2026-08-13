@@ -15,6 +15,7 @@
     "collect:global-rates": "node scripts/collect-global-rates-v1.mjs",
     "collect:fed-liquidity": "node scripts/collect-fed-liquidity-v1.mjs",
     "collect:us-cp": "node scripts/collect-us-cp-v1.mjs",
+    "collect:us-labor-signals": "node scripts/collect-us-labor-signals-v1.mjs",
     "discover:fed-board": "node scripts/discover-fed-board.mjs",
     "build:public-snapshot": "node scripts/build-public-snapshot.mjs"
   }
