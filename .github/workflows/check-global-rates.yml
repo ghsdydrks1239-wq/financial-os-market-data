@@ -2,6 +2,13 @@ name: Check global rates sources
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/check-global-rates.yml'
+      - 'scripts/collect-jgb-v1.mjs'
+      - 'config/japan-mof-jgb.v1.json'
+      - 'scripts/discover-bis.mjs'
+      - 'package.json'
 
 permissions:
   contents: read
@@ -28,3 +35,7 @@ jobs:
         run: OUTPUT_PATH=.tmp/us-cp.json npm run collect:us-cp
       - name: Test BLS Sahm Rule collection
         run: OUTPUT_PATH=.tmp/us-labor-signals.json npm run collect:us-labor-signals
+      - name: Test Japan MOF JGB collection
+        run: OUTPUT_PATH=.tmp/jgb.json npm run collect:jgb
+      - name: Discover BIS SDMX endpoints
+        run: node scripts/discover-bis.mjs
