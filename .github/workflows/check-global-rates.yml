@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - '.github/workflows/check-global-rates.yml'
+      - 'scripts/discover-fed-board.mjs'
 
 permissions:
   contents: read
