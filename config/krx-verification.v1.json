@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "verifiedAt": "2026-08-13",
+  "verificationScope": "Selector existence only. No KRX values are persisted or published.",
+  "authorization": {
+    "testedServices": 7,
+    "authorizedServices": 7,
+    "unauthorizedServices": 0
+  },
+  "verifiedExactSelectors": [
+    "kr_eq_kospi",
+    "kr_eq_kosdaq",
+    "kr_eq_kospi200",
+    "kr_etf_kodex_leverage",
+    "kr_etf_kodex_inverse",
+    "kr_eq_kodex_200_2x",
+    "kr_etf_kodex_bank",
+    "kr_etf_tiger_bank_high_div_top10",
+    "kr_etf_tiger_shipbuilding_top10",
+    "kr_eq_tiger_k",
+    "kr_etf_kodex_semiconductor",
+    "kr_etf_tiger_semiconductor_top10",
+    "kr_eq_kodex_2",
+    "kr_eq_tiger_2",
+    "kr_etf_kodex_bio",
+    "kr_etf_kodex_auto"
+  ],
+  "verifiedProductSelectors": [
+    {"metricId":"kr_deriv_kospi200_futures","productSelectorFound":true,"definitionStillPending":true},
+    {"metricId":"kr_eq_metric_010","kospi200CallAndPutInputsFound":true,"definitionStillPending":true}
+  ],
+  "pendingSelectorCount": 0,
+  "publicOutputAllowed": false
+}
