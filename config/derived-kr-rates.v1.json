@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0",
+  "basis": "Legacy workbook formulas recovered from MARKET_DATA_SOURCE_AUDIT; formulas are preserved rather than guessed.",
+  "unitPolicy": "Inputs are percentage rates. formulaValue is percentage-point difference; displayBp = formulaValue * 100.",
+  "metrics": [
+    {
+      "metricId": "kr_fi_ktb_3y_10y",
+      "name": "KTB 3Y-10Y 스프레드",
+      "formula": "kr_fi_10y - kr_fi_3y",
+      "displayFormula": "(kr_fi_10y - kr_fi_3y) * 100",
+      "displayUnit": "bp",
+      "verification": "legacy_formula_verified",
+      "legacyEvidence": "4.202509한국채권/채권 기본 B8 = B6-B4; B6=한국 국채 10년, B4=한국 국채 3년"
+    },
+    {
+      "metricId": "kr_fi_aa",
+      "name": "AA- 신용스프레드",
+      "formula": "kr_fi_aa_3y - kr_fi_3y",
+      "displayFormula": "(kr_fi_aa_3y - kr_fi_3y) * 100",
+      "displayUnit": "bp",
+      "verification": "legacy_formula_verified",
+      "legacyEvidence": "4.202509한국채권/채권 기본 B51 = B48-B4; B48=회사채 AA-, B4=한국 국채 3년"
+    },
+    {
+      "metricId": "kr_fi_bbb",
+      "name": "BBB- 신용스프레드",
+      "formula": "kr_fi_bbb_3y - kr_fi_3y",
+      "displayFormula": "(kr_fi_bbb_3y - kr_fi_3y) * 100",
+      "displayUnit": "bp",
+      "verification": "legacy_formula_verified",
+      "legacyEvidence": "4.202509한국채권/채권 기본 B50 = B49-B4; B49=회사채 BBB-, B4=한국 국채 3년"
+    },
+    {
+      "metricId": "kr_fi_cd91_tb91",
+      "name": "CD91-TB91 스프레드",
+      "formula": "kr_fi_cd_91d - kr_fi_91d",
+      "displayFormula": "(kr_fi_cd_91d - kr_fi_91d) * 100",
+      "displayUnit": "bp",
+      "verification": "legacy_formula_verified",
+      "legacyEvidence": "4.202509한국채권/국채 T2 = R2-Q2 and 파생, 신용 관련 스프레드들 C21 = CD91 - 통안채91"
+    },
+    {
+      "metricId": "kr_fi_ktb3",
+      "name": "KTB3-기준금리 스프레드",
+      "formula": "kr_fi_3y - kr_fi_metric_134",
+      "displayFormula": "(kr_fi_3y - kr_fi_metric_134) * 100",
+      "displayUnit": "bp",
+      "verification": "legacy_formula_verified",
+      "legacyEvidence": "4.202509한국채권/국채 P2 = D2-O2 and 파생, 신용 관련 스프레드들 C4 = 국고채3년 - 기준금리"
+    },
+    {
+      "metricId": "kr_fi_cd91",
+      "name": "CD91-기준금리 스프레드",
+      "formula": "kr_fi_cd_91d - kr_fi_metric_134",
+      "displayFormula": "(kr_fi_cd_91d - kr_fi_metric_134) * 100",
+      "displayUnit": "bp",
+      "verification": "legacy_formula_verified",
+      "legacyEvidence": "4.202509한국채권/국채 U2 = R2-O2 and 파생, 신용 관련 스프레드들 J21 = CD91 - 기준금리"
+    },
+    {
+      "metricId": "kr_fi_ktb3_tb91",
+      "name": "KTB3-TB91 스프레드",
+      "formula": "kr_fi_3y - kr_fi_91d",
+      "displayFormula": "(kr_fi_3y - kr_fi_91d) * 100",
+      "displayUnit": "bp",
+      "verification": "legacy_formula_verified",
+      "legacyEvidence": "4.202509한국채권/국채 S2 = D2-Q2 and 파생, 신용 관련 스프레드들 J4 = 국고채3년 - 통안채91"
+    }
+  ]
+}
