@@ -7,7 +7,8 @@ on:
       - '.github/workflows/check-global-rates.yml'
       - 'scripts/collect-jgb-v1.mjs'
       - 'config/japan-mof-jgb.v1.json'
-      - 'scripts/discover-bis.mjs'
+      - 'scripts/collect-bis-v1.mjs'
+      - 'config/bis-series.v1.json'
       - 'package.json'
 
 permissions:
@@ -37,5 +38,5 @@ jobs:
         run: OUTPUT_PATH=.tmp/us-labor-signals.json npm run collect:us-labor-signals
       - name: Test Japan MOF JGB collection
         run: OUTPUT_PATH=.tmp/jgb.json npm run collect:jgb
-      - name: Discover BIS SDMX endpoints
-        run: node scripts/discover-bis.mjs
+      - name: Test BIS policy-rate and FX collection
+        run: OUTPUT_PATH=.tmp/bis.json npm run collect:bis
