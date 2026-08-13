@@ -38,7 +38,7 @@ jobs:
 
       - name: Commit ECOS snapshot
         run: |
-          if git diff --quiet -- data/snapshots/ecos; then
+          if [ -z "$(git status --porcelain -- data/snapshots/ecos)" ]; then
             echo "No ECOS snapshot changes."
             exit 0
           fi
