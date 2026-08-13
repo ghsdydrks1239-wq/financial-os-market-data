@@ -5,12 +5,12 @@
 ## 전체 진행률
 
 - Master: **277**
-- Public snapshot 포함: **67**
-- Available: **66**
+- Public snapshot 포함: **68**
+- Available: **67**
 - Stale: **0**
 - Missing: **1**
 - Error: **0**
-- 아직 public snapshot에 미포함: **210**
+- 아직 public snapshot에 미포함: **209**
 
 ## CORE 진행률
 
@@ -23,8 +23,8 @@
 ## Coverage status
 
 - rights_blocked: 156
-- public_available: 66
-- research_needed: 19
+- public_available: 67
+- research_needed: 18
 - dependency_needed: 11
 - rights_review: 10
 - access_approval_needed: 6
@@ -45,7 +45,7 @@
 
 - GLOBAL_VENDOR: 100
 - KRX: 36
-- NATIONAL_AUTHORITY: 15
+- NATIONAL_AUTHORITY: 14
 - DERIVED: 11
 - ICE_LICENSED: 8
 - FUTURES_VENDOR: 6

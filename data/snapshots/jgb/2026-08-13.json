@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T08:25:28.204Z",
+  "generatedAt": "2026-08-13T11:31:24.210Z",
   "provider": "JAPAN_MOF_JGB",
   "source": "Ministry of Finance Japan — JGB Interest Rate",
   "publicOutputAllowed": true,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T08:25:28.204Z",
+      "collectedAt": "2026-08-13T11:31:24.210Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "2年",
@@ -52,7 +52,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T08:25:28.204Z",
+      "collectedAt": "2026-08-13T11:31:24.210Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "3年",
@@ -76,7 +76,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T08:25:28.204Z",
+      "collectedAt": "2026-08-13T11:31:24.210Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "5年",
@@ -100,7 +100,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T08:25:28.204Z",
+      "collectedAt": "2026-08-13T11:31:24.210Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "10年",
@@ -124,7 +124,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T08:25:28.204Z",
+      "collectedAt": "2026-08-13T11:31:24.210Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "20年",
@@ -148,7 +148,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T08:25:28.204Z",
+      "collectedAt": "2026-08-13T11:31:24.210Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "30年",
@@ -172,7 +172,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Official MOF constant-maturity JGB yield based on prevailing secondary-market prices at the market close.",
-      "collectedAt": "2026-08-13T08:25:28.204Z",
+      "collectedAt": "2026-08-13T11:31:24.210Z",
       "sourceMeta": {
         "provider": "JAPAN_MOF_JGB",
         "column": "40年",

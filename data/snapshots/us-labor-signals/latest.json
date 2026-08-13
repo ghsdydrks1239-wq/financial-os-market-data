@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T08:25:27.545Z",
+  "generatedAt": "2026-08-13T11:31:23.805Z",
   "provider": "BLS_DERIVED",
   "source": "U.S. Bureau of Labor Statistics — Current Population Survey",
   "publicOutputAllowed": true,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Derived from the latest seasonally adjusted BLS U-3 unemployment-rate vintage. This is the current Sahm Rule reading, not a reconstruction of historical real-time vintages.",
-      "collectedAt": "2026-08-13T08:25:27.544Z",
+      "collectedAt": "2026-08-13T11:31:23.805Z",
       "sourceMeta": {
         "provider": "BLS_DERIVED",
         "seriesId": "LNS14000000",

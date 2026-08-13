@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0",
+  "referenceDate": "2026-08-13",
+  "generatedAt": "2026-08-13T11:31:32.307Z",
+  "provider": "BANCO_DE_ESPANA",
+  "source": "Banco de España — Statistical Information",
+  "publicOutputAllowed": true,
+  "dataQuality": {
+    "total": 1,
+    "available": 1,
+    "stale": 0,
+    "missing": 0,
+    "error": 0
+  },
+  "metrics": [
+    {
+      "id": "gl_fi_spain_10y",
+      "name": "Spain 10Y",
+      "assetClass": "rates_credit_global",
+      "value": 3.607,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "Banco de España — Statistical Information",
+      "sourceDate": "2026-08-11",
+      "expectedSourceDate": null,
+      "marketSession": "EU_GOVT_YIELD_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Official Banco de España daily secondary-market government-bond yield; sourceDate preserved independently from referenceDate.",
+      "collectedAt": "2026-08-13T11:31:32.307Z",
+      "sourceMeta": {
+        "provider": "BANCO_DE_ESPANA",
+        "seriesCode": "D_G0B1F0ZP",
+        "seriesDescription": "Tipos de interés. Del mercado secundario de valores. Bonos y obligaciones del Estado no segregados. 10 Años. Conjunto del mercado. Operaciones simples al contado",
+        "sourceUrl": "https://www.bde.es/webbe/es/estadisticas/compartido/datos/csv/ti_1_3.csv",
+        "rights": "Banco de España statistical information may be reused provided the information and metadata are not distorted and Banco de España is cited as source; third-party data are excluded.",
+        "publicOutputAllowed": true
+      }
+    }
+  ]
+}

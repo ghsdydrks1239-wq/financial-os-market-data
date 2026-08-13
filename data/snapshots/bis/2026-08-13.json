@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T08:25:30.725Z",
+  "generatedAt": "2026-08-13T11:31:27.359Z",
   "provider": "BIS",
   "source": "Bank for International Settlements (BIS)",
   "publicOutputAllowed": true,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:28.886Z",
+      "collectedAt": "2026-08-13T11:31:24.851Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -57,7 +57,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:28.998Z",
+      "collectedAt": "2026-08-13T11:31:25.008Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -86,7 +86,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:29.111Z",
+      "collectedAt": "2026-08-13T11:31:25.247Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -115,7 +115,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:29.228Z",
+      "collectedAt": "2026-08-13T11:31:25.398Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -144,7 +144,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:29.348Z",
+      "collectedAt": "2026-08-13T11:31:25.659Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_CBPOL",
@@ -173,7 +173,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "BIS publishes local-currency units per USD; value inverted to match the master metric quotation convention.",
-      "collectedAt": "2026-08-13T08:25:29.456Z",
+      "collectedAt": "2026-08-13T11:31:25.815Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -202,7 +202,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "BIS publishes local-currency units per USD; value inverted to match the master metric quotation convention.",
-      "collectedAt": "2026-08-13T08:25:29.578Z",
+      "collectedAt": "2026-08-13T11:31:25.968Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -231,7 +231,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:29.687Z",
+      "collectedAt": "2026-08-13T11:31:26.191Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -260,7 +260,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:29.801Z",
+      "collectedAt": "2026-08-13T11:31:26.350Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -289,7 +289,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:29.909Z",
+      "collectedAt": "2026-08-13T11:31:26.507Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -318,7 +318,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:30.018Z",
+      "collectedAt": "2026-08-13T11:31:26.657Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -347,7 +347,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:30.396Z",
+      "collectedAt": "2026-08-13T11:31:26.806Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -376,7 +376,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:30.504Z",
+      "collectedAt": "2026-08-13T11:31:27.059Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -405,7 +405,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:30.612Z",
+      "collectedAt": "2026-08-13T11:31:27.210Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
@@ -434,7 +434,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Latest BIS observation; sourceDate preserved independently from referenceDate.",
-      "collectedAt": "2026-08-13T08:25:30.725Z",
+      "collectedAt": "2026-08-13T11:31:27.359Z",
       "sourceMeta": {
         "provider": "BIS",
         "dataflow": "WS_XRU",
