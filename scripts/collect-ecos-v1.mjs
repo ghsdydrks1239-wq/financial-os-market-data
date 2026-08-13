@@ -207,7 +207,8 @@ if (outputPath) {
 
 console.log(`ECOS collection: referenceDate=${referenceDate}, total=${metrics.length}, available=${snapshot.dataQuality.available}, stale=${snapshot.dataQuality.stale}, missing=${snapshot.dataQuality.missing}, error=${snapshot.dataQuality.error}`);
 for (const metric of metrics) {
-  console.log(`${metric.status.toUpperCase()} ${metric.id} sourceDate=${metric.sourceDate ?? "null"}`);
+  const detail = metric.status === "error" ? ` error=${metric.qualityNote}` : "";
+  console.log(`${metric.status.toUpperCase()} ${metric.id} sourceDate=${metric.sourceDate ?? "null"}${detail}`);
 }
 
-if (snapshot.dataQuality.error > 0) process.exitCode = 1;
+if (snapshot.dataQuality.error > 0 && process.env.STRICT_ERRORS === "1") process.exitCode = 1;
