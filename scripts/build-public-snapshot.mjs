@@ -4,6 +4,7 @@ import path from "node:path";
 const ecosPath = process.env.ECOS_INPUT?.trim();
 const derivedPath = process.env.DERIVED_INPUT?.trim();
 const treasuryPath = process.env.TREASURY_INPUT?.trim();
+const fedLiquidityPath = process.env.FED_LIQUIDITY_INPUT?.trim();
 const outputPath = process.env.OUTPUT_PATH?.trim();
 if (!ecosPath || !derivedPath || !outputPath) {
   throw new Error("ECOS_INPUT, DERIVED_INPUT and OUTPUT_PATH are required.");
@@ -13,6 +14,7 @@ const snapshots = await Promise.all([
   fs.readFile(ecosPath, "utf8").then(JSON.parse),
   fs.readFile(derivedPath, "utf8").then(JSON.parse),
   ...(treasuryPath ? [fs.readFile(treasuryPath, "utf8").then(JSON.parse)] : []),
+  ...(fedLiquidityPath ? [fs.readFile(fedLiquidityPath, "utf8").then(JSON.parse)] : []),
 ]);
 
 const referenceDate = snapshots[0]?.referenceDate;
