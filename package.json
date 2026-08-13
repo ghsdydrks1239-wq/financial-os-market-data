@@ -21,6 +21,7 @@
     "collect:bis": "node scripts/collect-bis-v1.mjs",
     "collect:boe": "node scripts/collect-boe-v1.mjs",
     "collect:bundesbank": "node scripts/collect-bundesbank-v1.mjs",
+    "collect:bde": "node scripts/collect-bde-v1.mjs",
     "discover:fed-board": "node scripts/discover-fed-board.mjs",
     "build:public-snapshot": "node scripts/build-public-snapshot.mjs",
     "build:coverage": "node scripts/build-coverage-report.mjs"
