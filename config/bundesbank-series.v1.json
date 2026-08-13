@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "provider": "DEUTSCHE_BUNDESBANK",
+  "source": "Deutsche Bundesbank — Daily yields of current Federal securities",
+  "apiBase": "https://api.statistiken.bundesbank.de/rest/data/BBSSY",
+  "publicOutputAllowed": true,
+  "rights": "Publicly available ESCB statistics may be reused free of charge with source attribution, provided the statistics and metadata are not modified; third-party data are excluded.",
+  "metrics": [
+    {"id":"gl_fi_germany_2y","name":"Germany 2Y","key":"D.REN.EUR.A610.000000WT0202.A","seriesTitle":"Daily yield of the current two-year Federal Treasury note"},
+    {"id":"gl_fi_germany_10y","name":"Germany 10Y","key":"D.REN.EUR.A630.000000WT1010.A","seriesTitle":"Daily yield of the current 10-year Federal bond"},
+    {"id":"gl_fi_germany_30y","name":"Germany 30Y","key":"D.REN.EUR.A640.000000WT3030.A","seriesTitle":"Daily yield of the current 30-year Federal bond"}
+  ]
+}
