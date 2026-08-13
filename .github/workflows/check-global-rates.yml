@@ -9,6 +9,7 @@ on:
       - 'config/japan-mof-jgb.v1.json'
       - 'scripts/collect-bis-v1.mjs'
       - 'config/bis-series.v1.json'
+      - 'scripts/discover-boe-yield.sh'
       - 'package.json'
 
 permissions:
@@ -40,3 +41,5 @@ jobs:
         run: OUTPUT_PATH=.tmp/jgb.json npm run collect:jgb
       - name: Test BIS policy-rate and FX collection
         run: OUTPUT_PATH=.tmp/bis.json npm run collect:bis
+      - name: Inspect Bank of England yield archive
+        run: bash scripts/discover-boe-yield.sh
