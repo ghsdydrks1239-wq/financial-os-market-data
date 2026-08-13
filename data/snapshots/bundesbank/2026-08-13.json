@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0",
+  "referenceDate": "2026-08-13",
+  "generatedAt": "2026-08-13T08:25:32.971Z",
+  "provider": "DEUTSCHE_BUNDESBANK",
+  "source": "Deutsche Bundesbank — Daily yields of current Federal securities",
+  "publicOutputAllowed": true,
+  "dataQuality": {
+    "total": 3,
+    "available": 3,
+    "stale": 0,
+    "missing": 0,
+    "error": 0
+  },
+  "metrics": [
+    {
+      "id": "gl_fi_germany_2y",
+      "name": "Germany 2Y",
+      "assetClass": "rates_credit_global",
+      "value": 2.79,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "Deutsche Bundesbank — Daily yields of current Federal securities",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "DE_GOVT_YIELD_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Official daily yield of the current German Federal security at the specified original maturity.",
+      "collectedAt": "2026-08-13T08:25:32.637Z",
+      "sourceMeta": {
+        "provider": "DEUTSCHE_BUNDESBANK",
+        "key": "D.REN.EUR.A610.000000WT0202.A",
+        "seriesTitle": "Daily yield of the current two-year Federal Treasury note",
+        "sourceUrl": "https://api.statistiken.bundesbank.de/rest/data/BBSSY/D.REN.EUR.A610.000000WT0202.A?format=sdmx_csv&lang=en&startPeriod=2026-06-29&endPeriod=2026-08-13",
+        "rights": "Publicly available ESCB statistics may be reused free of charge with source attribution, provided the statistics and metadata are not modified; third-party data are excluded.",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_germany_10y",
+      "name": "Germany 10Y",
+      "assetClass": "rates_credit_global",
+      "value": 3.16,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "Deutsche Bundesbank — Daily yields of current Federal securities",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "DE_GOVT_YIELD_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Official daily yield of the current German Federal security at the specified original maturity.",
+      "collectedAt": "2026-08-13T08:25:32.799Z",
+      "sourceMeta": {
+        "provider": "DEUTSCHE_BUNDESBANK",
+        "key": "D.REN.EUR.A630.000000WT1010.A",
+        "seriesTitle": "Daily yield of the current 10-year Federal bond",
+        "sourceUrl": "https://api.statistiken.bundesbank.de/rest/data/BBSSY/D.REN.EUR.A630.000000WT1010.A?format=sdmx_csv&lang=en&startPeriod=2026-06-29&endPeriod=2026-08-13",
+        "rights": "Publicly available ESCB statistics may be reused free of charge with source attribution, provided the statistics and metadata are not modified; third-party data are excluded.",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "gl_fi_germany_30y",
+      "name": "Germany 30Y",
+      "assetClass": "rates_credit_global",
+      "value": 3.65,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "Deutsche Bundesbank — Daily yields of current Federal securities",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "DE_GOVT_YIELD_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Official daily yield of the current German Federal security at the specified original maturity.",
+      "collectedAt": "2026-08-13T08:25:32.970Z",
+      "sourceMeta": {
+        "provider": "DEUTSCHE_BUNDESBANK",
+        "key": "D.REN.EUR.A640.000000WT3030.A",
+        "seriesTitle": "Daily yield of the current 30-year Federal bond",
+        "sourceUrl": "https://api.statistiken.bundesbank.de/rest/data/BBSSY/D.REN.EUR.A640.000000WT3030.A?format=sdmx_csv&lang=en&startPeriod=2026-06-29&endPeriod=2026-08-13",
+        "rights": "Publicly available ESCB statistics may be reused free of charge with source attribution, provided the statistics and metadata are not modified; third-party data are excluded.",
+        "publicOutputAllowed": true
+      }
+    }
+  ]
+}

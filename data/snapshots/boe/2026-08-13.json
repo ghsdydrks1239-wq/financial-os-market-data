@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0",
+  "referenceDate": "2026-08-13",
+  "generatedAt": "2026-08-13T08:25:31.738Z",
+  "provider": "BOE_DATABASE",
+  "source": "Bank of England Database",
+  "publicOutputAllowed": true,
+  "dataQuality": {
+    "total": 1,
+    "available": 1,
+    "stale": 0,
+    "missing": 0,
+    "error": 0
+  },
+  "metrics": [
+    {
+      "id": "gl_fi_uk_gilt_10y",
+      "name": "UK Gilt 10Y",
+      "assetClass": "rates_credit_global",
+      "value": 4.9718,
+      "unit": "%",
+      "referenceDate": "2026-08-13",
+      "source": "Bank of England Database",
+      "sourceDate": "2026-08-10",
+      "expectedSourceDate": null,
+      "marketSession": "UK_GILT_DAILY",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Exact Bank of England Database 10-year nominal par gilt-yield series downloaded through the documented CSV endpoint.",
+      "collectedAt": "2026-08-13T08:25:31.738Z",
+      "sourceMeta": {
+        "provider": "BOE_DATABASE",
+        "seriesCode": "IUDMNPY",
+        "seriesTitle": "Yield from British Government Securities, 10 year Nominal Par Yield",
+        "sourceUrl": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=29%2FJun%2F2026&Dateto=13%2FAug%2F2026&SeriesCodes=IUDMNPY&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N",
+        "parsedObservationCount": 31,
+        "rights": "Data in the Bank of England Database are reusable under the UK Open Government Licence, except specifically excluded third-party series. The gilt yield series used here is a Bank yield series, not a third-party exchange-rate series.",
+        "publicOutputAllowed": true
+      }
+    }
+  ]
+}
