@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "sources": [
+    {
+      "id": "KRX",
+      "name": "KRX Data Marketplace / OPEN API",
+      "role": "Korean equity, ETF, derivatives, investor/program trading",
+      "apiKeySecret": "KRX_API_KEY",
+      "status": "series_mapping_required",
+      "publicRepoPolicy": "review_before_publishing_values"
+    },
+    {
+      "id": "ECOS",
+      "name": "Bank of Korea ECOS Open API",
+      "role": "Korean rates, money market, FX, macro-financial series",
+      "apiKeySecret": "ECOS_API_KEY",
+      "status": "series_mapping_required",
+      "publicRepoPolicy": "allowed_subject_to_series_validation"
+    },
+    {
+      "id": "KOFIA",
+      "name": "KOFIA FREESIS",
+      "role": "Deposits, margin credit, funds, bond/credit market detail",
+      "status": "export_or_http_mapping_required",
+      "publicRepoPolicy": "review_before_publishing_values"
+    },
+    {
+      "id": "USTREASURY",
+      "name": "U.S. Treasury",
+      "role": "U.S. Treasury yield curve",
+      "status": "dataset_ready",
+      "publicRepoPolicy": "primary_public_source"
+    },
+    {
+      "id": "NYFED",
+      "name": "Federal Reserve Bank of New York",
+      "role": "SOFR, EFFR, repo and RRP",
+      "status": "api_ready",
+      "publicRepoPolicy": "primary_public_source"
+    },
+    {
+      "id": "BIS",
+      "name": "BIS Data Portal",
+      "role": "Policy rates and FX",
+      "status": "series_mapping_required",
+      "publicRepoPolicy": "verify_attribution"
+    },
+    {
+      "id": "EIA",
+      "name": "U.S. Energy Information Administration",
+      "role": "WTI, Brent, natural gas and petroleum products",
+      "status": "api_ready",
+      "publicRepoPolicy": "primary_public_source"
+    },
+    {
+      "id": "DERIVED",
+      "name": "Local calculation",
+      "role": "Spreads, ratios and cross-asset calculations",
+      "status": "depends_on_inputs",
+      "publicRepoPolicy": "preserve_upstream_lineage"
+    }
+  ]
+}
