@@ -10,6 +10,7 @@
     "check": "node scripts/check-setup.mjs",
     "smoke:ecos": "node scripts/smoke-ecos.mjs",
     "smoke:krx": "node scripts/smoke-krx.mjs",
-    "collect:ecos": "node scripts/collect-ecos-v1.mjs"
+    "collect:ecos": "node scripts/collect-ecos-v1.mjs",
+    "derive:kr-rates": "node scripts/derive-kr-rates.mjs"
   }
 }
