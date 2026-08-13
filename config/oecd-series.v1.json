@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "provider": "OECD",
+  "source": "OECD Data Explorer — Composite leading indicators",
+  "dataset": "OECD.SDD.STES,DSD_STES@DF_CLI,4.1",
+  "publicOutputAllowed": true,
+  "rights": "OECD data may be extracted, copied, adapted, distributed, shared and embedded unless additional dataset restrictions apply; OECD attribution is required.",
+  "metrics": [
+    {
+      "id": "gl_fi_oecd_leading_indicators",
+      "name": "OECD Leading Indicators",
+      "referenceArea": "USA",
+      "frequency": "M",
+      "measure": "LI",
+      "adjustment": "AA",
+      "calculationMethod": "H",
+      "queryKey": "USA.M.LI...AA...H",
+      "unit": "index",
+      "staleAfterDays": 70,
+      "legacyFREDSeries": "USALOLITOAASTSAM",
+      "definition": "United States OECD harmonised composite leading indicator, amplitude adjusted."
+    }
+  ]
+}
