@@ -2,6 +2,9 @@ name: Collect public market snapshot
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/collect-ecos.yml'
   schedule:
     # 07:30 / 07:40 / 07:50 KST = 22:30 / 22:40 / 22:50 UTC (previous UTC day)
     - cron: '30 22 * * *'
@@ -28,9 +31,9 @@ jobs:
         id: freshness
         shell: bash
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event_name }}" = "push" ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "Manual run: freshness guard bypassed."
+            echo "Validation/manual run: freshness guard bypassed."
             exit 0
           fi
           TODAY="$(TZ=Asia/Seoul date +%F)"
@@ -55,7 +58,7 @@ jobs:
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
         run: |
           REF_DATE="$(TZ=Asia/Seoul date +%F)"
-          mkdir -p data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/snapshots/jgb data/snapshots/bis data/snapshots/boe data/snapshots/bundesbank data/snapshots/bde data/public data/coverage .tmp
+          mkdir -p data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/snapshots/jgb data/snapshots/bis data/snapshots/boe data/snapshots/bundesbank data/snapshots/bde data/snapshots/oecd data/public data/coverage .tmp
           REFERENCE_DATE="$REF_DATE" OUTPUT_PATH="data/snapshots/ecos/$REF_DATE.json" npm run collect:ecos
           cp "data/snapshots/ecos/$REF_DATE.json" data/snapshots/ecos/latest.json
           INPUT_PATH="data/snapshots/ecos/$REF_DATE.json" OUTPUT_PATH="data/snapshots/derived/$REF_DATE.json" npm run derive:kr-rates
@@ -78,20 +81,22 @@ jobs:
           cp "data/snapshots/bundesbank/$REF_DATE.json" data/snapshots/bundesbank/latest.json
           REFERENCE_DATE="$REF_DATE" OUTPUT_PATH="data/snapshots/bde/$REF_DATE.json" npm run collect:bde
           cp "data/snapshots/bde/$REF_DATE.json" data/snapshots/bde/latest.json
-          ECOS_INPUT="data/snapshots/ecos/$REF_DATE.json" DERIVED_INPUT="data/snapshots/derived/$REF_DATE.json" TREASURY_INPUT="data/snapshots/treasury/$REF_DATE.json" FED_LIQUIDITY_INPUT="data/snapshots/fed-liquidity/$REF_DATE.json" US_CP_INPUT="data/snapshots/us-cp/$REF_DATE.json" US_LABOR_SIGNALS_INPUT="data/snapshots/us-labor-signals/$REF_DATE.json" JGB_INPUT="data/snapshots/jgb/$REF_DATE.json" BIS_INPUT="data/snapshots/bis/$REF_DATE.json" BOE_INPUT="data/snapshots/boe/$REF_DATE.json" BUNDESBANK_INPUT="data/snapshots/bundesbank/$REF_DATE.json" BDE_INPUT="data/snapshots/bde/$REF_DATE.json" OUTPUT_PATH="data/public/$REF_DATE.json" npm run build:public-snapshot
+          REFERENCE_DATE="$REF_DATE" OUTPUT_PATH="data/snapshots/oecd/$REF_DATE.json" npm run collect:oecd
+          cp "data/snapshots/oecd/$REF_DATE.json" data/snapshots/oecd/latest.json
+          ECOS_INPUT="data/snapshots/ecos/$REF_DATE.json" DERIVED_INPUT="data/snapshots/derived/$REF_DATE.json" TREASURY_INPUT="data/snapshots/treasury/$REF_DATE.json" FED_LIQUIDITY_INPUT="data/snapshots/fed-liquidity/$REF_DATE.json" US_CP_INPUT="data/snapshots/us-cp/$REF_DATE.json" US_LABOR_SIGNALS_INPUT="data/snapshots/us-labor-signals/$REF_DATE.json" JGB_INPUT="data/snapshots/jgb/$REF_DATE.json" BIS_INPUT="data/snapshots/bis/$REF_DATE.json" BOE_INPUT="data/snapshots/boe/$REF_DATE.json" BUNDESBANK_INPUT="data/snapshots/bundesbank/$REF_DATE.json" BDE_INPUT="data/snapshots/bde/$REF_DATE.json" OECD_INPUT="data/snapshots/oecd/$REF_DATE.json" OUTPUT_PATH="data/public/$REF_DATE.json" npm run build:public-snapshot
           cp "data/public/$REF_DATE.json" data/public/latest.json
           npm run build:coverage
 
       - name: Commit public-safe snapshots
         if: steps.freshness.outputs.skip != 'true'
         run: |
-          if [ -z "$(git status --porcelain -- data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/snapshots/jgb data/snapshots/bis data/snapshots/boe data/snapshots/bundesbank data/snapshots/bde data/public data/coverage MARKET_DATA_COVERAGE.md)" ]; then
+          if [ -z "$(git status --porcelain -- data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/snapshots/jgb data/snapshots/bis data/snapshots/boe data/snapshots/bundesbank data/snapshots/bde data/snapshots/oecd data/public data/coverage MARKET_DATA_COVERAGE.md)" ]; then
             echo "No public-safe snapshot changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/snapshots/jgb data/snapshots/bis data/snapshots/boe data/snapshots/bundesbank data/snapshots/bde data/public data/coverage MARKET_DATA_COVERAGE.md
+          git add data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/snapshots/jgb data/snapshots/bis data/snapshots/boe data/snapshots/bundesbank data/snapshots/bde data/snapshots/oecd data/public data/coverage MARKET_DATA_COVERAGE.md
           git commit -m "Update public market snapshot"
           git pull --rebase origin main
           git push
