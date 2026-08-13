@@ -8,7 +8,15 @@ if (!apiKey) {
   process.exit(1);
 }
 
-const endpoint = "https://data-dbg.krx.co.kr/svc/apis/sto/stk_bydd_trd";
+const services = [
+  ["KOSPI index", "https://data-dbg.krx.co.kr/svc/apis/idx/kospi_dd_trd"],
+  ["KOSDAQ index", "https://data-dbg.krx.co.kr/svc/apis/idx/kosdaq_dd_trd"],
+  ["KOSPI stocks", "https://data-dbg.krx.co.kr/svc/apis/sto/stk_bydd_trd"],
+  ["KOSDAQ stocks", "https://data-dbg.krx.co.kr/svc/apis/sto/ksq_bydd_trd"],
+  ["ETF", "https://data-dbg.krx.co.kr/svc/apis/etp/etf_bydd_trd"],
+  ["Futures", "https://data-dbg.krx.co.kr/svc/apis/drv/fut_bydd_trd"],
+  ["Options", "https://data-dbg.krx.co.kr/svc/apis/drv/opt_bydd_trd"],
+];
 
 function yyyymmddKst(daysAgo) {
   const now = new Date(Date.now() - daysAgo * 24 * 60 * 60 * 1000);
@@ -22,9 +30,11 @@ function yyyymmddKst(daysAgo) {
   return `${get("year")}${get("month")}${get("day")}`;
 }
 
-let lastError = null;
-for (let daysAgo = 1; daysAgo <= 10; daysAgo += 1) {
-  const basDd = yyyymmddKst(daysAgo);
+const basDd = yyyymmddKst(1);
+let successCount = 0;
+let unauthorizedCount = 0;
+
+for (const [name, endpoint] of services) {
   const url = new URL(endpoint);
   url.searchParams.set("basDd", basDd);
 
@@ -35,11 +45,16 @@ for (let daysAgo = 1; daysAgo <= 10; daysAgo += 1) {
         Accept: "application/json",
       },
     });
-
     const text = await response.text();
+
+    if (response.status === 401 || response.status === 403) {
+      unauthorizedCount += 1;
+      console.log(`UNAUTHORIZED ${name}: HTTP ${response.status}`);
+      continue;
+    }
+
     if (!response.ok) {
-      lastError = `KRX HTTP ${response.status} on ${basDd}: ${text.slice(0, 300)}`;
-      if ([401, 403].includes(response.status)) break;
+      console.log(`ERROR ${name}: HTTP ${response.status} ${text.slice(0, 160)}`);
       continue;
     }
 
@@ -47,24 +62,23 @@ for (let daysAgo = 1; daysAgo <= 10; daysAgo += 1) {
     try {
       data = JSON.parse(text);
     } catch {
-      lastError = `KRX returned non-JSON on ${basDd}: ${text.slice(0, 300)}`;
+      console.log(`ERROR ${name}: non-JSON ${text.slice(0, 160)}`);
       continue;
     }
 
-    const rows = data.OutBlock_1;
-    if (Array.isArray(rows) && rows.length > 0) {
-      console.log(`KRX smoke test OK: ${basDd}, received ${rows.length} KOSPI stock rows.`);
-      const sample = rows[0] ?? {};
-      console.log(`Sample: ${sample.ISU_SRT_CD ?? ""} ${sample.ISU_ABBRV ?? ""} ${sample.TDD_CLSPRC ?? ""}`.trim());
-      process.exit(0);
+    const rows = Array.isArray(data.OutBlock_1) ? data.OutBlock_1 : [];
+    successCount += 1;
+    console.log(`AUTHORIZED ${name}: HTTP 200, rows=${rows.length}`);
+    if (rows[0]) {
+      const sample = rows[0];
+      console.log(`  sample=${sample.IDX_NM ?? sample.ISU_ABBRV ?? sample.ISU_NM ?? sample.ISU_SRT_CD ?? "available"}`);
     }
-
-    const code = data.RESULT?.CODE ?? data.code ?? data.status ?? "";
-    const message = data.RESULT?.MESSAGE ?? data.message ?? "no rows";
-    lastError = `KRX response on ${basDd}: ${code} ${message}`.trim();
   } catch (error) {
-    lastError = `KRX request failed on ${basDd}: ${error?.message ?? String(error)}`;
+    console.log(`ERROR ${name}: ${error?.message ?? String(error)}`);
   }
 }
 
-throw new Error(lastError ?? "KRX smoke test returned no usable data in the last 10 calendar days.");
+console.log(`KRX authorization summary for ${basDd}: authorized=${successCount}, unauthorized=${unauthorizedCount}, tested=${services.length}`);
+if (successCount === 0) {
+  throw new Error("No tested KRX service accepted this API key. The key may be approved while individual API-service access is still unapproved or not yet active.");
+}
