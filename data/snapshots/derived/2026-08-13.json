@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "1.0",
+  "referenceDate": "2026-08-13",
+  "generatedAt": "2026-08-13T06:24:05.851Z",
+  "provider": "DERIVED_ECOS",
+  "source": "Verified legacy formulas applied to ECOS inputs",
+  "publicOutputAllowed": true,
+  "dataQuality": {
+    "total": 7,
+    "available": 7,
+    "stale": 0,
+    "missing": 0,
+    "error": 0
+  },
+  "metrics": [
+    {
+      "id": "kr_fi_ktb_3y_10y",
+      "name": "KTB 3Y-10Y 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 50.3,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:24:05.851Z",
+      "sourceMeta": {
+        "formula": "kr_fi_10y - kr_fi_3y",
+        "displayFormula": "(kr_fi_10y - kr_fi_3y) * 100",
+        "sourceDates": {
+          "kr_fi_10y": "2026-08-12",
+          "kr_fi_3y": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_aa",
+      "name": "AA- 신용스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 70.5,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:24:05.851Z",
+      "sourceMeta": {
+        "formula": "kr_fi_aa_3y - kr_fi_3y",
+        "displayFormula": "(kr_fi_aa_3y - kr_fi_3y) * 100",
+        "sourceDates": {
+          "kr_fi_aa_3y": "2026-08-12",
+          "kr_fi_3y": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_bbb",
+      "name": "BBB- 신용스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 650.6,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:24:05.851Z",
+      "sourceMeta": {
+        "formula": "kr_fi_bbb_3y - kr_fi_3y",
+        "displayFormula": "(kr_fi_bbb_3y - kr_fi_3y) * 100",
+        "sourceDates": {
+          "kr_fi_bbb_3y": "2026-08-12",
+          "kr_fi_3y": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_cd91_tb91",
+      "name": "CD91-TB91 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 14,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:24:05.851Z",
+      "sourceMeta": {
+        "formula": "kr_fi_cd_91d - kr_fi_91d",
+        "displayFormula": "(kr_fi_cd_91d - kr_fi_91d) * 100",
+        "sourceDates": {
+          "kr_fi_cd_91d": "2026-08-12",
+          "kr_fi_91d": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_ktb3",
+      "name": "KTB3-기준금리 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 104.1,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:24:05.851Z",
+      "sourceMeta": {
+        "formula": "kr_fi_3y - kr_fi_metric_134",
+        "displayFormula": "(kr_fi_3y - kr_fi_metric_134) * 100",
+        "sourceDates": {
+          "kr_fi_3y": "2026-08-12",
+          "kr_fi_metric_134": "2026-08-10"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_cd91",
+      "name": "CD91-기준금리 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 19,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:24:05.851Z",
+      "sourceMeta": {
+        "formula": "kr_fi_cd_91d - kr_fi_metric_134",
+        "displayFormula": "(kr_fi_cd_91d - kr_fi_metric_134) * 100",
+        "sourceDates": {
+          "kr_fi_cd_91d": "2026-08-12",
+          "kr_fi_metric_134": "2026-08-10"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    },
+    {
+      "id": "kr_fi_ktb3_tb91",
+      "name": "KTB3-TB91 스프레드",
+      "assetClass": "rates_credit_kr",
+      "value": 99.1,
+      "unit": "bp",
+      "referenceDate": "2026-08-13",
+      "source": "Derived from ECOS inputs",
+      "sourceDate": "2026-08-12",
+      "expectedSourceDate": null,
+      "marketSession": "KR_RATES_DERIVED",
+      "sessionAligned": null,
+      "status": "available",
+      "isStale": false,
+      "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
+      "collectedAt": "2026-08-13T06:24:05.851Z",
+      "sourceMeta": {
+        "formula": "kr_fi_3y - kr_fi_91d",
+        "displayFormula": "(kr_fi_3y - kr_fi_91d) * 100",
+        "sourceDates": {
+          "kr_fi_3y": "2026-08-12",
+          "kr_fi_91d": "2026-08-12"
+        },
+        "verification": "legacy_formula_verified",
+        "publicOutputAllowed": true
+      }
+    }
+  ]
+}
