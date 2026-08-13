@@ -15,8 +15,8 @@ MARKET BRIEF용 시장 데이터 파이프라인 저장소입니다.
 ### Public MARKET bundle
 
 - 프런트엔드가 바로 읽을 수 있는 `data/public/latest.json` 생성 완료
-- 현재 **39개 지표 중 38개 available / 1개 missing / 0 error**
-- 포함 공급자: ECOS, ECOS 기반 검증 파생지표, U.S. Treasury, Fed Liquidity
+- 현재 **40개 지표 중 39개 available / 1개 missing / 0 error**
+- 포함 공급자: ECOS, ECOS 기반 검증 파생지표, U.S. Treasury, Fed Liquidity, Federal Reserve Board Commercial Paper
 - KRX와 NY Fed reference-rate 값은 현재 public bundle에서 제외
 
 ### ECOS
@@ -35,7 +35,7 @@ MARKET BRIEF용 시장 데이터 파이프라인 저장소입니다.
 - 7개 모두 실제 계산 성공
 - 날짜별 snapshot: `data/snapshots/derived/`
 
-### U.S. Treasury / Fed Liquidity / NY Fed
+### U.S. Treasury / Fed Liquidity / Commercial Paper / NY Fed
 
 - U.S. Treasury 공식 XML 연결 성공
 - UST 3M / 1Y / 2Y / 3Y / 5Y / 10Y / 20Y / 30Y + 2s10s = 9개 수집 성공
@@ -44,6 +44,9 @@ MARKET BRIEF용 시장 데이터 파이프라인 저장소입니다.
 - ON RRP Balance / ON RRP Rate는 FRED의 Federal Reserve Bank of New York 원천 시리즈를 수집하고 원천 출처 메타데이터를 유지
 - Fed Liquidity 4개(IORB, TGA Balance, ON RRP Balance, ON RRP Rate) 모두 실제 수집 성공
 - 날짜별 Fed Liquidity snapshot: `data/snapshots/fed-liquidity/`
+- Federal Reserve Board Commercial Paper 공식 일별 표에서 `US CP Rate = 90-Day AA Nonfinancial Commercial Paper Interest Rate`를 수집
+- 최신 일자의 90일물 계산이 `n.a.`이면, 최근 일별 행 중 거래 데이터가 충분해 실제 금리가 계산된 가장 가까운 관측일을 사용하고 `sourceDate`와 `expectedSourceDate`를 분리
+- 날짜별 US CP snapshot: `data/snapshots/us-cp/`
 - NY Fed SOFR / EFFR API 연결과 정규화 수집은 성공했으나, reference-rate 표시 시 필요한 이용조건을 프런트엔드에 반영하기 전까지 public bundle에는 넣지 않음
 
 ### KRX
@@ -60,8 +63,8 @@ KRX OPEN API 기본 약관상 수신 정보를 제3자에게 제공하는 데 �
 ## GitHub Actions
 
 - `Check MARKET DATA setup`: Secret, ECOS, KRX 인증 및 selector 수동 검증
-- `Check global rates sources`: U.S. Treasury / NY Fed / Federal Reserve Board / Fed Liquidity 연결과 정규화 수동 검증
-- `Collect public market snapshot`: ECOS + 검증 파생지표 + U.S. Treasury + Fed Liquidity를 수집해 `data/public/latest.json` 생성
+- `Check global rates sources`: U.S. Treasury / NY Fed / Federal Reserve Board / Fed Liquidity / US CP 연결과 정규화 수동 검증
+- `Collect public market snapshot`: ECOS + 검증 파생지표 + U.S. Treasury + Fed Liquidity + US CP를 수집해 `data/public/latest.json` 생성
 - 현재 자동 스케줄은 붙이지 않았습니다. 데이터 소스와 공개범위를 더 확정한 뒤 일일 스케줄을 붙입니다.
 
 ## 필요한 GitHub Actions Secrets
