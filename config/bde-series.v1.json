@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "provider": "BANCO_DE_ESPANA",
+  "source": "Banco de España — Statistical Information",
+  "sourceUrl": "https://www.bde.es/webbe/es/estadisticas/compartido/datos/csv/ti_1_3.csv",
+  "encoding": "windows-1252",
+  "publicOutputAllowed": true,
+  "rights": "Banco de España statistical information may be reused provided the information and metadata are not distorted and Banco de España is cited as source; third-party data are excluded.",
+  "metrics": [
+    {
+      "id": "gl_fi_spain_10y",
+      "name": "Spain 10Y",
+      "seriesCode": "D_G0B1F0ZP",
+      "seriesDescription": "Tipos de interés. Del mercado secundario de valores. Bonos y obligaciones del Estado no segregados. 10 Años. Conjunto del mercado. Operaciones simples al contado",
+      "unit": "%",
+      "staleAfterDays": 7
+    }
+  ]
+}
