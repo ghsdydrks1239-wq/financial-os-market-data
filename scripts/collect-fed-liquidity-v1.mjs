@@ -3,8 +3,7 @@ import path from "node:path";
 
 const PRATES_URL = "https://www.federalreserve.gov/datadownload/Output.aspx?filetype=csv&from=&label=include&lastobs=20&layout=seriescolumn&rel=PRATES&series=c27939ee810cb2e929a920a6bd77d9f6&to=&type=package";
 const H41_URL = "https://www.federalreserve.gov/datadownload/Output.aspx?filetype=csv&from=&label=include&lastobs=8&layout=seriescolumn&rel=H41&series=2704b6bc9b50bc034baf9660364dfb26&to=&type=package";
-const FRED_RRP_BALANCE_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RRPONTSYD";
-const FRED_RRP_RATE_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RRPONTSYAWARD";
+const NYFED_RRP_RESULTS_URL = "https://markets.newyorkfed.org/api/rp/reverserepo/all/results/lastTwoWeeks.json";
 
 function kstToday() {
   const parts = new Intl.DateTimeFormat("en-CA", {
@@ -45,6 +44,15 @@ async function fetchText(url) {
   });
   if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
   return response.text();
+}
+
+async function fetchJson(url) {
+  const response = await fetch(url, {
+    headers: { Accept: "application/json", "User-Agent": "FinancialOS-MarketData/0.1 (+personal research)" },
+    signal: AbortSignal.timeout(20000),
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
+  return response.json();
 }
 
 function ageDays(referenceDate, sourceDate) {
@@ -97,24 +105,38 @@ async function collectBoardDdp({ url, shortCode, referenceDate }) {
   return observations[0] ?? null;
 }
 
-async function collectFredCsv({ url, seriesId, referenceDate }) {
-  const rows = (await fetchText(url)).split(/\r?\n/).filter(Boolean).map(parseCsvLine);
-  const header = rows[0] ?? [];
-  const dateIndex = header.findIndex((value) => /^(observation_date|DATE)$/i.test(value));
-  const valueIndex = header.findIndex((value) => value === seriesId);
-  if (dateIndex < 0 || valueIndex < 0) throw new Error(`FRED CSV columns not found for ${seriesId}`);
+async function collectNyFedRrp(referenceDate) {
+  const payload = await fetchJson(NYFED_RRP_RESULTS_URL);
+  const operations = Array.isArray(payload?.repo?.operations) ? payload.repo.operations : [];
+  const candidates = operations
+    .filter((row) => row?.operationDate && row.operationDate <= referenceDate)
+    .filter((row) => String(row.operationType ?? "").toLowerCase() === "reverse repo")
+    .filter((row) => String(row.term ?? "").toLowerCase() === "overnight")
+    .filter((row) => String(row.auctionStatus ?? "").toLowerCase() === "results")
+    .sort((a, b) => String(b.operationDate).localeCompare(String(a.operationDate)));
 
-  const observations = rows.slice(1)
-    .map((row) => ({ date: row[dateIndex], raw: row[valueIndex] }))
-    .filter((row) => /^\d{4}-\d{2}-\d{2}$/.test(row.date ?? ""))
-    .filter((row) => row.date <= referenceDate)
-    .map((row) => ({ ...row, value: Number(row.raw) }))
-    .filter((row) => Number.isFinite(row.value))
-    .sort((a, b) => b.date.localeCompare(a.date));
-  return observations[0] ?? null;
+  const latest = candidates[0] ?? null;
+  if (!latest) throw new Error("NY Fed reverse repo API contained no completed overnight operation on or before the reference date.");
+
+  const totalAmtAccepted = Number(latest.totalAmtAccepted);
+  const details = Array.isArray(latest.details) ? latest.details : [];
+  const treasuryDetail = details.find((row) => String(row?.securityType ?? "").toLowerCase() === "treasury") ?? details[0] ?? null;
+  const awardRate = Number(treasuryDetail?.percentAwardRate ?? treasuryDetail?.percentOfferingRate);
+
+  if (!Number.isFinite(totalAmtAccepted)) throw new Error("NY Fed reverse repo result did not contain a numeric totalAmtAccepted.");
+  if (!Number.isFinite(awardRate)) throw new Error("NY Fed reverse repo result did not contain a numeric award/offering rate.");
+
+  return {
+    date: latest.operationDate,
+    balanceBillions: totalAmtAccepted / 1_000_000_000,
+    rate: awardRate,
+    operationId: latest.operationId ?? null,
+    acceptedCounterparties: Number.isFinite(Number(latest.acceptedCpty)) ? Number(latest.acceptedCpty) : null,
+  };
 }
 
 const referenceDate = process.env.REFERENCE_DATE?.trim() || kstToday();
+const nyFedRrp = await collectNyFedRrp(referenceDate);
 const definitions = [
   {
     id: "gl_fi_iorb", name: "IORB", unit: "%", frequency: "daily", staleAfterDays: 7,
@@ -130,15 +152,15 @@ const definitions = [
   },
   {
     id: "gl_fi_on_rrp_balance", name: "ON RRP Balance", unit: "USD billions", frequency: "daily", staleAfterDays: 7,
-    fetcher: () => collectFredCsv({ url: FRED_RRP_BALANCE_URL, seriesId: "RRPONTSYD", referenceDate }),
-    source: "Federal Reserve Bank of New York via FRED",
-    sourceMeta: { provider: "FRED_NYFED", seriesId: "RRPONTSYD", sourceUrl: FRED_RRP_BALANCE_URL, underlyingSource: "Federal Reserve Bank of New York — Temporary Open Market Operations", attributionRequired: true },
+    fetcher: async () => ({ date: nyFedRrp.date, value: nyFedRrp.balanceBillions }),
+    source: "Federal Reserve Bank of New York — Reverse Repo Operations",
+    sourceMeta: { provider: "NY_FED_RRP", field: "totalAmtAccepted / 1e9", sourceUrl: NYFED_RRP_RESULTS_URL, operationId: nyFedRrp.operationId, acceptedCounterparties: nyFedRrp.acceptedCounterparties, rights: "New York Fed Terms of Use grant a non-exclusive license to use, copy, and distribute website/API content for personal or business purposes, subject to those terms." },
   },
   {
     id: "gl_fi_on_rrp_rate", name: "ON RRP Rate", unit: "%", frequency: "daily", staleAfterDays: 7,
-    fetcher: () => collectFredCsv({ url: FRED_RRP_RATE_URL, seriesId: "RRPONTSYAWARD", referenceDate }),
-    source: "Federal Reserve Bank of New York via FRED",
-    sourceMeta: { provider: "FRED_NYFED", seriesId: "RRPONTSYAWARD", sourceUrl: FRED_RRP_RATE_URL, underlyingSource: "Federal Reserve Bank of New York — Temporary Open Market Operations", attributionRequired: true },
+    fetcher: async () => ({ date: nyFedRrp.date, value: nyFedRrp.rate }),
+    source: "Federal Reserve Bank of New York — Reverse Repo Operations",
+    sourceMeta: { provider: "NY_FED_RRP", field: "details[].percentAwardRate", sourceUrl: NYFED_RRP_RESULTS_URL, operationId: nyFedRrp.operationId, rights: "New York Fed Terms of Use grant a non-exclusive license to use, copy, and distribute website/API content for personal or business purposes, subject to those terms." },
   },
 ];
 
@@ -183,7 +205,7 @@ const snapshot = {
   referenceDate,
   generatedAt: new Date().toISOString(),
   provider: "FED_LIQUIDITY",
-  source: "Federal Reserve Board + Federal Reserve Bank of New York via FRED",
+  source: "Federal Reserve Board + Federal Reserve Bank of New York direct APIs",
   publicOutputAllowed: true,
   dataQuality: {
     total: metrics.length,
@@ -201,5 +223,5 @@ if (outputPath) {
   await fs.writeFile(outputPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
 }
 console.log(`Fed liquidity collection: total=${snapshot.dataQuality.total}, available=${snapshot.dataQuality.available}, stale=${snapshot.dataQuality.stale}, missing=${snapshot.dataQuality.missing}, error=${snapshot.dataQuality.error}`);
-for (const item of metrics) console.log(`${item.status.toUpperCase()} ${item.id} sourceDate=${item.sourceDate ?? "null"}`);
+for (const item of metrics) console.log(`${item.status.toUpperCase()} ${item.id} value=${item.value ?? "null"} sourceDate=${item.sourceDate ?? "null"} provider=${item.sourceMeta?.provider ?? "unknown"}`);
 if (snapshot.dataQuality.error > 0) process.exitCode = 1;
