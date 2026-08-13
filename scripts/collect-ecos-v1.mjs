@@ -1,0 +1,213 @@
+import dns from "node:dns";
+import fs from "node:fs/promises";
+import path from "node:path";
+import { fetchEcosStatistic } from "../src/collectors/ecos.mjs";
+
+dns.setDefaultResultOrder("ipv4first");
+
+const CONFIG_PATH = new URL("../config/ecos-series.v1.json", import.meta.url);
+const config = JSON.parse(await fs.readFile(CONFIG_PATH, "utf8"));
+
+function kstToday() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  const get = (type) => parts.find((part) => part.type === type)?.value;
+  return `${get("year")}-${get("month")}-${get("day")}`;
+}
+
+function compactDate(date) {
+  return date.replaceAll("-", "");
+}
+
+function isoDate(compact) {
+  if (!/^\d{8}$/.test(String(compact ?? ""))) return null;
+  const text = String(compact);
+  return `${text.slice(0, 4)}-${text.slice(4, 6)}-${text.slice(6, 8)}`;
+}
+
+function minusDays(date, days) {
+  const [year, month, day] = date.split("-").map(Number);
+  const d = new Date(Date.UTC(year, month - 1, day, 12));
+  d.setUTCDate(d.getUTCDate() - days);
+  return d.toISOString().slice(0, 10);
+}
+
+function calendarAgeDays(referenceDate, sourceDate) {
+  if (!sourceDate) return null;
+  const a = Date.parse(`${referenceDate}T00:00:00Z`);
+  const b = Date.parse(`${sourceDate}T00:00:00Z`);
+  return Math.round((a - b) / 86400000);
+}
+
+function parseValue(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const normalized = String(value).replaceAll(",", "").trim();
+  const number = Number(normalized);
+  return Number.isFinite(number) ? number : String(value);
+}
+
+function rowsFrom(data) {
+  return Array.isArray(data?.StatisticSearch?.row) ? data.StatisticSearch.row : [];
+}
+
+async function fetchRows(metric, referenceDate, itemCode = metric.itemCode) {
+  const startDate = compactDate(minusDays(referenceDate, metric.lookbackDays ?? 14));
+  const endDate = compactDate(referenceDate);
+  const data = await fetchEcosStatistic({
+    statisticCode: metric.statisticCode,
+    cycle: metric.cycle,
+    startDate,
+    endDate,
+    itemCodes: [itemCode],
+    start: 1,
+    end: 1000,
+  });
+  return rowsFrom(data);
+}
+
+function latestRow(rows) {
+  return [...rows]
+    .filter((row) => /^\d{8}$/.test(String(row.TIME ?? "")))
+    .sort((a, b) => String(b.TIME).localeCompare(String(a.TIME)))[0] ?? null;
+}
+
+async function collectMetric(metric, referenceDate, collectedAt) {
+  const assetClass = metric.metricId.startsWith("fx_") ? "fx" : "rates_credit_kr";
+  const base = {
+    id: metric.metricId,
+    name: metric.name,
+    assetClass,
+    value: null,
+    unit: metric.unit ?? null,
+    referenceDate,
+    source: config.source,
+    sourceDate: null,
+    expectedSourceDate: null,
+    marketSession: assetClass === "fx" ? "KR_FX_DAILY" : "KR_RATES_DAILY",
+    sessionAligned: null,
+    status: "missing",
+    isStale: false,
+    qualityNote: null,
+    collectedAt,
+    sourceMeta: {
+      provider: config.provider,
+      statisticCode: metric.statisticCode ?? null,
+      itemCode: metric.itemCode ?? null,
+      definition: metric.definition ?? null,
+      publicOutputAllowed: config.publicOutputAllowed,
+    },
+  };
+
+  if (metric.status === "unresolved") {
+    return {
+      ...base,
+      status: "missing",
+      qualityNote: metric.reason ?? "Source mapping unresolved.",
+      sourceMeta: { ...base.sourceMeta, mappingStatus: "unresolved" },
+    };
+  }
+
+  try {
+    let rows = await fetchRows(metric, referenceDate);
+    let usedItemCode = metric.itemCode;
+    let usedFallback = false;
+
+    if (rows.length === 0 && metric.fallbackItemCode) {
+      rows = await fetchRows(metric, referenceDate, metric.fallbackItemCode);
+      usedItemCode = metric.fallbackItemCode;
+      usedFallback = rows.length > 0;
+    }
+
+    const row = latestRow(rows);
+    if (!row) {
+      return { ...base, qualityNote: `No ECOS observation found within ${metric.lookbackDays ?? 14} calendar days.` };
+    }
+
+    const sourceDate = isoDate(row.TIME);
+    const ageDays = calendarAgeDays(referenceDate, sourceDate);
+    const value = parseValue(row.DATA_VALUE);
+    if (value === null) {
+      return { ...base, sourceDate, status: "missing", qualityNote: "ECOS returned an observation with an empty DATA_VALUE." };
+    }
+
+    const latestEffective = metric.freshnessMode === "latest_effective";
+    const isStale = !latestEffective && ageDays !== null && ageDays > 7;
+    const status = isStale ? "stale" : "available";
+
+    return {
+      ...base,
+      value,
+      unit: row.UNIT_NAME || metric.unit || null,
+      sourceDate,
+      expectedSourceDate: latestEffective ? null : sourceDate,
+      sessionAligned: latestEffective ? true : (isStale ? false : null),
+      status,
+      isStale,
+      qualityNote: usedFallback
+        ? `Primary item had no data in range; fallback item ${usedItemCode} was used.`
+        : (latestEffective ? "Latest effective policy value; sourceDate is not expected to equal referenceDate." : "Daily-session calendar alignment is provisional until the KR market holiday calendar is added."),
+      sourceMeta: {
+        ...base.sourceMeta,
+        itemCode: usedItemCode,
+        fallbackUsed: usedFallback,
+        observedItemName: row.ITEM_NAME1 ?? null,
+      },
+    };
+  } catch (error) {
+    return {
+      ...base,
+      status: "error",
+      qualityNote: error?.message ?? String(error),
+    };
+  }
+}
+
+const referenceDate = process.env.REFERENCE_DATE?.trim() || kstToday();
+if (!/^\d{4}-\d{2}-\d{2}$/.test(referenceDate)) {
+  throw new Error("REFERENCE_DATE must be YYYY-MM-DD.");
+}
+
+const collectedAt = new Date().toISOString();
+const metrics = [];
+for (const metric of config.metrics) {
+  metrics.push(await collectMetric(metric, referenceDate, collectedAt));
+}
+
+const counts = metrics.reduce((acc, metric) => {
+  acc[metric.status] = (acc[metric.status] ?? 0) + 1;
+  return acc;
+}, {});
+
+const snapshot = {
+  schemaVersion: "1.0",
+  referenceDate,
+  generatedAt: collectedAt,
+  provider: config.provider,
+  source: config.source,
+  publicOutputAllowed: config.publicOutputAllowed,
+  dataQuality: {
+    total: metrics.length,
+    available: counts.available ?? 0,
+    stale: counts.stale ?? 0,
+    missing: counts.missing ?? 0,
+    error: counts.error ?? 0,
+  },
+  metrics,
+};
+
+const outputPath = process.env.OUTPUT_PATH?.trim();
+if (outputPath) {
+  await fs.mkdir(path.dirname(outputPath), { recursive: true });
+  await fs.writeFile(outputPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
+}
+
+console.log(`ECOS collection: referenceDate=${referenceDate}, total=${metrics.length}, available=${snapshot.dataQuality.available}, stale=${snapshot.dataQuality.stale}, missing=${snapshot.dataQuality.missing}, error=${snapshot.dataQuality.error}`);
+for (const metric of metrics) {
+  console.log(`${metric.status.toUpperCase()} ${metric.id} sourceDate=${metric.sourceDate ?? "null"}`);
+}
+
+if (snapshot.dataQuality.error > 0) process.exitCode = 1;
