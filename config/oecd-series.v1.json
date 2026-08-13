@@ -16,7 +16,7 @@
       "calculationMethod": "H",
       "queryKey": ".M.LI...AA...H",
       "unit": "index",
-      "staleAfterDays": 70,
+      "staleAfterDays": 100,
       "legacyFREDSeries": "USALOLITOAASTSAM",
       "definition": "United States OECD harmonised composite leading indicator, amplitude adjusted."
     }
