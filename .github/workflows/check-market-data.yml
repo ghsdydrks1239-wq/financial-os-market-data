@@ -32,7 +32,7 @@ jobs:
         env:
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
 
-      - name: Smoke test KRX API
+      - name: Check KRX service approvals
         run: npm run smoke:krx
         env:
           KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
