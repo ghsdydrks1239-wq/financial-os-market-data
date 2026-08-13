@@ -1,0 +1,25 @@
+name: Check MARKET DATA setup
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Check API secret setup
+        run: npm run check
+        env:
+          KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
+          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
