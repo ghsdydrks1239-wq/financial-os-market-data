@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "provider": "EIA",
+  "source": "U.S. Energy Information Administration — Daily price history tables",
+  "publicOutputAllowed": false,
+  "rights": "Transient collection is allowed for source validation, but these market-price values remain excluded from the public bundle until the underlying third-party redistribution rights are resolved.",
+  "metrics": [
+    {
+      "id": "cmdty_wti_crude",
+      "name": "WTI Crude",
+      "sourceKey": "PET.RWTC.D",
+      "url": "https://www.eia.gov/dnav/pet/hist/RWTCD.htm",
+      "unit": "USD/bbl",
+      "staleAfterDays": 10
+    },
+    {
+      "id": "cmdty_brent_crude",
+      "name": "Brent Crude",
+      "sourceKey": "PET.RBRTE.D",
+      "url": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
+      "unit": "USD/bbl",
+      "staleAfterDays": 10
+    },
+    {
+      "id": "cmdty_natural_gas",
+      "name": "Natural Gas",
+      "sourceKey": "NG.RNGWHHD.D",
+      "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm",
+      "unit": "USD/MMBtu",
+      "staleAfterDays": 10
+    },
+    {
+      "id": "cmdty_gasoline",
+      "name": "Gasoline",
+      "sourceKey": "PET.EER_EPMRU_PF4_Y35NY_DPG.D",
+      "url": "https://www.eia.gov/dnav/pet/hist/EER_EPMRU_PF4_Y35NY_DPGD.htm",
+      "unit": "USD/gal",
+      "staleAfterDays": 10
+    },
+    {
+      "id": "cmdty_heating_oil",
+      "name": "Heating Oil",
+      "sourceKey": "PET.EER_EPD2F_PF4_Y35NY_DPG.D",
+      "url": "https://www.eia.gov/dnav/pet/hist/EER_EPD2F_PF4_Y35NY_DPGD.htm",
+      "unit": "USD/gal",
+      "staleAfterDays": 10
+    }
+  ]
+}

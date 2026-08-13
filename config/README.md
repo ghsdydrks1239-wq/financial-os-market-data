@@ -5,9 +5,10 @@
 ## 상태
 
 - Master 기준: 277개 항목
-- KRX: 공급자와 대상 영역은 확인됨. 각 API 상품의 정확한 URL/API ID와 이용승인을 지표별로 매핑해야 함.
-- ECOS: Open API collector 기본 함수 준비됨. 정확한 통계표코드/주기/항목코드를 지표별로 매핑해야 함.
-- KOFIA / 글로벌 공식소스는 이후 source family별로 추가.
+- KRX: 7개 API 인증과 주요 selector 검증 완료. 공개 저장소 재배포 권리 확인 전까지 값은 비공개 처리.
+- ECOS: 국내 금리·신용·원화환율 19개 항목 매핑과 수집 완료.
+- EIA: 원자재 5개 history HTML 매핑과 transient collector 완료. 제3자 가격 재배포 권리 확인 전까지 public bundle 제외.
+- 글로벌 공식소스는 source family별 config와 collector를 추가해 관리.
 
 ## 중요한 규칙
 

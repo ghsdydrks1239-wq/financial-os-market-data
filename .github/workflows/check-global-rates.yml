@@ -5,7 +5,10 @@ on:
   push:
     paths:
       - '.github/workflows/check-global-rates.yml'
-      - 'scripts/discover-eia-html.mjs'
+      - 'config/eia-series.v1.json'
+      - 'scripts/collect-eia-v1.mjs'
+      - 'src/lib/eia-history.mjs'
+      - 'test/eia-history.test.mjs'
 
 permissions:
   contents: read
@@ -44,5 +47,7 @@ jobs:
         run: OUTPUT_PATH=.tmp/bde.json npm run collect:bde
       - name: Test OECD US leading-indicator collection
         run: OUTPUT_PATH=.tmp/oecd.json npm run collect:oecd
-      - name: Inspect keyless EIA history pages
-        run: node scripts/discover-eia-html.mjs
+      - name: Test EIA history parser
+        run: npm test
+      - name: Test transient EIA commodity collection
+        run: OUTPUT_PATH=.tmp/eia.json npm run collect:eia
