@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T07:14:13.613Z",
+  "generatedAt": "2026-08-13T07:21:41.230Z",
   "provider": "FED_LIQUIDITY",
-  "source": "Federal Reserve Board + Federal Reserve Bank of New York via FRED",
+  "source": "Federal Reserve Board + Federal Reserve Bank of New York direct APIs",
   "publicOutputAllowed": true,
   "dataQuality": {
     "total": 4,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T07:14:13.423Z",
+      "collectedAt": "2026-08-13T07:21:41.085Z",
       "sourceMeta": {
         "provider": "FED_BOARD_PRATES",
         "seriesId": "PRATES/PRATES_POLICY_RATES/RESBM_N.D",
@@ -52,7 +52,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Weekly official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T07:14:13.512Z",
+      "collectedAt": "2026-08-13T07:21:41.230Z",
       "sourceMeta": {
         "provider": "FED_BOARD_H41",
         "seriesId": "H41/H41/RESPPLLDT_XAW_N.WW",
@@ -69,7 +69,7 @@
       "value": 0.725,
       "unit": "USD billions",
       "referenceDate": "2026-08-13",
-      "source": "Federal Reserve Bank of New York via FRED",
+      "source": "Federal Reserve Bank of New York — Reverse Repo Operations",
       "sourceDate": "2026-08-12",
       "expectedSourceDate": null,
       "marketSession": "US_LIQUIDITY_DAILY",
@@ -77,13 +77,14 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T07:14:13.567Z",
+      "collectedAt": "2026-08-13T07:21:41.230Z",
       "sourceMeta": {
-        "provider": "FRED_NYFED",
-        "seriesId": "RRPONTSYD",
-        "sourceUrl": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RRPONTSYD",
-        "underlyingSource": "Federal Reserve Bank of New York — Temporary Open Market Operations",
-        "attributionRequired": true,
+        "provider": "NY_FED_RRP",
+        "field": "totalAmtAccepted / 1e9",
+        "sourceUrl": "https://markets.newyorkfed.org/api/rp/reverserepo/all/results/lastTwoWeeks.json",
+        "operationId": "RP 081226 26",
+        "acceptedCounterparties": 1,
+        "rights": "New York Fed Terms of Use grant a non-exclusive license to use, copy, and distribute website/API content for personal or business purposes, subject to those terms.",
         "publicOutputAllowed": true
       }
     },
@@ -94,7 +95,7 @@
       "value": 3.5,
       "unit": "%",
       "referenceDate": "2026-08-13",
-      "source": "Federal Reserve Bank of New York via FRED",
+      "source": "Federal Reserve Bank of New York — Reverse Repo Operations",
       "sourceDate": "2026-08-12",
       "expectedSourceDate": null,
       "marketSession": "US_LIQUIDITY_DAILY",
@@ -102,13 +103,13 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Daily official observation; holiday/session alignment is preserved separately from sourceDate.",
-      "collectedAt": "2026-08-13T07:14:13.613Z",
+      "collectedAt": "2026-08-13T07:21:41.230Z",
       "sourceMeta": {
-        "provider": "FRED_NYFED",
-        "seriesId": "RRPONTSYAWARD",
-        "sourceUrl": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RRPONTSYAWARD",
-        "underlyingSource": "Federal Reserve Bank of New York — Temporary Open Market Operations",
-        "attributionRequired": true,
+        "provider": "NY_FED_RRP",
+        "field": "details[].percentAwardRate",
+        "sourceUrl": "https://markets.newyorkfed.org/api/rp/reverserepo/all/results/lastTwoWeeks.json",
+        "operationId": "RP 081226 26",
+        "rights": "New York Fed Terms of Use grant a non-exclusive license to use, copy, and distribute website/API content for personal or business purposes, subject to those terms.",
         "publicOutputAllowed": true
       }
     }

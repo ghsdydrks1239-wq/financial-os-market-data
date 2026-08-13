@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "referenceDate": "2026-08-13",
-  "generatedAt": "2026-08-13T07:14:12.265Z",
+  "generatedAt": "2026-08-13T07:21:39.833Z",
   "provider": "DERIVED_ECOS",
   "source": "Verified legacy formulas applied to ECOS inputs",
   "publicOutputAllowed": true,
@@ -28,7 +28,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T07:14:12.265Z",
+      "collectedAt": "2026-08-13T07:21:39.833Z",
       "sourceMeta": {
         "formula": "kr_fi_10y - kr_fi_3y",
         "displayFormula": "(kr_fi_10y - kr_fi_3y) * 100",
@@ -55,7 +55,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T07:14:12.265Z",
+      "collectedAt": "2026-08-13T07:21:39.833Z",
       "sourceMeta": {
         "formula": "kr_fi_aa_3y - kr_fi_3y",
         "displayFormula": "(kr_fi_aa_3y - kr_fi_3y) * 100",
@@ -82,7 +82,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T07:14:12.265Z",
+      "collectedAt": "2026-08-13T07:21:39.833Z",
       "sourceMeta": {
         "formula": "kr_fi_bbb_3y - kr_fi_3y",
         "displayFormula": "(kr_fi_bbb_3y - kr_fi_3y) * 100",
@@ -109,7 +109,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T07:14:12.265Z",
+      "collectedAt": "2026-08-13T07:21:39.833Z",
       "sourceMeta": {
         "formula": "kr_fi_cd_91d - kr_fi_91d",
         "displayFormula": "(kr_fi_cd_91d - kr_fi_91d) * 100",
@@ -136,7 +136,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T07:14:12.265Z",
+      "collectedAt": "2026-08-13T07:21:39.833Z",
       "sourceMeta": {
         "formula": "kr_fi_3y - kr_fi_metric_134",
         "displayFormula": "(kr_fi_3y - kr_fi_metric_134) * 100",
@@ -163,7 +163,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T07:14:12.265Z",
+      "collectedAt": "2026-08-13T07:21:39.833Z",
       "sourceMeta": {
         "formula": "kr_fi_cd_91d - kr_fi_metric_134",
         "displayFormula": "(kr_fi_cd_91d - kr_fi_metric_134) * 100",
@@ -190,7 +190,7 @@
       "status": "available",
       "isStale": false,
       "qualityNote": "Formula recovered from the legacy workbook audit; no sign convention was guessed.",
-      "collectedAt": "2026-08-13T07:14:12.265Z",
+      "collectedAt": "2026-08-13T07:21:39.833Z",
       "sourceMeta": {
         "formula": "kr_fi_3y - kr_fi_91d",
         "displayFormula": "(kr_fi_3y - kr_fi_91d) * 100",
