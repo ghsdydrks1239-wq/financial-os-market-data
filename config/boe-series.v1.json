@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "provider": "BOE_DATABASE",
+  "source": "Bank of England Database",
+  "publicOutputAllowed": true,
+  "rights": "Data in the Bank of England Database are reusable under the UK Open Government Licence, except specifically excluded third-party series. The gilt yield series used here is a Bank yield series, not a third-party exchange-rate series.",
+  "metrics": [
+    {
+      "id": "gl_fi_uk_gilt_10y",
+      "name": "UK Gilt 10Y",
+      "seriesCode": "IUDMNPY",
+      "seriesTitle": "Yield from British Government Securities, 10 year Nominal Par Yield",
+      "unit": "%"
+    }
+  ]
+}
