@@ -2,6 +2,10 @@ name: Check global rates sources
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/check-global-rates.yml'
+      - 'scripts/discover-bde.mjs'
 
 permissions:
   contents: read
@@ -36,3 +40,5 @@ jobs:
         run: OUTPUT_PATH=.tmp/boe.json npm run collect:boe
       - name: Test Deutsche Bundesbank government-yield collection
         run: OUTPUT_PATH=.tmp/bundesbank.json npm run collect:bundesbank
+      - name: Inspect Banco de España daily-rate CSVs
+        run: node scripts/discover-bde.mjs
