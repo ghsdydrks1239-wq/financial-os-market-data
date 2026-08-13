@@ -1,0 +1,21 @@
+name: Check global rates sources
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/check-global-rates.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Check official public endpoints
+        run: node scripts/smoke-global-rates.mjs
