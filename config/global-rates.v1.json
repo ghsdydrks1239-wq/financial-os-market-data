@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "sources": {
+    "treasury": {
+      "name": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates",
+      "url": "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml",
+      "publicOutputAllowed": true,
+      "notes": "Official Treasury daily par-yield curve XML. Source attribution is retained in normalized output."
+    },
+    "nyFed": {
+      "name": "Federal Reserve Bank of New York — Reference Rates",
+      "publicOutputAllowed": false,
+      "notes": "SOFR/EFFR API access is verified. Public redistribution is held back until the required New York Fed reference-rate notice/disclaimer is wired into the presentation layer."
+    }
+  },
+  "treasuryMetrics": [
+    {"metricId":"gl_fi_ust_3m","name":"UST 3M","xmlTag":"BC_3MONTH","unit":"%"},
+    {"metricId":"gl_fi_ust_1y","name":"UST 1Y","xmlTag":"BC_1YEAR","unit":"%"},
+    {"metricId":"gl_fi_ust_2y","name":"UST 2Y","xmlTag":"BC_2YEAR","unit":"%"},
+    {"metricId":"gl_fi_ust_3y","name":"UST 3Y","xmlTag":"BC_3YEAR","unit":"%"},
+    {"metricId":"gl_fi_ust_5y","name":"UST 5Y","xmlTag":"BC_5YEAR","unit":"%"},
+    {"metricId":"gl_fi_ust_10y","name":"UST 10Y","xmlTag":"BC_10YEAR","unit":"%"},
+    {"metricId":"gl_fi_ust_20y","name":"UST 20Y","xmlTag":"BC_20YEAR","unit":"%"},
+    {"metricId":"gl_fi_ust_30y","name":"UST 30Y","xmlTag":"BC_30YEAR","unit":"%"}
+  ],
+  "treasuryDerived": [
+    {"metricId":"gl_fi_ust_2s10s","name":"UST 2s10s","left":"gl_fi_ust_10y","right":"gl_fi_ust_2y","unit":"bp","formula":"(UST10Y - UST2Y) * 100"}
+  ],
+  "nyFedMetrics": [
+    {"metricId":"gl_fi_sofr","name":"SOFR","url":"https://markets.newyorkfed.org/api/rates/secured/sofr/last/3.json","unit":"%"},
+    {"metricId":"gl_fi_effr","name":"EFFR","url":"https://markets.newyorkfed.org/api/rates/unsecured/effr/last/3.json","unit":"%"}
+  ]
+}
