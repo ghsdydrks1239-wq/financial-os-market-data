@@ -1,0 +1,37 @@
+name: Check local market dashboard
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/check-viewer.yml'
+      - 'data/public/latest.json'
+      - 'package.json'
+      - 'viewer/**'
+      - 'START_MARKET_DASHBOARD.bat'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Check dashboard JavaScript
+        run: |
+          node --check viewer/model.js
+          node --check viewer/dashboard.js
+
+      - name: Test dashboard data model
+        run: npm run test:viewer
+
+      - name: Validate metric registry
+        run: npm run check:registry
