@@ -2,6 +2,7 @@ import dns from "node:dns";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fetchEcosStatistic } from "../src/collectors/ecos.mjs";
+import { applyLastGoodFallback, selectLatestUsableSnapshot } from "../src/lib/last-good-fallback.mjs";
 
 dns.setDefaultResultOrder("ipv4first");
 
@@ -52,6 +53,35 @@ function parseValue(value) {
 
 function rowsFrom(data) {
   return Array.isArray(data?.StatisticSearch?.row) ? data.StatisticSearch.row : [];
+}
+
+async function loadFallbackSnapshot(inputPath) {
+  const directory = path.dirname(inputPath);
+  const candidates = [];
+  let entries = [];
+
+  try {
+    entries = await fs.readdir(directory, { withFileTypes: true });
+  } catch (error) {
+    if (error?.code !== "ENOENT") throw error;
+  }
+
+  const candidatePaths = new Set([inputPath]);
+  for (const entry of entries) {
+    if (entry.isFile() && (entry.name === "latest.json" || /^\d{4}-\d{2}-\d{2}\.json$/.test(entry.name))) {
+      candidatePaths.add(path.join(directory, entry.name));
+    }
+  }
+
+  for (const candidatePath of candidatePaths) {
+    try {
+      candidates.push(JSON.parse(await fs.readFile(candidatePath, "utf8")));
+    } catch (error) {
+      if (error?.code !== "ENOENT") console.warn(`Ignoring unusable ECOS fallback file ${candidatePath}: ${error?.message ?? error}`);
+    }
+  }
+
+  return selectLatestUsableSnapshot(candidates);
 }
 
 async function fetchRows(metric, referenceDate, itemCode = metric.itemCode) {
@@ -172,9 +202,24 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(referenceDate)) {
 }
 
 const collectedAt = new Date().toISOString();
-const metrics = [];
+let metrics = [];
 for (const metric of config.metrics) {
   metrics.push(await collectMetric(metric, referenceDate, collectedAt));
+}
+
+let liveCollectionErrors = metrics.filter((metric) => metric.status === "error").length;
+let carriedForward = 0;
+const fallbackInputPath = process.env.FALLBACK_INPUT_PATH?.trim();
+if (fallbackInputPath) {
+  const previousSnapshot = await loadFallbackSnapshot(fallbackInputPath);
+  if (previousSnapshot) {
+    const fallback = applyLastGoodFallback({ metrics, previousSnapshot, referenceDate, collectedAt });
+    metrics = fallback.metrics;
+    liveCollectionErrors = fallback.liveCollectionErrors;
+    carriedForward = fallback.carriedForward;
+  } else {
+    console.warn(`No usable ECOS fallback snapshot found near: ${fallbackInputPath}`);
+  }
 }
 
 const counts = metrics.reduce((acc, metric) => {
@@ -195,6 +240,8 @@ const snapshot = {
     stale: counts.stale ?? 0,
     missing: counts.missing ?? 0,
     error: counts.error ?? 0,
+    liveCollectionErrors,
+    carriedForward,
   },
   metrics,
 };
@@ -206,6 +253,7 @@ if (outputPath) {
 }
 
 console.log(`ECOS collection: referenceDate=${referenceDate}, total=${metrics.length}, available=${snapshot.dataQuality.available}, stale=${snapshot.dataQuality.stale}, missing=${snapshot.dataQuality.missing}, error=${snapshot.dataQuality.error}`);
+if (carriedForward > 0) console.log(`ECOS fallback: carriedForward=${carriedForward}, liveCollectionErrors=${liveCollectionErrors}`);
 for (const metric of metrics) {
   const detail = metric.status === "error" ? ` error=${metric.qualityNote}` : "";
   console.log(`${metric.status.toUpperCase()} ${metric.id} sourceDate=${metric.sourceDate ?? "null"}${detail}`);

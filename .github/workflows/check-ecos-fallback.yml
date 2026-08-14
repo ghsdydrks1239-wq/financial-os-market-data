@@ -1,0 +1,35 @@
+name: Check ECOS last-good fallback
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/check-ecos-fallback.yml'
+      - '.github/workflows/collect-ecos.yml'
+      - 'package.json'
+      - 'scripts/collect-ecos-v1.mjs'
+      - 'src/lib/last-good-fallback.mjs'
+      - 'test/last-good-fallback.test.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Check ECOS collection syntax
+        run: |
+          node --check scripts/collect-ecos-v1.mjs
+          node --check src/lib/last-good-fallback.mjs
+
+      - name: Test last-good fallback
+        run: npm run test:ecos-fallback
