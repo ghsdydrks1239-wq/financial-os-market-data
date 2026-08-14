@@ -112,3 +112,9 @@ data/public/            공개 가능한 MARKET BRIEF 숫자 bundle
 ## 운영 원칙
 
 `collect → normalize → validate → snapshot → market-brief`
+
+## Windows 로컬 대시보드
+
+저장소 루트의 `START_MARKET_DASHBOARD.bat`를 더블클릭하면 최신 public snapshot을 내려받아 개인용 브라우저 대시보드로 표시합니다. Python, Streamlit, Node 설치나 별도 서버 실행은 필요하지 않습니다.
+
+화면은 Overview, Korea Rates, Global Rates, FX, Data Quality로 구성되며 값·단위·기준일·상태·출처를 함께 표시합니다. 자세한 사용법은 `viewer/README.md`를 참고합니다.
