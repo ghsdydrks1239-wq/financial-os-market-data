@@ -1,3 +1,4 @@
+(() => {
 const {
   attentionMetrics,
   curvePoints,
@@ -190,3 +191,4 @@ function initialize() {
 }
 
 initialize();
+})();

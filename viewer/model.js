@@ -1,3 +1,4 @@
+(() => {
 const STATUS_PRIORITY = new Map([["error", 0], ["missing", 1], ["stale", 2], ["available", 3]]);
 
 function metrics(snapshot) {
@@ -78,3 +79,4 @@ globalThis.MarketModel = {
   providerCounts,
   statusCounts,
 };
+})();
