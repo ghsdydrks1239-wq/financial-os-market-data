@@ -7,9 +7,9 @@
 - Master: **277**
 - Public snapshot 포함: **69**
 - Available: **43**
-- Stale: **0**
-- Missing: **8**
-- Error: **18**
+- Stale: **25**
+- Missing: **1**
+- Error: **0**
 - 아직 public snapshot에 미포함: **208**
 
 ## CORE 진행률
@@ -17,21 +17,21 @@
 - CORE 전체: **65**
 - Public snapshot 포함: **24**
 - Available: **11**
-- Stale: **0**
+- Stale: **13**
 - 남음: **41**
 
 ## Coverage status
 
 - rights_blocked: 156
 - public_available: 43
+- public_stale: 25
 - research_needed: 18
-- public_error: 18
 - dependency_needed: 11
 - rights_review: 10
-- public_missing: 8
 - access_approval_needed: 6
 - source_mapped_not_public_collected: 5
 - presentation_notice_required: 2
+- public_missing: 1
 
 ## Master category 수
 
