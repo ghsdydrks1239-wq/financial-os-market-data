@@ -56,7 +56,7 @@ jobs:
         run: |
           REF_DATE="$(TZ=Asia/Seoul date +%F)"
           mkdir -p data/snapshots/ecos data/snapshots/derived data/snapshots/treasury data/snapshots/fed-liquidity data/snapshots/us-cp data/snapshots/us-labor-signals data/snapshots/jgb data/snapshots/bis data/snapshots/boe data/snapshots/bundesbank data/snapshots/bde data/snapshots/oecd data/public data/coverage .tmp
-          REFERENCE_DATE="$REF_DATE" OUTPUT_PATH="data/snapshots/ecos/$REF_DATE.json" npm run collect:ecos
+          REFERENCE_DATE="$REF_DATE" FALLBACK_INPUT_PATH="data/snapshots/ecos/latest.json" OUTPUT_PATH="data/snapshots/ecos/$REF_DATE.json" npm run collect:ecos
           cp "data/snapshots/ecos/$REF_DATE.json" data/snapshots/ecos/latest.json
           INPUT_PATH="data/snapshots/ecos/$REF_DATE.json" OUTPUT_PATH="data/snapshots/derived/$REF_DATE.json" npm run derive:kr-rates
           cp "data/snapshots/derived/$REF_DATE.json" data/snapshots/derived/latest.json
