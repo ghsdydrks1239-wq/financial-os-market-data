@@ -7,3 +7,4 @@ npm-debug.log*
 pnpm-debug.log*
 /coverage/
 .tmp/
+viewer/.local-data/

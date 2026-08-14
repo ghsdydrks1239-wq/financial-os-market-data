@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Financial OS — Local Market Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="masthead">
+        <div class="brand-block">
+          <p class="eyebrow">FINANCIAL OS · LOCAL TERMINAL</p>
+          <h1>MARKET DATA</h1>
+          <p class="subtitle">수집된 숫자만 표시하는 개인용 시장 모니터</p>
+        </div>
+        <div class="header-facts" aria-label="데이터 기준 정보">
+          <div><span>기준일</span><strong id="reference-date">—</strong></div>
+          <div><span>수집 상태</span><strong id="health-label">—</strong></div>
+          <div><span>마지막 로드</span><strong id="loaded-at">—</strong></div>
+        </div>
+      </header>
+
+      <section id="notice" class="notice" hidden></section>
+
+      <nav class="toolbar" aria-label="시장 데이터 화면">
+        <div class="tabs" role="tablist">
+          <button class="tab is-active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="korea">Korea Rates</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="global">Global Rates</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="fx">FX</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="quality">Data Quality</button>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">지표 검색</span>
+          <input id="metric-search" type="search" placeholder="지표·출처 검색" autocomplete="off" />
+          <kbd id="result-count">0</kbd>
+        </label>
+      </nav>
+
+      <main id="dashboard" tabindex="-1"></main>
+
+      <footer class="footer">
+        <span>Values are collected or calculated only. Missing values are never replaced with zero.</span>
+        <span id="data-source-label">—</span>
+      </footer>
+    </div>
+
+    <noscript>이 대시보드는 JavaScript가 필요합니다.</noscript>
+    <script src="./.local-data/latest.js"></script>
+    <script src="./model.js"></script>
+    <script src="./dashboard.js"></script>
+  </body>
+</html>
