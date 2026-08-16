@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "referenceDate": "2026-08-16",
-  "generatedAt": "2026-08-15T22:49:24.568Z",
+  "referenceDate": "2026-08-17",
+  "generatedAt": "2026-08-16T22:48:10.813Z",
   "masterTotal": 277,
   "publicObservedTotal": 69,
   "publicAvailable": 68,
@@ -2331,7 +2331,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-13",
+      "sourceDate": "2026-08-14",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3266,7 +3266,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-16",
+      "sourceDate": "2026-08-17",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
