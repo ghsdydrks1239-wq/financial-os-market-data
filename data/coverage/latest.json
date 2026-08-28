@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0",
-  "referenceDate": "2026-08-27",
-  "generatedAt": "2026-08-27T03:28:37.419Z",
+  "referenceDate": "2026-08-28",
+  "generatedAt": "2026-08-28T06:14:25.269Z",
   "masterTotal": 277,
   "publicObservedTotal": 69,
-  "publicAvailable": 58,
-  "publicStale": 10,
-  "publicMissing": 1,
+  "publicAvailable": 67,
+  "publicStale": 0,
+  "publicMissing": 2,
   "publicError": 0,
   "remaining": 208,
   "coverage": {
@@ -15,11 +15,10 @@
     "source_mapped_not_public_collected": 5,
     "rights_review": 10,
     "research_needed": 18,
-    "public_available": 58,
-    "public_missing": 1,
+    "public_available": 67,
+    "public_missing": 2,
     "dependency_needed": 11,
-    "presentation_notice_required": 2,
-    "public_stale": 10
+    "presentation_notice_required": 2
   },
   "byCategory": {
     "korea_equity": 41,
@@ -32,8 +31,8 @@
   "core": {
     "total": 65,
     "publicObserved": 24,
-    "available": 21,
-    "stale": 3,
+    "available": 24,
+    "stale": 0,
     "remaining": 41
   },
   "remainingByPrimarySource": {
@@ -2349,7 +2348,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2366,7 +2365,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2383,7 +2382,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2400,7 +2399,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2417,7 +2416,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2434,7 +2433,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2451,7 +2450,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -2468,7 +2467,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2485,7 +2484,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2502,7 +2501,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2519,7 +2518,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2570,7 +2569,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2587,7 +2586,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2604,7 +2603,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -2621,7 +2620,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -2638,7 +2637,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -2995,7 +2994,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3063,7 +3062,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3097,7 +3096,7 @@
       "sourceKey": "3M",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3114,7 +3113,7 @@
       "sourceKey": "1Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3131,7 +3130,7 @@
       "sourceKey": "2Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3148,7 +3147,7 @@
       "sourceKey": "3Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3165,7 +3164,7 @@
       "sourceKey": "5Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3182,7 +3181,7 @@
       "sourceKey": "10Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3199,7 +3198,7 @@
       "sourceKey": "20Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3216,7 +3215,7 @@
       "sourceKey": "30Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3233,7 +3232,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3267,7 +3266,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-27",
+      "sourceDate": "2026-08-28",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3301,7 +3300,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3316,9 +3315,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_available",
-      "observedStatus": "available",
-      "sourceDate": "2026-08-19",
+      "coverageStatus": "public_missing",
+      "observedStatus": "missing",
+      "sourceDate": "2026-08-26",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3369,7 +3368,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-19",
+      "sourceDate": "2026-08-26",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3386,7 +3385,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3556,7 +3555,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3573,7 +3572,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3590,7 +3589,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3624,7 +3623,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-24",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3692,7 +3691,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-24",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3743,7 +3742,7 @@
       "sourceKey": "2Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3760,7 +3759,7 @@
       "sourceKey": "3Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3777,7 +3776,7 @@
       "sourceKey": "5Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3794,7 +3793,7 @@
       "sourceKey": "10Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3811,7 +3810,7 @@
       "sourceKey": "20Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3828,7 +3827,7 @@
       "sourceKey": "30Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3845,7 +3844,7 @@
       "sourceKey": "40Y",
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3896,7 +3895,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-18",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3913,7 +3912,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-17",
+      "sourceDate": "2026-08-24",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3930,7 +3929,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-18",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3947,7 +3946,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-17",
+      "sourceDate": "2026-08-24",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3964,7 +3963,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-18",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4151,7 +4150,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -4168,7 +4167,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -4185,7 +4184,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-26",
+      "sourceDate": "2026-08-27",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -4202,7 +4201,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-08-27",
+      "sourceDate": "2026-08-28",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -4234,9 +4233,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4251,9 +4250,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4268,9 +4267,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4285,9 +4284,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4302,9 +4301,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4319,9 +4318,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4336,9 +4335,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4353,9 +4352,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4370,9 +4369,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -4387,9 +4386,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_stale",
-      "observedStatus": "stale",
-      "sourceDate": "2026-08-18",
+      "coverageStatus": "public_available",
+      "observedStatus": "available",
+      "sourceDate": "2026-08-25",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
