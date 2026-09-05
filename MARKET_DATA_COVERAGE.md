@@ -1,13 +1,13 @@
 # MARKET DATA COVERAGE
 
-기준일: 2026-09-04
+기준일: 2026-09-05
 
 ## 전체 진행률
 
 - Master: **277**
 - Public snapshot 포함: **69**
-- Available: **43**
-- Stale: **25**
+- Available: **68**
+- Stale: **0**
 - Missing: **1**
 - Error: **0**
 - 아직 public snapshot에 미포함: **208**
@@ -16,15 +16,14 @@
 
 - CORE 전체: **65**
 - Public snapshot 포함: **24**
-- Available: **11**
-- Stale: **13**
+- Available: **24**
+- Stale: **0**
 - 남음: **41**
 
 ## Coverage status
 
 - rights_blocked: 156
-- public_available: 43
-- public_stale: 25
+- public_available: 68
 - research_needed: 18
 - dependency_needed: 11
 - rights_review: 10
