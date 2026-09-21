@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0",
-  "referenceDate": "2026-09-20",
-  "generatedAt": "2026-09-20T00:17:22.471Z",
+  "referenceDate": "2026-09-21",
+  "generatedAt": "2026-09-21T00:25:18.959Z",
   "masterTotal": 277,
   "publicObservedTotal": 69,
-  "publicAvailable": 68,
+  "publicAvailable": 67,
   "publicStale": 0,
-  "publicMissing": 1,
+  "publicMissing": 2,
   "publicError": 0,
   "remaining": 208,
   "coverage": {
@@ -15,8 +15,8 @@
     "source_mapped_not_public_collected": 5,
     "rights_review": 10,
     "research_needed": 18,
-    "public_available": 68,
-    "public_missing": 1,
+    "public_available": 67,
+    "public_missing": 2,
     "dependency_needed": 11,
     "presentation_notice_required": 2
   },
@@ -2331,7 +2331,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-09-17",
+      "sourceDate": "2026-09-18",
       "rightsPublicRepoSafe": true,
       "guardReason": null
     },
@@ -3266,7 +3266,7 @@
       "sourceKey": null,
       "coverageStatus": "public_available",
       "observedStatus": "available",
-      "sourceDate": "2026-09-20",
+      "sourceDate": "2026-09-21",
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
@@ -3621,9 +3621,9 @@
       "automationStatus": "source_ready_series_mapping",
       "publicRepoSafe": null,
       "sourceKey": null,
-      "coverageStatus": "public_available",
-      "observedStatus": "available",
-      "sourceDate": "2026-09-16",
+      "coverageStatus": "public_missing",
+      "observedStatus": "missing",
+      "sourceDate": null,
       "rightsPublicRepoSafe": null,
       "guardReason": null
     },
